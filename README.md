@@ -16,6 +16,20 @@ GPL v3 (see [COPYING.txt](COPYING.txt)). Most of the
 
 The source is the `fsemi` branch of this repository; `master` follows Mission Planner.
 
+**User guide (Vietnamese):** [docs/huong-dan-su-dung.md](docs/huong-dan-su-dung.md) explains the
+FSEMI functions step by step, with screenshots.
+
+## FSEMI functions at a glance
+
+| Function | Where | Guide |
+|---|---|---|
+| Payload delivery: lock and release, releases listed and marked | DATA → **Delivery** tab | [Giao hàng](docs/huong-dan-su-dung.md#2-giao-hàng) |
+| Delivery drop in the mission | PLAN map → right-click → **Delivery drop here** | [Thả hàng tại đây](docs/huong-dan-su-dung.md#22-lập-nhiệm-vụ-thả-hàng) |
+| Photos for 3D models of a structure (orbit, facade) | PLAN map → right-click → **Inspection** | [Công trình](docs/huong-dan-su-dung.md#3-chụp-ảnh-3d-cho-công-trình) |
+| Photos for 3D models of hills and mountain ranges | PLAN: draw a polygon, then **Inspection → Terrain survey** | [Đồi núi](docs/huong-dan-su-dung.md#4-chụp-ảnh-3d-cho-đồi-núi-dãy-núi) |
+| Long missions split by battery, each flight saved as a file | the inspection and terrain dialogs, **Inspection flights** | [Chia chuyến](docs/huong-dan-su-dung.md#5-chia-chuyến-theo-pin) |
+| Name and geotag the photos, lists for 3D software | DATA map → right-click → **Inspection photos...** | [Xử lý ảnh](docs/huong-dan-su-dung.md#6-xử-lý-ảnh-sau-chuyến-bay) |
+
 ## Differences from Mission Planner
 
 - Name, window title and installer are FSEMI Mission Planner; the executable is
@@ -197,7 +211,7 @@ Updates** is hidden and new versions are installed by hand.
 | Location | Use | Transferable between PCs |
 |---|---|---|
 | `C:\ProgramData\FSEMI Mission Planner\gmapcache` | map cache | yes |
-| `C:\ProgramData\FSEMI Mission Planner\srtm` | elevation data cache | yes |
+| `C:\ProgramData\FSEMI Mission Planner\srtm` | elevation data cache (SRTM): open the survey area on the map while online so its tiles are downloaded before going to the field | yes |
 | `C:\ProgramData\FSEMI Mission Planner\*.pdef.xml` | parameter cache | yes |
 | `C:\ProgramData\FSEMI Mission Planner\LogMessages*.xml` | DF log metadata cache | yes |
 
@@ -212,6 +226,8 @@ Supported offline data:
 |---|---|
 | `C:\ProgramData\FSEMI Mission Planner` | content shared by all users |
 | `C:\Users\USERNAME\Documents\FSEMI Mission Planner` | per-user content (settings, logs, missions) |
+| `...\FSEMI Mission Planner\missions\inspection_<date>_<time>` | the flights of a split inspection or terrain survey, one `.waypoints` file each |
+| `...\FSEMI Mission Planner\photos` | where each photo was taken, a `flight_<date>_<time>_photos.csv` per flight |
 
 On Linux both are in `/home/<user>/.local/share/FSEMI Mission Planner/`.
 

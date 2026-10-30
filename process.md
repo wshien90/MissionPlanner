@@ -3,7 +3,7 @@
 Ghi lại việc đã làm, đang làm và cần làm, để tiếp tục ở session mới. Cập nhật file này
 mỗi khi xong một PR.
 
-Cập nhật lần cuối: 2026-10-30.
+Cập nhật lần cuối: 2026-10-30 (sau PR #3; tạm dừng, sẽ phát triển tiếp sau).
 
 ## Sản phẩm
 
@@ -34,8 +34,11 @@ Cập nhật lần cuối: 2026-10-30.
   - build trên Linux;
   - chạy unit test;
   - chạy thử trong app với SITL và chụp màn hình;
-  - chạy CI **DotNet Build** (Actions → Run workflow, file `main.yml`, trên nhánh làm việc).
-  
+  - CI **DotNet Build** (Windows) và **Linux Build** tự chạy với mỗi PR vào `fsemi`. DotNet
+    Build cũng chạy tay được (Actions → DotNet Build → Run workflow).
+  - **Android Build** và **OSX Build** chỉ chạy khi bấm tay (người dùng đồng ý, để tiết kiệm phút
+    chạy Actions; máy macOS tính gấp 10).
+
   Người dùng thử trên Windows rồi tự merge.
 - Bản build thử: pre-release **test-build**
   (https://github.com/wshien90/MissionPlanner/releases/tag/test-build). Mỗi lần chạy CI sẽ thay
@@ -64,37 +67,28 @@ Cập nhật lần cuối: 2026-10-30.
 |---|---|
 | #1 | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, logo/biểu tượng/màn hình khởi động FPT Semiconductor và theme FSEMI (navy #010837, xanh #6388F7) lấy từ website, bấm logo mở fpt-semiconductor.com, CI (chạy tay và với mỗi PR vào `fsemi`) kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
 | #2 | Giao hàng: tab Giao hàng (KHÓA/THẢ, gripper hoặc servo, trạng thái từ servo, danh sách lần thả), "Thả hàng tại đây" trên bản đồ Kế hoạch, đánh dấu điểm thả; chữ giao diện riêng `FsemiStrings.resx` (en, vi) |
+| #3 | Chụp ảnh 3D: công trình (bay vòng quanh, dọc mặt tường, camera và độ chồng ảnh, chia chuyến theo pin với thời gian bay một pin nhập trong hộp thoại, lưu từng chuyến thành file), `PhotoRecorder` ghi vị trí ảnh, "Ảnh kiểm tra công trình" (đặt tên, ghi GPS, CSV/geo.txt/KML); đồi núi, dãy núi (tuyến song song trên vùng đa giác, giữ độ cao theo địa hình của máy bay hoặc SRTM, lượt chụp nghiêng, chia chuyến); Android/OSX chỉ chạy tay |
+| (sau #3) | README cập nhật, hướng dẫn sử dụng `docs/huong-dan-su-dung.md` (kèm ảnh màn hình trong `docs/images`) |
 
 ## Đang làm
 
-- PR #3 **Chụp ảnh 3D cho công trình, đồi núi, dãy núi** vào `fsemi`: chờ người dùng thử và merge.
-  - Công trình (lấy từ bigWing):
-    - bay vòng quanh hoặc dọc mặt tường;
-    - chọn camera và độ chồng ảnh;
-    - chia chuyến theo pin (thời gian bay một pin nhập trong hộp thoại) và lưu từng chuyến thành
-      file `.waypoints`.
-  - `PhotoRecorder` ghi vị trí từng ảnh (CAMERA_FEEDBACK) vào
-    `photos/flight_<ngày>_<giờ>_photos.csv`.
-  - "Ảnh kiểm tra công trình": đặt tên ảnh, ghi GPS vào ảnh, xuất CSV, `geo.txt` và KML.
-  - Đồi núi, dãy núi (mới), menu "Chụp ảnh địa hình vùng đa giác (3D)":
-    - bay đi bay về theo các tuyến song song trên vùng đã vẽ bằng Đa giác, ở độ cao cố định so
-      với mặt đất;
-    - camera chụp theo quãng đường (DO_SET_CAM_TRIGG_DIST);
-    - thêm lượt chụp nghiêng vuông góc với các tuyến (camera nghiêng 45°);
-    - giữ độ cao theo dữ liệu địa hình của máy bay (khung terrain, cần TERRAIN_ENABLE = 1) hoặc
-      theo SRTM của phần mềm (độ cao so với mực nước biển, thêm waypoint mỗi 30 m);
-    - chia chuyến theo pin.
-
-    Code: `Utilities/TerrainSurvey.cs`, `Controls/TerrainSurveyForm.cs`,
-    `GCSViews/FlightPlannerTerrain.cs`.
-  - Test: `InspectionPatternTests`, `CameraCoverageTests`, `InspectionPhotosTests`,
-    `TerrainSurveyTests`.
-- Workflow Android và OSX/iOS chỉ chạy khi bấm tay (người dùng đồng ý, để tiết kiệm phút chạy
-  Actions).
+Không có. Đã dừng sau PR #3 (đã merge), chờ người dùng chọn việc tiếp theo.
 
 ## Cần làm / ý tưởng tiếp theo
 
-1. Thử bay thật phần địa hình: kiểm tra TERRAIN_ENABLE và dữ liệu địa hình trên máy bay; nếu
-   dùng SRTM thì cần tải dữ liệu trước khi ra hiện trường (máy không có mạng).
-2. Gửi ảnh lên WebODM để dựng mô hình 3D (cần máy chủ WebODM).
-3. Danh sách điểm giao hàng hay dùng.
+1. **Tải trước dữ liệu SRTM cho vùng bay**: một nút trong hộp thoại chụp ảnh địa hình (hoặc menu
+   Đa giác) tải đủ ô SRTM của vùng khi còn mạng, để ngoài hiện trường không cần Internet.
+   - SRTM là dữ liệu độ cao mặt đất toàn cầu, ô khoảng 30–90 m, sai số khoảng ±5–10 m, đo theo
+     ngọn cây và mái nhà. Phần mềm tải từ máy chủ ArduPilot, lưu ở thư mục `srtm` trong
+     dữ liệu người dùng.
+   - Dùng cho: giữ độ cao theo SRTM, gửi dữ liệu địa hình cho máy bay (TERRAIN_REQUEST), hiện
+     độ cao thấp nhất và cao nhất của vùng.
+2. **Thử bay thật phần địa hình**: kiểm tra `TERRAIN_ENABLE` và dữ liệu địa hình trên máy bay; ở
+   vùng có rừng, bay từ 60 m trở lên; nếu có rangefinder hoặc lidar, cân nhắc thêm tuỳ chọn giữ
+   độ cao theo cảm biến.
+3. **Gửi ảnh lên WebODM** để tự dựng mô hình 3D, từ cửa sổ "Ảnh kiểm tra công trình" (dùng
+   `geo.txt`). Cần máy chủ WebODM (URL và tài khoản).
+4. **Danh sách điểm giao hàng** hay dùng: lưu sẵn tên, toạ độ, độ cao thả; chọn khi lập nhiệm vụ.
+5. Tự học thời gian bay của pin sau mỗi chuyến (như bigWing, cần bộ ghi chuyến bay), thay cho ô
+   nhập tay.
+6. Giọng nói tiếng Việt cho cảnh báo thả hàng (hiện đang nói tiếng Anh).
