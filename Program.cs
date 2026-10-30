@@ -54,6 +54,11 @@ namespace MissionPlanner
         public static Image Logo = null;
 
         /// <summary>
+        /// where crash reports are posted; empty disables sending
+        /// </summary>
+        public static string CrashReportUrl = "";
+
+        /// <summary>
         /// Ardupilot logo
         /// </summary>
         public static Image Logo2 = null;
@@ -84,6 +89,8 @@ namespace MissionPlanner
             AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
 
             //AppDomain.CurrentDomain.AssemblyResolve += Resolver;
+
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
         }
 
         /// <summary>
@@ -127,9 +134,9 @@ namespace MissionPlanner
             Program.args = args;
             Console.WriteLine(
                 "If your error is about Microsoft.DirectX.DirectInput, please install the latest directx redist from here http://www.microsoft.com/en-us/download/details.aspx?id=35 \n\n");
-            Console.WriteLine("Debug under mono    MONO_LOG_LEVEL=debug mono MissionPlanner.exe");
+            Console.WriteLine("Debug under mono    MONO_LOG_LEVEL=debug mono FSEMIMissionPlanner.exe");
             Console.WriteLine("To fix any filename case issues under mono use    export MONO_IOMAP=drive:case");
-            Console.WriteLine("for pinvoke      MONO_LOG_LEVEL=debug MONO_LOG_MASK=dll mono MissionPlanner.exe");
+            Console.WriteLine("for pinvoke      MONO_LOG_LEVEL=debug MONO_LOG_MASK=dll mono FSEMIMissionPlanner.exe");
 
             Console.WriteLine("watch -n 1 ls -l /proc/$(pidof mono)/fd");
             Console.WriteLine("watch -n 1 lsof -p $(pidof mono)");
@@ -204,7 +211,7 @@ namespace MissionPlanner
                 return;
             }
 
-            name = "Mission Planner";
+            name = "FSEMI Mission Planner";
 
             try
             {
@@ -278,10 +285,9 @@ namespace MissionPlanner
             if (IconFile != null)
                 Splash.Icon = Icon.FromHandle(((Bitmap) IconFile).GetHicon());
 
-            string strVersion = File.Exists("version.txt")
-                ? File.ReadAllText("version.txt")
-                : System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            Splash.Text = name + " " + Application.ProductVersion + " build " + strVersion;
+            // "FSEMI Mission Planner 1.0.0 (build 42)", the build being the CI run number; local builds have none
+            var build = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision;
+            Splash.Text = name + " " + Application.ProductVersion + (build > 0 ? " (build " + build + ")" : "");
             Console.WriteLine("Splash.Show()");
             Splash.Show();
 
@@ -549,6 +555,17 @@ namespace MissionPlanner
             log.Debug("FirstChanceException in: " + e.Exception.Source, e.Exception);
         }
 
+        /// <summary>
+        /// The exe is FSEMIMissionPlanner.exe, but plugins built against Mission Planner reference it as
+        /// "MissionPlanner". Hand them this assembly.
+        /// </summary>
+        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            if (new AssemblyName(args.Name).Name == "MissionPlanner")
+                return typeof(Program).Assembly;
+            return null;
+        }
+
         private static Assembly CurrentDomain_TypeResolve(object sender, ResolveEventArgs args)
         {
             log.Debug("TypeResolve Failed: " + args.Name + " from " + args.RequestingAssembly);
@@ -790,6 +807,12 @@ namespace MissionPlanner
 
             log.Info("Th Name " + Thread?.Name);
 
+            if (string.IsNullOrEmpty(CrashReportUrl))
+            {
+                CustomMessageBox.Show("An error has occurred\n" + ex.ToString(), Strings.ERROR);
+                return;
+            }
+
             var dr =
                 CustomMessageBox.Show("An error has occurred\n" + ex.ToString() + "\n\nReport this Error???",
                     "Send Error", MessageBoxButtons.YesNo);
@@ -859,7 +882,7 @@ namespace MissionPlanner
                                       + "\ndata " + data
                                       + "\nmessage " + message.Replace('&', ' ').Replace('=', ' ')
                                       + "\n\n" + processinfo;
-                    _ = Download.PostAsync("http://vps.oborne.me/mail.php", postData).ConfigureAwait(false);
+                    _ = Download.PostAsync(CrashReportUrl, postData).ConfigureAwait(false);
                 }
                 catch (Exception exp)
                 {

@@ -23,13 +23,13 @@ namespace tlogThumbnailHandler
 
     //C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm /regfile /codebase tlogThumbnailHandler.dll
 
-    // reg add HKEY_CLASSES_ROOT\.tlog\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1} /d {f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}
+    // reg add HKEY_CLASSES_ROOT\.tlog\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1} /d {5308cf80-48ee-42b4-99aa-3b1213b14a10}
 
-    // reg add HKEY_CLASSES_ROOT\MissionPlanner.tlog\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1} /d {f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}
+    // reg add HKEY_CLASSES_ROOT\FSEMIMissionPlanner.tlog\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1} /d {5308cf80-48ee-42b4-99aa-3b1213b14a10}
 
     [ComVisible(true), ClassInterface(ClassInterfaceType.None)]
-    [ProgId("tlogThumbnailHandler.tlogThumbnailHandler")]
-    [Guid("f3b857f1-0b79-4e77-9d0b-8b8b7e874f56")]
+    [ProgId("FSEMIMissionPlanner.tlogThumbnailHandler")]
+    [Guid("5308cf80-48ee-42b4-99aa-3b1213b14a10")]
     public class tlogThumbnailHandler : IThumbnailProvider, IInitializeWithStream, IExtractImage2, IExtractImage, IPersistFile, IDisposable
     {
         private Size m_size = Size.Empty; 
@@ -43,7 +43,7 @@ namespace tlogThumbnailHandler
 
         static string commonAppData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
 
-        public static string queuefile = commonAppData + Path.DirectorySeparatorChar + "Mission Planner" + Path.DirectorySeparatorChar + "tlogimagecache" + Path.DirectorySeparatorChar + "queue.txt";
+        public static string queuefile = commonAppData + Path.DirectorySeparatorChar + "FSEMI Mission Planner" + Path.DirectorySeparatorChar + "tlogimagecache" + Path.DirectorySeparatorChar + "queue.txt";
 
         private static class NativeMethods
         {

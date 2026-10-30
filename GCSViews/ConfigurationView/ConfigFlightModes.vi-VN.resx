@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BUT_SaveModes.Text" xml:space="preserve">
+    <value>Lưu chế độ</value>
+  </data>
+  <data name="CB_simple1.Text" xml:space="preserve">
+    <value>Chế độ Simple</value>
+  </data>
+  <data name="CB_simple2.Text" xml:space="preserve">
+    <value>Chế độ Simple</value>
+  </data>
+  <data name="CB_simple3.Text" xml:space="preserve">
+    <value>Chế độ Simple</value>
+  </data>
+  <data name="CB_simple4.Text" xml:space="preserve">
+    <value>Chế độ Simple</value>
+  </data>
+  <data name="CB_simple5.Text" xml:space="preserve">
+    <value>Chế độ Simple</value>
+  </data>
+  <data name="CB_simple6.Text" xml:space="preserve">
+    <value>Chế độ Simple</value>
+  </data>
+  <data name="chk_ss1.Text" xml:space="preserve">
+    <value>Chế độ Super Simple</value>
+  </data>
+  <data name="chk_ss2.Text" xml:space="preserve">
+    <value>Chế độ Super Simple</value>
+  </data>
+  <data name="chk_ss3.Text" xml:space="preserve">
+    <value>Chế độ Super Simple</value>
+  </data>
+  <data name="chk_ss4.Text" xml:space="preserve">
+    <value>Chế độ Super Simple</value>
+  </data>
+  <data name="chk_ss5.Text" xml:space="preserve">
+    <value>Chế độ Super Simple</value>
+  </data>
+  <data name="chk_ss6.Text" xml:space="preserve">
+    <value>Chế độ Super Simple</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Chế độ hiện tại:</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>PWM hiện tại:</value>
+  </data>
+  <data name="labelfm1.Text" xml:space="preserve">
+    <value>Chế độ bay 1</value>
+  </data>
+  <data name="labelfm2.Text" xml:space="preserve">
+    <value>Chế độ bay 2</value>
+  </data>
+  <data name="labelfm3.Text" xml:space="preserve">
+    <value>Chế độ bay 3</value>
+  </data>
+  <data name="labelfm4.Text" xml:space="preserve">
+    <value>Chế độ bay 4</value>
+  </data>
+  <data name="labelfm5.Text" xml:space="preserve">
+    <value>Chế độ bay 5</value>
+  </data>
+  <data name="labelfm6.Text" xml:space="preserve">
+    <value>Chế độ bay 6</value>
+  </data>
+  <data name="lbl_currentmode.Text" xml:space="preserve">
+    <value>Thủ công</value>
+  </data>
+  <data name="linkLabel1_ss.Text" xml:space="preserve">
+    <value>Giải thích Simple và Super Simple</value>
+  </data>
+</root>

@@ -61,13 +61,13 @@ namespace Updater
                         P.StartInfo.FileName = "mono";
                         P.StartInfo.Arguments =
                             " \"" + Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) +
-                            Path.DirectorySeparatorChar + "MissionPlanner.exe\"";
+                            Path.DirectorySeparatorChar + "FSEMIMissionPlanner.exe\"";
                     }
                     else
                     {
                         P.StartInfo.WorkingDirectory = path;
                         P.StartInfo.FileName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) +
-                                               Path.DirectorySeparatorChar + "MissionPlanner.exe";
+                                               Path.DirectorySeparatorChar + "FSEMIMissionPlanner.exe";
                         P.StartInfo.Arguments = "";
                     }
 

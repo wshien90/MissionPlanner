@@ -19,8 +19,8 @@ docker run "${docker_args[@]}" ubuntu:22.04 bash -euo pipefail -c '
         exit 1
     fi
     mkdir "/tmp/extracted package"
-    tar -xzf /packages/MissionPlanner-linux-x86_64.tar.gz -C "/tmp/extracted package"
-    cd "/tmp/extracted package/MissionPlanner-linux-x86_64"
+    tar -xzf /packages/FSEMIMissionPlanner-linux-x86_64.tar.gz -C "/tmp/extracted package"
+    cd "/tmp/extracted package/FSEMIMissionPlanner-linux-x86_64"
     # Ask Mono for thread stacks if startup hangs before forcing termination.
     if [[ -n ${DISPLAY:-} ]]; then
         timeout --signal=QUIT --kill-after=5s 90s ./run.sh --self-test 2>&1 | tee /tmp/smoke.log

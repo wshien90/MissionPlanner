@@ -144,7 +144,7 @@ namespace TerrainMakerPlugin
 
                         frmProgressReporter.Dispose();
 
-                        CustomMessageBox.Show("Terrain DAT created in Documents/Mission Planner/TerrainDat folder", "Terrain DAT");
+                        CustomMessageBox.Show("Terrain DAT created in Documents/FSEMI Mission Planner/TerrainDat folder", "Terrain DAT");
 
 
                     }

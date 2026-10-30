@@ -133,7 +133,7 @@
     <value>Donanım yapılandırması</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Görev Planlayıcısı - Michael Oborn</value>
+    <value>FSEMI Mission Planner</value>
   </data>
   <data name="connectionOptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Baglanti ayarları</value>

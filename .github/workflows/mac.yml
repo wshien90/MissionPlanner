@@ -95,7 +95,7 @@ jobs:
         run: |
           npm install --global create-dmg
           cd ExtLibs/Xamarin/Xamarin.MacOS/bin/Release/
-          create-dmg 'Mission Planner.app' --dmg-title='Mission Planner'
+          create-dmg 'FSEMI Mission Planner.app' --dmg-title='FSEMI Mission Planner'
           
       - uses: actions/upload-artifact@v4
         with:

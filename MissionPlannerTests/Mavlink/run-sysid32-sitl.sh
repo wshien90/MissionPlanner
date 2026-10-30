@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 if [[ $# != 1 ]]; then
-    echo 'Usage: run-sysid32-sitl.sh /path/to/MissionPlanner-linux-x86_64' >&2
+    echo 'Usage: run-sysid32-sitl.sh /path/to/FSEMIMissionPlanner-linux-x86_64' >&2
     exit 1
 fi
 app_dir=$(realpath -- "$1")
 test_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 references=(-r:System.Windows.Forms -r:System.Drawing -r:/usr/lib/mono/4.5/Facades/netstandard.dll)
-for assembly in MissionPlanner.exe MAVLink.dll MissionPlanner.ArduPilot.dll MissionPlanner.Utilities.dll MissionPlanner.Comms.dll Interfaces.dll MissionPlanner.Controls.dll; do
+for assembly in FSEMIMissionPlanner.exe MAVLink.dll MissionPlanner.ArduPilot.dll MissionPlanner.Utilities.dll MissionPlanner.Comms.dll Interfaces.dll MissionPlanner.Controls.dll; do
     references+=("-r:$app_dir/$assembly")
 done
 mcs -langversion:latest "${references[@]}" -out:"$app_dir/Sysid32Sitl.exe" "$test_dir/Sysid32Sitl.cs"
-cp -- "$app_dir/MissionPlanner.exe.config" "$app_dir/Sysid32Sitl.exe.config"
+cp -- "$app_dir/FSEMIMissionPlanner.exe.config" "$app_dir/Sysid32Sitl.exe.config"
 cd -- "$app_dir"
 export MONO_IOMAP=drive:case
 export MONO_PATH="$app_dir:$app_dir/mono-facades${MONO_PATH:+:$MONO_PATH}"

@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RSSI.ToolTip" xml:space="preserve">
+    <value>xem tài liệu để có đồ thị RSSI sang dBm. Các số ở cuối là: 
+txe: số lỗi phát (vd. hết thời gian phát) 
+rxe: số lỗi thu (lỗi CRC, lỗi khung, v.v.) 
+stx: số lần tràn bộ đệm phát nối tiếp 
+rrx: số lần tràn bộ đệm thu nối tiếp 
+ecc: số từ 12 bit được mã golay sửa thành công
+và cho CRC gói hợp lệ 
+</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Đèn trạng thái</value>
+  </data>
+  <data name="linkLabel1.ToolTip" xml:space="preserve">
+    <value>Radio 3DR có 2 đèn trạng thái, một đỏ và một xanh.
+đèn xanh nhấp nháy - đang tìm radio còn lại 
+đèn xanh sáng liên tục - đã kết nối với radio còn lại 
+đèn đỏ nhấp nháy - đang truyền dữ liệu 
+đèn đỏ sáng liên tục - đang ở chế độ cập nhật firmware</value>
+  </data>
+  <data name="RRTSCTS.ToolTip" xml:space="preserve">
+    <value>Bật hoặc tắt điều khiển luồng phần cứng</value>
+  </data>
+  <data name="RMAX_FREQ.ToolTip" xml:space="preserve">
+    <value>tần số tối đa tính bằng kHz </value>
+  </data>
+  <data name="RNUM_CHANNELS.ToolTip" xml:space="preserve">
+    <value>số kênh nhảy tần </value>
+  </data>
+  <data name="RDUTY_CYCLE.ToolTip" xml:space="preserve">
+    <value>phần trăm thời gian được phép phát</value>
+  </data>
+  <data name="RLBT_RSSI.ToolTip" xml:space="preserve">
+    <value>Ngưỡng Listen Before Talk</value>
+  </data>
+  <data name="RMIN_FREQ.ToolTip" xml:space="preserve">
+    <value>tần số tối thiểu tính bằng kHz </value>
+  </data>
+  <data name="RGPO1_1R_COUT.ToolTip" xml:space="preserve">
+    <value>GPI1_1R/COUT đặt GPIO 1.1 làm đầu ra R/C(PPM)</value>
+  </data>
+  <data name="RGPI1_1R_CIN.ToolTip" xml:space="preserve">
+    <value>GPI1_1R/CIN đặt GPIO 1.1 làm đầu vào R/C(PPM)</value>
+  </data>
+  <data name="RSERIAL_SPEED.ToolTip" xml:space="preserve">
+    <value>Baud rate nối tiếp tính bằng kbps làm tròn. Ví dụ 57 nghĩa là 57600. 
+</value>
+  </data>
+  <data name="RAIR_SPEED.ToolTip" xml:space="preserve">
+    <value>AIR_SPEED là tốc độ dữ liệu giữa hai radio tính bằng kbps làm tròn. Ví dụ 128 nghĩa là 128kbps. Tối đa 192, tối thiểu 2. Không nên dùng dưới 16 vì thời gian nhảy tần và đồng bộ TDM sẽ quá dài. </value>
+  </data>
+  <data name="RNETID.ToolTip" xml:space="preserve">
+    <value>NETID là 'mã mạng' 16 bit. Mã này dùng để khởi tạo chuỗi nhảy tần và nhận biết gói đến từ đúng radio. Hãy dùng NETID khác với những người khác dùng cùng loại radio trong khu vực. </value>
+  </data>
+  <data name="RTXPOWER.ToolTip" xml:space="preserve">
+    <value>TXPOWER là công suất phát tính bằng dBm. 20dBm là 100mW. Nên đặt thấp hơn khi thử ở cự ly ngắn.
+</value>
+  </data>
+  <data name="RECC.ToolTip" xml:space="preserve">
+    <value>ECC bật/tắt mã sửa lỗi golay. Mặc định tắt. Nếu bật, mỗi gói cần gấp đôi số byte để gửi, nên mất một nửa băng thông không dây, nhưng có thể sửa tới 3 bit lỗi trên mỗi 12 bit dữ liệu. Dùng cho cự ly xa, thường kèm tốc độ dữ liệu không dây thấp hơn. Giải mã golay mất 20 micro giây cho mỗi byte phát (40 micro giây cho mỗi byte dữ liệu người dùng), nên CPU cũng bị giới hạn ở tốc độ dữ liệu cao nhất. Vì vậy thường chỉ dùng golay ở 128kbps trở xuống. 
+</value>
+  </data>
+  <data name="ROPPRESEND.ToolTip" xml:space="preserve">
+    <value>OPPRESEND bật/tắt "gửi lại khi có cơ hội". Khi bật, radio sẽ gửi một gói hai lần nếu bộ đệm vào nối tiếp có ít hơn 256 byte. Lần gửi thứ 2 được đánh dấu là gửi lại và bị radio nhận bỏ qua nếu đã nhận tốt gói đầu. Tính năng này cải thiện rõ chất lượng kết nối, nhất là với lệnh gửi lên. 
+</value>
+  </data>
+  <data name="RTSCTS.ToolTip" xml:space="preserve">
+    <value>Bật hoặc tắt điều khiển luồng phần cứng</value>
+  </data>
+  <data name="MAX_FREQ.ToolTip" xml:space="preserve">
+    <value>tần số tối đa tính bằng kHz </value>
+  </data>
+  <data name="NUM_CHANNELS.ToolTip" xml:space="preserve">
+    <value>số kênh nhảy tần </value>
+  </data>
+  <data name="LBT_RSSI.ToolTip" xml:space="preserve">
+    <value>Ngưỡng Listen Before Talk</value>
+  </data>
+  <data name="MIN_FREQ.ToolTip" xml:space="preserve">
+    <value>tần số tối thiểu tính bằng kHz </value>
+  </data>
+  <data name="DUTY_CYCLE.ToolTip" xml:space="preserve">
+    <value>phần trăm thời gian được phép phát</value>
+  </data>
+  <data name="GPO1_1R_COUT.ToolTip" xml:space="preserve">
+    <value>GPI1_1R/COUT đặt GPIO 1.1 làm đầu ra R/C(PPM)</value>
+  </data>
+  <data name="GPI1_1R_CIN.ToolTip" xml:space="preserve">
+    <value>GPI1_1R/CIN đặt GPIO 1.1 làm đầu vào R/C(PPM)</value>
+  </data>
+  <data name="SERIAL_SPEED.ToolTip" xml:space="preserve">
+    <value>Baud rate nối tiếp tính bằng kbps làm tròn. Ví dụ 57 nghĩa là 57600. 
+</value>
+  </data>
+  <data name="AIR_SPEED.ToolTip" xml:space="preserve">
+    <value>AIR_SPEED là tốc độ dữ liệu giữa hai radio tính bằng kbps làm tròn. Ví dụ 128 nghĩa là 128kbps. Tối đa 192, tối thiểu 2. Không nên dùng dưới 16 vì thời gian nhảy tần và đồng bộ TDM sẽ quá dài. </value>
+  </data>
+  <data name="NETID.ToolTip" xml:space="preserve">
+    <value>NETID là 'mã mạng' 16 bit. Mã này dùng để khởi tạo chuỗi nhảy tần và nhận biết gói đến từ đúng radio. Hãy dùng NETID khác với những người khác dùng cùng loại radio trong khu vực. </value>
+  </data>
+  <data name="TXPOWER.ToolTip" xml:space="preserve">
+    <value>TXPOWER là công suất phát tính bằng dBm. 20dBm là 100mW. Nên đặt thấp hơn khi thử ở cự ly ngắn.
+</value>
+  </data>
+  <data name="ECC.ToolTip" xml:space="preserve">
+    <value>ECC bật/tắt mã sửa lỗi golay. Mặc định tắt. Nếu bật, mỗi gói cần gấp đôi số byte để gửi, nên mất một nửa băng thông không dây, nhưng có thể sửa tới 3 bit lỗi trên mỗi 12 bit dữ liệu. Dùng cho cự ly xa, thường kèm tốc độ dữ liệu không dây thấp hơn. Giải mã golay mất 20 micro giây cho mỗi byte phát (40 micro giây cho mỗi byte dữ liệu người dùng), nên CPU cũng bị giới hạn ở tốc độ dữ liệu cao nhất. Vì vậy thường chỉ dùng golay ở 128kbps trở xuống. 
+</value>
+  </data>
+  <data name="OPPRESEND.ToolTip" xml:space="preserve">
+    <value>OPPRESEND bật/tắt "gửi lại khi có cơ hội". Khi bật, radio sẽ gửi một gói hai lần nếu bộ đệm vào nối tiếp có ít hơn 256 byte. Lần gửi thứ 2 được đánh dấu là gửi lại và bị radio nhận bỏ qua nếu đã nhận tốt gói đầu. Tính năng này cải thiện rõ chất lượng kết nối, nhất là với lệnh gửi lên. 
+</value>
+  </data>
+  <data name="ENCRYPTION_LEVEL.ToolTip" xml:space="preserve">
+    <value>Mức mã hoá AES</value>
+  </data>
+  <data name="RENCRYPTION_LEVEL.ToolTip" xml:space="preserve">
+    <value>Mức mã hoá AES</value>
+  </data>
+  <data name="FSFRAMELOSS.ToolTip" xml:space="preserve">
+    <value>Số khung đầu ra SBUS hoặc PPM bị mất trước khi vào failsafe.</value>
+  </data>
+  <data name="RFSFRAMELOSS.ToolTip" xml:space="preserve">
+    <value>Số khung đầu ra SBUS hoặc PPM bị mất trước khi vào failsafe.</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Phiên bản</value>
+  </data>
+  <data name="lbl_status.Text" xml:space="preserve">
+    <value>LƯU Ý: Luôn bấm "Sao chép mục bắt buộc sang radio xa" khi sửa
+để không bị mất kết nối radio</value>
+  </data>
+  <data name="groupBoxLocal.Text" xml:space="preserve">
+    <value>Tại chỗ</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Mất khung Failsafe</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Quốc gia:</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Tốc độ/Dải tần</value>
+  </data>
+  <data name="btnRandom.Text" xml:space="preserve">
+    <value>Ngẫu nhiên</value>
+  </data>
+  <data name="lblDESTID.Text" xml:space="preserve">
+    <value>ID đích</value>
+  </data>
+  <data name="lblNODEID.Text" xml:space="preserve">
+    <value>ID nút</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Định dạng</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tốc độ không dây</value>
+  </data>
+  <data name="lblTXPOWER.Text" xml:space="preserve">
+    <value>Công suất phát</value>
+  </data>
+  <data name="lblOPPRESEND.Text" xml:space="preserve">
+    <value>Gửi lại khi có cơ hội</value>
+  </data>
+  <data name="lblANT_MODE.Text" xml:space="preserve">
+    <value>Chế độ anten</value>
+  </data>
+  <data name="lblSER_BRK_DETMS.Text" xml:space="preserve">
+    <value>Phát hiện ngắt</value>
+  </data>
+  <data name="lblGLOBAL_RETRIES.Text" xml:space="preserve">
+    <value>Số lần thử lại chung</value>
+  </data>
+  <data name="lblMAX_RETRIES.Text" xml:space="preserve">
+    <value>Số lần thử lại tối đa</value>
+  </data>
+  <data name="lblMAX_DATA.Text" xml:space="preserve">
+    <value>Dữ liệu tối đa</value>
+  </data>
+  <data name="lblENCRYPTION_LEVEL.Text" xml:space="preserve">
+    <value>Mã hoá AES</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Khoá AES</value>
+  </data>
+  <data name="linkLabel_mavlink.Text" xml:space="preserve">
+    <value>Cài đặt cho Mavlink chuẩn</value>
+  </data>
+  <data name="linkLabel_lowlatency.Text" xml:space="preserve">
+    <value>Cài đặt cho độ trễ thấp</value>
+  </data>
+  <data name="lblMAX_WINDOW.Text" xml:space="preserve">
+    <value>Cửa sổ tối đa (ms)</value>
+  </data>
+  <data name="lblMIN_FREQ.Text" xml:space="preserve">
+    <value>Tần số tối thiểu</value>
+  </data>
+  <data name="lblDUTY_CYCLE.Text" xml:space="preserve">
+    <value>Chu kỳ làm việc</value>
+  </data>
+  <data name="lblNUM_CHANNELS.Text" xml:space="preserve">
+    <value>Số kênh</value>
+  </data>
+  <data name="lblMAX_FREQ.Text" xml:space="preserve">
+    <value>Tần số tối đa</value>
+  </data>
+  <data name="btnRemoteLoadFromFile.Text" xml:space="preserve">
+    <value>Nạp từ file...</value>
+  </data>
+  <data name="btnRemoteSaveToFile.Text" xml:space="preserve">
+    <value>Lưu vào file...</value>
+  </data>
+  <data name="lblRFSFRAMELOSS.Text" xml:space="preserve">
+    <value>Mất khung Failsafe</value>
+  </data>
+  <data name="BUT_SetPPMFailSafeRemote.Text" xml:space="preserve">
+    <value>Đặt Fail Safe PPM</value>
+  </data>
+  <data name="BUT_SetPPMFailSafeRemote.ToolTip" xml:space="preserve">
+    <value>Ghi luồng PPM mặc định cho đầu ra PPM (phía máy bay)</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Quốc gia:</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Tốc độ/Dải tần</value>
+  </data>
+  <data name="lblRDESTID.Text" xml:space="preserve">
+    <value>ID đích</value>
+  </data>
+  <data name="lblRNODEID.Text" xml:space="preserve">
+    <value>ID nút</value>
+  </data>
+  <data name="lblROPPRESEND.Text" xml:space="preserve">
+    <value>Gửi lại khi có cơ hội</value>
+  </data>
+  <data name="lblRTXPOWER.Text" xml:space="preserve">
+    <value>Công suất phát</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Tốc độ không dây</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Định dạng</value>
+  </data>
+  <data name="lblRANT_MODE.Text" xml:space="preserve">
+    <value>Chế độ anten</value>
+  </data>
+  <data name="lblRSER_BRK_DETMS.Text" xml:space="preserve">
+    <value>Phát hiện ngắt</value>
+  </data>
+  <data name="lblRGLOBAL_RETRIES.Text" xml:space="preserve">
+    <value>Số lần thử lại chung</value>
+  </data>
+  <data name="lblRMAX_RETRIES.Text" xml:space="preserve">
+    <value>Số lần thử lại tối đa</value>
+  </data>
+  <data name="lblRMAX_DATA.Text" xml:space="preserve">
+    <value>Dữ liệu tối đa</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Khoá AES</value>
+  </data>
+  <data name="lblRENCRYPTION_LEVEL.Text" xml:space="preserve">
+    <value>Mã hoá AES</value>
+  </data>
+  <data name="lblRMAX_WINDOW.Text" xml:space="preserve">
+    <value>Cửa sổ tối đa (ms)</value>
+  </data>
+  <data name="lblRMIN_FREQ.Text" xml:space="preserve">
+    <value>Tần số tối thiểu</value>
+  </data>
+  <data name="lblRMAX_FREQ.Text" xml:space="preserve">
+    <value>Tần số tối đa</value>
+  </data>
+  <data name="lblRNUM_CHANNELS.Text" xml:space="preserve">
+    <value>Số kênh</value>
+  </data>
+  <data name="lblRDUTY_CYCLE.Text" xml:space="preserve">
+    <value>Chu kỳ làm việc</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Phiên bản</value>
+  </data>
+  <data name="groupBoxRemote.Text" xml:space="preserve">
+    <value>Radio xa</value>
+  </data>
+  <data name="BUT_loadcustom.Text" xml:space="preserve">
+    <value>Tải firmware lên (tuỳ chỉnh)</value>
+  </data>
+  <data name="BUT_resettodefault.Text" xml:space="preserve">
+    <value>Về mặc định</value>
+  </data>
+  <data name="BUT_SetPPMFailSafe.Text" xml:space="preserve">
+    <value>Đặt Fail Safe PPM</value>
+  </data>
+  <data name="BUT_SetPPMFailSafe.ToolTip" xml:space="preserve">
+    <value>Ghi luồng PPM mặc định cho đầu ra PPM (phía máy bay)</value>
+  </data>
+  <data name="BUT_savesettings.Text" xml:space="preserve">
+    <value>Lưu cài đặt</value>
+  </data>
+  <data name="BUT_getcurrent.Text" xml:space="preserve">
+    <value>Nạp cài đặt</value>
+  </data>
+  <data name="BUT_upload.Text" xml:space="preserve">
+    <value>Tải firmware lên (chuẩn)</value>
+  </data>
+  <data name="BUT_Syncoptions.Text" xml:space="preserve">
+    <value>Sao chép mục bắt buộc sang radio xa</value>
+  </data>
+  <data name="btnSaveToFile.Text" xml:space="preserve">
+    <value>Lưu vào file...</value>
+  </data>
+  <data name="btnLoadFromFile.Text" xml:space="preserve">
+    <value>Nạp từ file...</value>
+  </data>
+</root>

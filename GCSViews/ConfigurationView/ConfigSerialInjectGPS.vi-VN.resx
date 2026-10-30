@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chk_rtcmmsg.Text" xml:space="preserve">
+    <value>Kiểu thông điệp chèn</value>
+  </data>
+  <data name="chk_rtcmmsg.ToolTip" xml:space="preserve">
+    <value>Tuỳ thuộc phiên bản firmware trên autopilot, nếu được hãy để bật, vì thông điệp mới xử lý lỗi dữ liệu tốt hơn nhiều</value>
+  </data>
+  <data name="lbl_svin.ToolTip" xml:space="preserve">
+    <value>Thông tin survey in
+Valid: survey in đã hợp lệ chưa
+InProgress: có đang survey vị trí không
+Duration: số giây đã survey
+Obs: số lần quan sát dùng để survey
+Acc: độ chính xác hiện tại của điểm survey
+</value>
+  </data>
+  <data name="chk_autoconfig.Text" xml:space="preserve">
+    <value>Tự cấu hình bộ thu</value>
+  </data>
+  <data name="chk_autoconfig.ToolTip" xml:space="preserve">
+    <value>Tự cấu hình bộ thu gắn ở cổng đã chọn để xuất thông điệp hiệu chỉnh.</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Khi kết nối, bộ thu sẽ bắt đầu “survey-in” để xác định vị trí GPS chính xác.
+Survey-in xong khi vị trí trạm gốc RTCM không còn thay đổi.
+Tuỳ vị trí và tín hiệu, việc này có thể mất vài phút
+
+Khi survey xong là có thể dùng.
+</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Hệ vệ tinh dùng cho RTCM</value>
+  </data>
+  <data name="label21.ToolTip" xml:space="preserve">
+    <value>Chọn các hệ vệ tinh mà bộ thu xuất hiệu chỉnh. Càng nhiều hệ thì tốc độ dữ liệu càng cao.</value>
+  </data>
+  <data name="chk_septentriogalileo.ToolTip" xml:space="preserve">
+    <value>Bật/tắt xuất thông điệp RTCM Galileo.</value>
+  </data>
+  <data name="chk_septentriobeidou.ToolTip" xml:space="preserve">
+    <value>Bật/tắt xuất thông điệp RTCM BeiDou.</value>
+  </data>
+  <data name="chk_septentrioglonass.ToolTip" xml:space="preserve">
+    <value>Bật/tắt xuất thông điệp RTCM GLONASS.</value>
+  </data>
+  <data name="chk_septentriogps.ToolTip" xml:space="preserve">
+    <value>Bật/tắt xuất thông điệp RTCM GPS.</value>
+  </data>
+  <data name="button_septentriortcminterval.Text" xml:space="preserve">
+    <value>Đặt chu kỳ</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Chu kỳ thông điệp RTCM (giây)</value>
+  </data>
+  <data name="label20.ToolTip" xml:space="preserve">
+    <value>Chọn tần suất bộ thu xuất thông điệp RTCM. Giá trị nhỏ hơn cho tốc độ dữ liệu cao hơn.</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Lượng thông điệp RTCM</value>
+  </data>
+  <data name="label19.ToolTip" xml:space="preserve">
+    <value>Chọn mức chi tiết của thông điệp RTCM. Giá trị cao hơn cho tốc độ dữ liệu cao hơn.</value>
+  </data>
+  <data name="chk_septentriofixedposition.Text" xml:space="preserve">
+    <value>Vị trí cố định</value>
+  </data>
+  <data name="chk_septentriofixedposition.ToolTip" xml:space="preserve">
+    <value>Nhập vị trí cố định cho anten trạm gốc thay vì để bộ thu tự xác định. Cách này có thể tăng độ chính xác của hiệu chỉnh.
+</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Vĩ độ (WGS84)</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Kinh độ (WGS84)</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Độ cao (m)</value>
+  </data>
+  <data name="button_septentriosetposition.Text" xml:space="preserve">
+    <value>Đặt vị trí</value>
+  </data>
+  <data name="but_restartsvin.Text" xml:space="preserve">
+    <value>Khởi động lại</value>
+  </data>
+  <data name="but_restartsvin.ToolTip" xml:space="preserve">
+    <value>Dùng để lưu vị trí trạm gốc hiện tại là vị trí đã survey</value>
+  </data>
+  <data name="chk_m8p_130p.ToolTip" xml:space="preserve">
+    <value>Nếu cả trạm gốc và rover đều có firmware ublox 1.30 trở lên, hãy đánh dấu ô này</value>
+  </data>
+  <data name="but_save_basepos.Text" xml:space="preserve">
+    <value>Lưu vị trí hiện tại</value>
+  </data>
+  <data name="but_save_basepos.ToolTip" xml:space="preserve">
+    <value>Dùng để lưu vị trí trạm gốc hiện tại là vị trí đã survey</value>
+  </data>
+  <data name="BaseName1.HeaderText" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="Use.HeaderText" xml:space="preserve">
+    <value>Dùng</value>
+  </data>
+  <data name="Delete.HeaderText" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Thời gian (giây)</value>
+  </data>
+  <data name="txt_surveyinAcc.ToolTip" xml:space="preserve">
+    <value>Ngưỡng độ chính xác survey in. Phải thấp hơn giá trị này</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Độ chính xác SurveyIn (m)</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value>Survey in chỉ hoàn tất khi đạt cả độ chính xác và thời gian
+ví dụ độ chính xác dưới 2 m, và quan sát hơn 60 giây</value>
+  </data>
+  <data name="txt_surveyinDur.ToolTip" xml:space="preserve">
+    <value>Thời gian survey in tối thiểu. Phải lớn hơn số này</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value>Thông tin survey in
+Valid: survey in đã hợp lệ chưa
+InProgress: có đang survey vị trí không
+Duration: số giây đã survey
+Obs: số lần quan sát dùng để survey
+Acc: độ chính xác hiện tại của điểm survey
+</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>Thông tin survey in
+Valid: survey in đã hợp lệ chưa
+InProgress: có đang survey vị trí không
+Duration: số giây đã survey
+Obs: số lần quan sát dùng để survey
+Acc: độ chính xác hiện tại của điểm survey
+</value>
+  </data>
+  <data name="label9.ToolTip" xml:space="preserve">
+    <value>Thông tin survey in
+Valid: survey in đã hợp lệ chưa
+InProgress: có đang survey vị trí không
+Duration: số giây đã survey
+Obs: số lần quan sát dùng để survey
+Acc: độ chính xác hiện tại của điểm survey
+</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>Thông tin survey in
+Valid: survey in đã hợp lệ chưa
+InProgress: có đang survey vị trí không
+Duration: số giây đã survey
+Obs: số lần quan sát dùng để survey
+Acc: độ chính xác hiện tại của điểm survey
+</value>
+  </data>
+  <data name="groupBox_autoconfig.Text" xml:space="preserve">
+    <value>Tuỳ chọn tự cấu hình</value>
+  </data>
+  <data name="chk_sendgga.Text" xml:space="preserve">
+    <value>Gửi GGA cho NTRIP? (VRS/Smart)</value>
+  </data>
+  <data name="chk_sendgga.ToolTip" xml:space="preserve">
+    <value>Tuỳ thuộc phiên bản firmware trên autopilot, nếu được hãy để bật, vì thông điệp mới xử lý lỗi dữ liệu tốt hơn nhiều</value>
+  </data>
+  <data name="check_sendntripv1.Text" xml:space="preserve">
+    <value>Gửi theo giao thức NTRIP v1.0?</value>
+  </data>
+  <data name="check_sendntripv1.ToolTip" xml:space="preserve">
+    <value>Một số caster NTRIP cũ, như RTKLIB, không hỗ trợ giao thức NTRIP v2.0. Đánh dấu ô này để dùng giao thức v1.0</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tốc độ dữ liệu vào</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Tốc độ dữ liệu ra</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Trạm gốc RTCM </value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Thông điệp đã nhận</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Trạm gốc</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Trạng thái kết nối</value>
+  </data>
+  <data name="BUT_connect.Text" xml:space="preserve">
+    <value>Kết nối</value>
+  </data>
+</root>

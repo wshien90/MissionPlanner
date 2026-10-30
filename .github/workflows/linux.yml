@@ -38,10 +38,10 @@ jobs:
         run: ./Linux/test-package.sh 2>&1 | tee linux-runtime-test.log
       - uses: actions/upload-artifact@v4
         with:
-          name: MissionPlanner-linux-x86_64
+          name: FSEMIMissionPlanner-linux-x86_64
           path: |
-            bin/linux/MissionPlanner-linux-x86_64.tar.gz
-            bin/linux/MissionPlanner-linux-x86_64.tar.gz.sha256
+            bin/linux/FSEMIMissionPlanner-linux-x86_64.tar.gz
+            bin/linux/FSEMIMissionPlanner-linux-x86_64.tar.gz.sha256
           if-no-files-found: error
           compression-level: 0
           retention-days: 30
@@ -67,7 +67,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: MissionPlanner-linux-x86_64
+          name: FSEMIMissionPlanner-linux-x86_64
           path: download
       - name: Update Linux development release
         env:

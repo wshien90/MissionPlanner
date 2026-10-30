@@ -2680,7 +2680,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>미션 플래너 - Michael Oborne</value>
+    <value>FSEMI Mission Planner</value>
   </data>
   <data name="&gt;&gt;autoHideToolStripMenuItem.Name" xml:space="preserve">
     <value>autoHideToolStripMenuItem</value>

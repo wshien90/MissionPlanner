@@ -74,12 +74,12 @@ namespace wix
             //Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar+ 
             string file = "installer.wxs";
 
-            string outputfilename = "MissionPlanner";
+            string outputfilename = "FSEMIMissionPlanner";
 
             if (args.Length > 1)
                 outputfilename = args[1];
 
-            string exepath = Path.GetFullPath(path) + Path.DirectorySeparatorChar + "MissionPlanner.exe";
+            string exepath = Path.GetFullPath(path) + Path.DirectorySeparatorChar + "FSEMIMissionPlanner.exe";
             string version = Assembly.LoadFile(exepath).GetName().Version.ToString();
 
             System.Diagnostics.FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(exepath);
@@ -88,9 +88,9 @@ namespace wix
 
             header(fvi.ProductVersion);
 
-            sw.WriteLine("    <Directory Id=\"INSTALLDIR\" Name=\"Mission Planner\">");
+            sw.WriteLine("    <Directory Id=\"INSTALLDIR\" Name=\"FSEMI Mission Planner\">");
 
-            sw.WriteLine(@"        <Component Id=""InstallDirPermissions"" Guid=""{525389D7-EB3C-4d77-A5F6-A285CF99437D}"" KeyPath=""yes""> 
+            sw.WriteLine(@"        <Component Id=""InstallDirPermissions"" Guid=""{977DCF44-52DA-4D46-8D26-A8E9BA1D86FC}"" KeyPath=""yes""> 
             <CreateFolder> 
                 <Permission User=""Everyone"" GenericAll=""yes"" /> 
             </CreateFolder>
@@ -119,7 +119,7 @@ namespace wix
 
             st.WriteLine(@"""C:\Program Files\7-Zip\7z.exe"" a -tzip -xr!beta.bat -xr!cameras.xml -xr!firmware.hex -xr!*.zip -xr!stats.xml -xr!*.bin -xr!*.xyz -xr!*.sqlite -xr!*.dxf -xr!*.zip -xr!*.h -xr!*.param -xr!ParameterMetaData.xml -xr!translation -xr!mavelous_web -xr!stats.xml -xr!driver -xr!*.etag -xr!srtm -xr!*.rlog -xr!*.zip -xr!*.tlog -xr!config.xml -xr!gmapcache -xr!eeprom.bin -xr!dataflash.bin -xr!*.new -xr!*.log -xr!ArdupilotPlanner.log* -xr!cameras.xml -xr!firmware.hex -xr!*.zip -xr!stats.xml -xr!ParameterMetaData.xml -xr!*.etag -xr!*.rlog -xr!*.tlog -xr!config.xml -xr!gmapcache -xr!eeprom.bin -xr!dataflash.bin -xr!*.new " + fn + @".zip " + path + "*");
 
-            st.WriteLine("About to upload!!!!!!!!!");
+            st.WriteLine("echo About to upload");
             st.WriteLine("pause");
 
             st.WriteLine(@"c:\cygwin\bin\chmod.exe 777 " + fn + ".zip");
@@ -128,11 +128,9 @@ namespace wix
             st.WriteLine(@"c:\cygwin\bin\ln.exe -f -s " + fn + ".zip " + outputfilename + "-latest.zip");
             st.WriteLine(@"c:\cygwin\bin\ln.exe -f -s " + fn + ".msi " + outputfilename + "-latest.msi");
 
-            st.WriteLine(@"c:\cygwin\bin\rsync.exe -Pv -e '/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /cygdrive/c/Users/michael/sitl' " + fn + ".zip michael@mega2.ardupilot.org:MissionPlanner/");
-            st.WriteLine(@"c:\cygwin\bin\rsync.exe -Pv -e '/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /cygdrive/c/Users/michael/sitl' " + fn + ".msi michael@mega2.ardupilot.org:MissionPlanner/");
+            st.WriteLine("echo Built " + fn + ".zip and " + fn + ".msi");
 
-            st.WriteLine(@"c:\cygwin\bin\rsync.exe -Pv -e '/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /cygdrive/c/Users/michael/sitl'   -l MissionPlanner-latest.zip michael@mega2.ardupilot.org:MissionPlanner/");
-            st.WriteLine(@"c:\cygwin\bin\rsync.exe -Pv -e '/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /cygdrive/c/Users/michael/sitl'   -l MissionPlanner-latest.msi michael@mega2.ardupilot.org:MissionPlanner/");
+
 
             st.Close();
 
@@ -161,11 +159,11 @@ namespace wix
 <Wix xmlns=""http://schemas.microsoft.com/wix/2006/wi"" xmlns:netfx=""http://schemas.microsoft.com/wix/NetFxExtension"" xmlns:difx=""http://schemas.microsoft.com/wix/DifxAppExtension"" xmlns:iis='http://schemas.microsoft.com/wix/IIsExtension' >
 
 
-    <Product Id=""" + newid + @""" Name=""Mission Planner"" Language=""1033"" Version=""" + version + @""" Manufacturer=""Michael Oborne"" UpgradeCode=""{625389D7-EB3C-4d77-A5F6-A285CF99437D}"">
+    <Product Id=""" + newid + @""" Name=""FSEMI Mission Planner"" Language=""1033"" Version=""" + version + @""" Manufacturer=""FSEMI"" UpgradeCode=""{A1D4B10C-8E25-47E3-B263-D479DD06425A}"">
 
-    <Package Description=""Mission Planner Installer"" Comments=""Mission Planner Installer"" Manufacturer=""Michael Oborne"" InstallerVersion=""200"" Compressed=""yes"" />
+    <Package Description=""FSEMI Mission Planner Installer"" Comments=""FSEMI Mission Planner Installer"" Manufacturer=""FSEMI"" InstallerVersion=""200"" Compressed=""yes"" />
 
-    <Upgrade Id=""{625389D7-EB3C-4d77-A5F6-A285CF99437D}"">
+    <Upgrade Id=""{A1D4B10C-8E25-47E3-B263-D479DD06425A}"">
         <UpgradeVersion OnlyDetect=""yes"" Minimum=""" + version + @""" Property=""NEWERVERSIONDETECTED"" IncludeMinimum=""no"" />
         <UpgradeVersion OnlyDetect=""no"" Minimum=""0.0.0"" Maximum=""" + version + @""" Property=""OLDERVERSIONBEINGUPGRADED"" IncludeMinimum=""yes"" IncludeMaximum=""yes"" />
     </Upgrade>
@@ -195,7 +193,7 @@ namespace wix
         </Directory>
 
         <Directory Id=""ProgramMenuFolder"">
-            <Directory Id=""ApplicationProgramsFolder"" Name=""Mission Planner"" />
+            <Directory Id=""ApplicationProgramsFolder"" Name=""FSEMI Mission Planner"" />
         </Directory>
     </Directory>
 
@@ -250,9 +248,9 @@ namespace wix
 
     <DirectoryRef Id=""ApplicationProgramsFolder"">
         <Component Id=""ApplicationShortcut"" Guid=""*"">
-            <Shortcut Id=""ApplicationStartMenuShortcut10"" Name=""Mission Planner"" Description=""Mission Planner"" Target=""[INSTALLDIR]MissionPlanner.exe"" WorkingDirectory=""INSTALLDIR"" />
-            <Shortcut Id=""UninstallProduct"" Name=""Uninstall Mission Planner"" Description=""Uninstalls My Application"" Target=""[System64Folder]msiexec.exe"" Arguments=""/x [ProductCode]"" />
-            <RegistryValue Root=""HKCU"" Key=""Software\MichaelOborne\MissionPlanner"" Name=""installed"" Type=""integer"" Value=""1"" KeyPath=""yes"" />
+            <Shortcut Id=""ApplicationStartMenuShortcut10"" Name=""FSEMI Mission Planner"" Description=""FSEMI Mission Planner"" Target=""[INSTALLDIR]FSEMIMissionPlanner.exe"" WorkingDirectory=""INSTALLDIR"" />
+            <Shortcut Id=""UninstallProduct"" Name=""Uninstall FSEMI Mission Planner"" Description=""Uninstalls FSEMI Mission Planner"" Target=""[System64Folder]msiexec.exe"" Arguments=""/x [ProductCode]"" />
+            <RegistryValue Root=""HKCU"" Key=""Software\FSEMI\FSEMIMissionPlanner"" Name=""installed"" Type=""integer"" Value=""1"" KeyPath=""yes"" />
 
             <RemoveFolder Id=""dltApplicationProgramsFolder"" Directory=""ApplicationProgramsFolder"" On=""uninstall"" />
 
@@ -261,7 +259,7 @@ namespace wix
     </DirectoryRef>
 
 
-    <Feature Id=""Complete"" Title=""Mission Planner"" Level=""1"">
+    <Feature Id=""Complete"" Title=""FSEMI Mission Planner"" Level=""1"">
         <ComponentRef Id=""InstallDirPermissions"" />
 ";
             sw.WriteLine(data);
@@ -288,7 +286,7 @@ namespace wix
             Event=""DoAction"" 
             Value=""LaunchApplication"">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
     </UI>
-    <Property Id=""WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT"" Value=""Launch Mission Planner"" />
+    <Property Id=""WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT"" Value=""Launch FSEMI Mission Planner"" />
 
     <!-- Step 3: Include the custom action -->
     <Property Id=""WixShellExecTarget"" Value=""[#" + mainexeid + @"]"" />
@@ -344,35 +342,35 @@ namespace wix
                 no++;
 
 
-                if (filepath.EndsWith("MissionPlanner.exe"))
+                if (filepath.EndsWith("FSEMIMissionPlanner.exe"))
                 {
                     mainexeid = "_" + no;
 
-                    sw.WriteLine(tabs3 + "<File Id=\"" + mainexeid + "\" Source=\"" + filepath + "\" ><netfx:NativeImage Id=\"ngen_MissionPlannerexe\"/> </File>");
+                    sw.WriteLine(tabs3 + "<File Id=\"" + mainexeid + "\" Source=\"" + filepath + "\" ><netfx:NativeImage Id=\"ngen_FSEMIMissionPlannerexe\"/> </File>");
 
-                    sw.WriteLine(@"<ProgId Id='MissionPlanner.tlog' Description='Telemetry Log'>
+                    sw.WriteLine(@"<ProgId Id='FSEMIMissionPlanner.tlog' Description='Telemetry Log'>
   <Extension Id='tlog' ContentType='application/tlog'>
      <Verb Id='open' Command='Open' TargetFile='" + mainexeid + @"' Argument='""%1""' />
   </Extension>
 </ProgId>
-<ProgId Id='MissionPlanner.dfbin' Description='Binary Log'>
+<ProgId Id='FSEMIMissionPlanner.dfbin' Description='Binary Log'>
   <Extension Id='dfbin' ContentType='application/dflog'>
      <Verb Id='open' Command='Open' TargetFile='" + mainexeid + @"' Argument='""%1""' />
   </Extension>
 </ProgId>
-<ProgId Id='MissionPlanner.log' Description='DF Log'>
+<ProgId Id='FSEMIMissionPlanner.log' Description='DF Log'>
   <Extension Id='log' ContentType='application/dflog'>
      <Verb Id='open' Command='Open' TargetFile='" + mainexeid + @"' Argument='""%1""' />
   </Extension>
 </ProgId>
- <RegistryValue Root=""HKCR"" Key=""MissionPlanner.tlog\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}"" Value=""{f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}"" Type=""string"" Action=""write"" />
- <RegistryValue Root=""HKCR"" Key=""MissionPlanner.tlog\shellex\{e357fccd-a995-4576-b01f-234630154e96}"" Value=""{f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}"" Type=""string"" Action=""write"" />
+ <RegistryValue Root=""HKCR"" Key=""FSEMIMissionPlanner.tlog\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}"" Value=""{5308cf80-48ee-42b4-99aa-3b1213b14a10}"" Type=""string"" Action=""write"" />
+ <RegistryValue Root=""HKCR"" Key=""FSEMIMissionPlanner.tlog\shellex\{e357fccd-a995-4576-b01f-234630154e96}"" Value=""{5308cf80-48ee-42b4-99aa-3b1213b14a10}"" Type=""string"" Action=""write"" />
 
- <RegistryValue Root=""HKCR"" Key=""MissionPlanner.dfbin\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}"" Value=""{f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}"" Type=""string"" Action=""write"" />
- <RegistryValue Root=""HKCR"" Key=""MissionPlanner.dfbin\shellex\{e357fccd-a995-4576-b01f-234630154e96}"" Value=""{f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}"" Type=""string"" Action=""write"" />
+ <RegistryValue Root=""HKCR"" Key=""FSEMIMissionPlanner.dfbin\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}"" Value=""{5308cf80-48ee-42b4-99aa-3b1213b14a10}"" Type=""string"" Action=""write"" />
+ <RegistryValue Root=""HKCR"" Key=""FSEMIMissionPlanner.dfbin\shellex\{e357fccd-a995-4576-b01f-234630154e96}"" Value=""{5308cf80-48ee-42b4-99aa-3b1213b14a10}"" Type=""string"" Action=""write"" />
 
- <RegistryValue Root=""HKCR"" Key=""MissionPlanner.log\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}"" Value=""{f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}"" Type=""string"" Action=""write"" />
- <RegistryValue Root=""HKCR"" Key=""MissionPlanner.log\shellex\{e357fccd-a995-4576-b01f-234630154e96}"" Value=""{f3b857f1-0b79-4e77-9d0b-8b8b7e874f56}"" Type=""string"" Action=""write"" />
+ <RegistryValue Root=""HKCR"" Key=""FSEMIMissionPlanner.log\shellex\{BB2E617C-0920-11D1-9A0B-00C04FC2D6C1}"" Value=""{5308cf80-48ee-42b4-99aa-3b1213b14a10}"" Type=""string"" Action=""write"" />
+ <RegistryValue Root=""HKCR"" Key=""FSEMIMissionPlanner.log\shellex\{e357fccd-a995-4576-b01f-234630154e96}"" Value=""{5308cf80-48ee-42b4-99aa-3b1213b14a10}"" Type=""string"" Action=""write"" />
 ");
 
                 }

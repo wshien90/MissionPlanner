@@ -1,10 +1,13 @@
 name: DotNet Build
-on: [push, workflow_dispatch, pull_request]
+on: workflow_dispatch
 
 jobs:
   build:
     name: Build Release
     runs-on: windows-latest
+    # to publish the test build as a release
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v2
@@ -18,12 +21,13 @@ jobs:
           $msbuildPath = Split-Path (& "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -requires Microsoft.Component.MSBuild -find MSBuild\Current\Bin\amd64\MSBuild.exe | Select-Object -First 1) -Parent
           $env:PATH = $msbuildPath + ';' + $env:PATH
           nuget locals all -clear
+          (Get-Content Properties\AssemblyInfo.cs) -replace 'AssemblyVersion\("1\.0\.0\.0"\)', "AssemblyVersion(`"1.0.0.$env:GITHUB_RUN_NUMBER`")" | Set-Content -Encoding UTF8 Properties\AssemblyInfo.cs
           msbuild -v:m -restore -t:Build -p:Configuration=Release MissionPlanner.sln
 
-      - name: MAVLink protocol regression tests
+      - name: Unit tests
         shell: pwsh
         run: |
-          dotnet test MissionPlannerTests/MissionPlannerTests.csproj --configuration Release --filter FullyQualifiedName~Sysid32Tests --logger "trx;LogFileName=sysid32.trx"
+          dotnet test MissionPlannerTests/MissionPlannerTests.csproj --configuration Release --filter "FullyQualifiedName~Sysid32Tests" --logger "trx;LogFileName=unit.trx"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Cleanup
@@ -33,14 +37,9 @@ jobs:
           gci plugins | ForEach-Object {                 if (Test-Path $_.Name -PathType Leaf)                {                    Write-Host "Remove" $_.FullName   ;                 Remove-Item $_.FullName                            } else {                    Write-Host $_.Name                }            }
 
           copy version.txt ..\..\..\
-          7z a -tzip ..\..\..\MissionPlannerBeta.zip *
+          7z a -tzip ..\..\..\FSEMIMissionPlannerBeta.zip *
           cd ..
           .\md5sum.exe net461 > ..\..\checksums.txt
-          
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MissionPlannerBeta
-          path: bin\Release\net461
           
       - uses: "marvinpinto/action-automatic-releases@v1.2.1"
         if: ${{ github.ref == 'refs/tags/beta' }}
@@ -50,10 +49,41 @@ jobs:
           prerelease: true
           title: "Beta Build"
           files: |
-            MissionPlannerBeta.zip
+            FSEMIMissionPlannerBeta.zip
             checksums.txt
             version.txt
             ChangeLog.txt
+
+      # after the zip, so nothing the app writes ends up in the build
+      - name: Smoke test on Windows
+        shell: pwsh
+        run: .github\smoke-test.ps1
+
+      # the app in Vietnamese: accents must show, not boxes
+      - name: Smoke test in Vietnamese
+        shell: pwsh
+        run: .github\smoke-test.ps1 -Language vi-VN -Out smoke\vi-VN -ShotsAt 20,45
+
+      # the build to test on Windows, once the smoke tests pass: the "test-build" pre-release, replaced by each run.
+      # Release files don't count against the account's artifact storage, which a 340 MB build a run filled up.
+      - name: Publish the test build
+        if: ${{ github.ref != 'refs/tags/beta' }}
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete test-build --yes --cleanup-tag 2>$null
+          $notes = "FSEMI Mission Planner 1.0.0 (build $env:GITHUB_RUN_NUMBER) from the $env:GITHUB_REF_NAME branch, commit $env:GITHUB_SHA.`n`nTo test it: download FSEMIMissionPlannerBeta.zip, unzip it and run FSEMIMissionPlanner.exe."
+          gh release create test-build FSEMIMissionPlannerBeta.zip checksums.txt --prerelease --target $env:GITHUB_SHA --title "Test build $env:GITHUB_RUN_NUMBER ($env:GITHUB_REF_NAME)" --notes $notes
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        continue-on-error: true
+        with:
+          name: smoke-test-screenshots
+          path: smoke
+          if-no-files-found: ignore
+          retention-days: 7
 
 
   buildDebug:
