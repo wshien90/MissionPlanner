@@ -1,5 +1,9 @@
 name: DotNet Build
-on: workflow_dispatch
+# by hand, and on each pull request into fsemi
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [fsemi]
 
 jobs:
   build:
