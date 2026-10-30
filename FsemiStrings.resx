@@ -173,4 +173,286 @@ Altitude {0:0.0} {1}, speed {2:0.0} {3}</value>
   <data name="Voice_Released" xml:space="preserve">
     <value>Payload released</value>
   </data>
+  <data name="Insp_Bottom" xml:space="preserve">
+    <value>Bottom altitude</value>
+  </data>
+  <data name="Insp_Camera" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+  <data name="Insp_CameraFacade" xml:space="preserve">
+    <value>The camera is pointed at the wall with DO_SET_ROI, so the vehicle needs a gimbal or a copter that yaws to the ROI.</value>
+  </data>
+  <data name="Insp_CameraManual" xml:space="preserve">
+    <value>Set by hand</value>
+  </data>
+  <data name="Insp_CameraManualNote" xml:space="preserve">
+    <value>Choose the camera to work out the photos per orbit, the photo spacing and the level spacing from the overlap. Cameras are those of the Survey tool; add yours there.</value>
+  </data>
+  <data name="Insp_CameraOrbit" xml:space="preserve">
+    <value>The camera is pointed at the structure with DO_SET_ROI, so the vehicle needs a gimbal or a copter that yaws to the ROI.</value>
+  </data>
+  <data name="Insp_Clear" xml:space="preserve">
+    <value>The top altitude must clear the structure.</value>
+  </data>
+  <data name="Insp_ClearRtl" xml:space="preserve">
+    <value>The top altitude and RTL_ALT must clear the structure, as RTL flies straight home from the last point.</value>
+  </data>
+  <data name="Insp_Clockwise" xml:space="preserve">
+    <value>Clockwise</value>
+  </data>
+  <data name="Insp_CounterClockwise" xml:space="preserve">
+    <value>Counter-clockwise</value>
+  </data>
+  <data name="Insp_Coverage" xml:space="preserve">
+    <value>Each photo covers {2:0.0} × {3:0.0} m of the structure from {1:0.0} m away: {0:0.0} mm per pixel. For 2 mm per pixel (fine cracks) fly {4:0.0} m from the surface.</value>
+  </data>
+  <data name="Insp_Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="Insp_Distance" xml:space="preserve">
+    <value>Distance from the wall</value>
+  </data>
+  <data name="Insp_ErrorSize" xml:space="preserve">
+    <value>{0:0} waypoints, more than the {1} a flight controller can store: use fewer levels or photos.</value>
+  </data>
+  <data name="Insp_ErrorWall" xml:space="preserve">
+    <value>The wall is shorter than 1 m.</value>
+  </data>
+  <data name="Insp_FlightLine" xml:space="preserve">
+    <value>Flight {0}: {1:0} to {2:0} {3}, about {4:0} min</value>
+  </data>
+  <data name="Insp_Flights" xml:space="preserve">
+    <value>Split into {0} flights of at most {1:0} min each (battery about {2:0} min, 30% kept in reserve):</value>
+  </data>
+  <data name="Insp_FrontOverlap" xml:space="preserve">
+    <value>Overlap between photos (%)</value>
+  </data>
+  <data name="Insp_Hover" xml:space="preserve">
+    <value>Hover at each point (s)</value>
+  </data>
+  <data name="Insp_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Insp_LevelSpacing" xml:space="preserve">
+    <value>Level spacing</value>
+  </data>
+  <data name="Insp_OneFlight" xml:space="preserve">
+    <value>One flight is enough: about {0:0} min of the {1:0} min a flight may take (battery about {2:0} min, 30% kept in reserve).</value>
+  </data>
+  <data name="Insp_PhotoSpacing" xml:space="preserve">
+    <value>Photo spacing along the wall</value>
+  </data>
+  <data name="Insp_Photos" xml:space="preserve">
+    <value>Take a photo at each point (DO_DIGICAM_CONTROL)</value>
+  </data>
+  <data name="Insp_PhotosPerOrbit" xml:space="preserve">
+    <value>Photos per orbit</value>
+  </data>
+  <data name="Insp_Radius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="Insp_Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Insp_Rtl" xml:space="preserve">
+    <value>Return to launch at the end</value>
+  </data>
+  <data name="Insp_Side" xml:space="preserve">
+    <value>Fly on the</value>
+  </data>
+  <data name="Insp_SideOverlap" xml:space="preserve">
+    <value>Overlap between levels (%)</value>
+  </data>
+  <data name="Insp_Split" xml:space="preserve">
+    <value>Split into flights by battery (each ends with RTL)</value>
+  </data>
+  <data name="Insp_StructureRadius" xml:space="preserve">
+    <value>Structure radius</value>
+  </data>
+  <data name="Insp_Summary" xml:space="preserve">
+    <value>Adds {0} mission items to the end of the mission: {1} levels from {2} down to {3} {4}, {5} waypoints, {6} photos, {7:0} {8} of flight, about {9:0} min at up to {10:0.#} m/s.</value>
+  </data>
+  <data name="Insp_SummaryHold" xml:space="preserve">
+    <value>Then holds at the top until you take over.</value>
+  </data>
+  <data name="Insp_SummaryRtl" xml:space="preserve">
+    <value>Then returns to launch.</value>
+  </data>
+  <data name="Insp_TitleFacade" xml:space="preserve">
+    <value>Inspection: facade</value>
+  </data>
+  <data name="Insp_TitleOrbit" xml:space="preserve">
+    <value>Inspection: orbit structure</value>
+  </data>
+  <data name="Insp_Top" xml:space="preserve">
+    <value>Top altitude</value>
+  </data>
+  <data name="Insp_WarnCloseOrbit" xml:space="preserve">
+    <value>Passes {0:0.#} m from the structure's center, closer than {1} m: GPS error and wind can reach it.</value>
+  </data>
+  <data name="Insp_WarnCloseWall" xml:space="preserve">
+    <value>Passes {0:0.#} m from the wall, closer than {1} m: GPS error and wind can reach it.</value>
+  </data>
+  <data name="Insp_WarnItems" xml:space="preserve">
+    <value>More than {0} items may not fit the vehicle's mission storage; use fewer levels or photos.</value>
+  </data>
+  <data name="Insp_WarnLow" xml:space="preserve">
+    <value>The bottom level is below 3 m.</value>
+  </data>
+  <data name="Insp_WarnOverlap" xml:space="preserve">
+    <value>The overlap asked for can't be reached within the limits: fly farther away or lower the overlap.</value>
+  </data>
+  <data name="Insp_WarnStructure" xml:space="preserve">
+    <value>The orbit passes less than {0} m from the structure's surface: make the radius larger.</value>
+  </data>
+  <data name="Photo_Browse" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="Photo_DoneOrder" xml:space="preserve">
+    <value>{0} of {1} photos named and placed, in the order they were taken.</value>
+  </data>
+  <data name="Photo_DoneTime" xml:space="preserve">
+    <value>{0} of {1} photos named and placed by the time they were taken (the counts differ).</value>
+  </data>
+  <data name="Photo_Files" xml:space="preserve">
+    <value>Saved in {0}, with photos.csv, geo.txt and photos.kml.</value>
+  </data>
+  <data name="Photo_Flight" xml:space="preserve">
+    <value>Flight</value>
+  </data>
+  <data name="Photo_FlightItem" xml:space="preserve">
+    <value>{0:g}: {1} photos ({2})</value>
+  </data>
+  <data name="Photo_FloorHeight" xml:space="preserve">
+    <value>Floor height (m)</value>
+  </data>
+  <data name="Photo_FloorName" xml:space="preserve">
+    <value>Floor {0}</value>
+  </data>
+  <data name="Photo_Folder" xml:space="preserve">
+    <value>Photo folder</value>
+  </data>
+  <data name="Photo_FolderPrompt" xml:space="preserve">
+    <value>The folder with the photos of the flight</value>
+  </data>
+  <data name="Photo_Geotag" xml:space="preserve">
+    <value>Write the GPS position into each photo (EXIF)</value>
+  </data>
+  <data name="Photo_GroundHeight" xml:space="preserve">
+    <value>Floor 1 at height above take-off (m)</value>
+  </data>
+  <data name="Photo_Intro" xml:space="preserve">
+    <value>Copy the photos from the camera's card into a folder, choose the flight they were taken on, and FSEMI Mission Planner names each copy by floor and side, writes its GPS position into it and lists them in photos.csv (Metashape, Pix4D, RealityScan), geo.txt (WebODM/OpenDroneMap) and photos.kml (Google Earth). The original photos are not changed.</value>
+  </data>
+  <data name="Photo_NoFlight" xml:space="preserve">
+    <value>Choose the flight: its photo positions are recorded when the vehicle reports each photo (CAMERA_FEEDBACK).</value>
+  </data>
+  <data name="Photo_NoFolder" xml:space="preserve">
+    <value>Choose the folder with the photos.</value>
+  </data>
+  <data name="Photo_OpenFolder" xml:space="preserve">
+    <value>Open the folder</value>
+  </data>
+  <data name="Photo_Output" xml:space="preserve">
+    <value>Output: {0}</value>
+  </data>
+  <data name="Photo_Prefix" xml:space="preserve">
+    <value>Structure name</value>
+  </data>
+  <data name="Photo_Run" xml:space="preserve">
+    <value>Name and geotag</value>
+  </data>
+  <data name="Photo_Title" xml:space="preserve">
+    <value>Inspection photos...</value>
+  </data>
+  <data name="Photo_Unplaced" xml:space="preserve">
+    <value>{0} photos had no position: they are in the unplaced folder.</value>
+  </data>
+  <data name="Plan_FacadeApproach" xml:space="preserve">
+    <value>The vehicle comes in from {0} at the top altitude to the nearer wall end.</value>
+  </data>
+  <data name="Plan_FacadeEnd" xml:space="preserve">
+    <value>Facade: wall end here...</value>
+  </data>
+  <data name="Plan_FacadeInLine" xml:space="preserve">
+    <value>The vehicle comes in from {0}, in line with the wall: pick the side yourself.</value>
+  </data>
+  <data name="Plan_FacadeNoApproach" xml:space="preserve">
+    <value>No home or earlier waypoint to come in from: pick the side yourself.</value>
+  </data>
+  <data name="Plan_FacadeStart" xml:space="preserve">
+    <value>Facade: wall start here</value>
+  </data>
+  <data name="Plan_FlightItem" xml:space="preserve">
+    <value>Flight {0}/{1}: {2:0} to {3:0} {4}, about {5:0} min</value>
+  </data>
+  <data name="Plan_FlightReplace" xml:space="preserve">
+    <value>Replace the inspection in the mission (from item {2}) with flight {0} of {1}?</value>
+  </data>
+  <data name="Plan_FlightReplaceChanged" xml:space="preserve">
+    <value>The mission has changed since the inspection was added. Replace everything from item {2} on with flight {0} of {1}?</value>
+  </data>
+  <data name="Plan_Flights" xml:space="preserve">
+    <value>Inspection flights</value>
+  </data>
+  <data name="Plan_FlightsAdded" xml:space="preserve">
+    <value>Flight 1 of {0} is in the mission. After it lands and the battery is changed, choose the next one under Inspection, Inspection flights, and write it to the vehicle.</value>
+  </data>
+  <data name="Plan_FlightsGone" xml:space="preserve">
+    <value>The inspection is no longer in the mission.</value>
+  </data>
+  <data name="Plan_FlightsNotSaved" xml:space="preserve">
+    <value>The flights could not be saved as files; the log has the reason.</value>
+  </data>
+  <data name="Plan_FlightsOpenFolder" xml:space="preserve">
+    <value>Open the folder of flight files</value>
+  </data>
+  <data name="Plan_FlightsSaved" xml:space="preserve">
+    <value>Each flight is also saved as its own mission file in {0}, to open again later (Load WP File) or on another computer.</value>
+  </data>
+  <data name="Plan_FromHome" xml:space="preserve">
+    <value>home</value>
+  </data>
+  <data name="Plan_FromItem" xml:space="preserve">
+    <value>mission item {0}</value>
+  </data>
+  <data name="Plan_Inspection" xml:space="preserve">
+    <value>Inspection</value>
+  </data>
+  <data name="Plan_Orbit" xml:space="preserve">
+    <value>Orbit structure here...</value>
+  </data>
+  <data name="Plan_OrbitApproach" xml:space="preserve">
+    <value>The vehicle comes in from {0} at the top altitude and starts on that side.</value>
+  </data>
+  <data name="Plan_OrbitNoApproach" xml:space="preserve">
+    <value>No home or earlier waypoint to come in from: the orbit starts north of the structure.</value>
+  </data>
+  <data name="Plan_SideApproach" xml:space="preserve">
+    <value>Side the vehicle comes from</value>
+  </data>
+  <data name="Plan_SideFar" xml:space="preserve">
+    <value>Far side of the wall</value>
+  </data>
+  <data name="Plan_SideLeft" xml:space="preserve">
+    <value>Left, looking from start to end</value>
+  </data>
+  <data name="Plan_SideRight" xml:space="preserve">
+    <value>Right, looking from start to end</value>
+  </data>
+  <data name="Plan_Wall" xml:space="preserve">
+    <value>Wall: {0:0.#} {1} long, heading {2:0}°</value>
+  </data>
+  <data name="Plan_WallEnd" xml:space="preserve">
+    <value>Wall end</value>
+  </data>
+  <data name="Plan_WallStartTip" xml:space="preserve">
+    <value>Wall start: now right-click the wall end</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Insp_Battery" xml:space="preserve">
+    <value>Battery flight time (min)</value>
+  </data>
 </root>

@@ -214,8 +214,9 @@ namespace MissionPlanner.GCSViews
 
             MainMap.Overlays.Add(poioverlay);
 
-            // FSEMI delivery drop menu item and drop markers
+            // FSEMI delivery drop menu item and drop markers, structure inspection
             InitDelivery();
+            InitInspection();
 
             prop = new Propagation(MainMap);
 

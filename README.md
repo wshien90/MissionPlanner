@@ -35,6 +35,9 @@ The source is the `fsemi` branch of this repository; `master` follows Mission Pl
   servers (see [External services used](#external-services-used)).
 - The whole interface is also in Vietnamese: **Config → Planner → UI Language → Tiếng Việt
   (vi-VN)**, then restart.
+- The FSEMI screens (delivery, inspection, photos) are in English and Vietnamese; their text is in
+  `FsemiStrings.resx` and `FsemiStrings.vi-VN.resx`, apart from Mission Planner's Crowdin
+  translations.
 - No question about Altitude Angel or restart prompt for the Drone ID tab on first start.
 - **Delivery**:
   - The **Delivery** tab under the HUD locks and releases the payload with large LOCK / RELEASE
@@ -50,10 +53,55 @@ The source is the `fsemi` branch of this repository; `master` follows Mission Pl
     an RC switch, seen on the servo output), is listed in the Delivery tab and marked in orange on
     the DATA map. With **Config → Planner → Enable Speech** on, a release is announced (in
     English).
-  - These screens are in English and Vietnamese; their text is in `FsemiStrings.resx` and
-    `FsemiStrings.vi-VN.resx`, apart from Mission Planner's Crowdin translations.
+- **Photos for 3D models of structures**:
+  - On the **PLAN** map, right-click → **Inspection** adds a structure inspection
+    to the end of the mission, levels flown from the top down with the camera
+    pointed at the structure (DO_SET_ROI) and a photo at each point
+    (DO_DIGICAM_CONTROL):
+    - **Orbit structure here...**: circles around a tower, pole or pier at a
+      radius, starting on the side facing home.
+    - **Facade: wall start here**, then **Facade: wall end here...**: passes
+      along a wall at a distance from it, on the home side or the far side, the
+      camera square to the wall.
 
-Planned: photo capture for 3D models of structures, hills and mountain ranges. See
+    The dialog shows the number of mission items, photos, flight length and an
+    estimated flight time, and warns when the vehicle would fly closer than 5 m
+    or the mission has more than 700 items.
+
+    - **Camera**: choose the camera (those of the Survey tool, from
+      `camerasBuiltin.xml` and your own `cameras.xml`) and the overlap between
+      photos (default 80 %) and between levels (default 70 %). The dialog then
+      works out the photos per orbit (at least one every 15°), the photo spacing
+      along a wall and the level spacing, and shows the area one photo covers and
+      the millimetres per pixel at that distance. Built in, among others: Sony
+      A6400 with 16, 20 and 35 mm lenses (the same sensor as the A6100 and A6600;
+      the 16 mm is the default), Sony A7R IV 35 mm, DJI Zenmuse P1 35 mm, DJI
+      Mavic 3 Enterprise and DJI Phantom 4 Pro / RTK. **Set by hand** keeps the
+      numbers you type.
+    - **Split into flights by battery** (on by default): when the inspection
+      takes longer than one battery, its levels are grouped, top down, into
+      flights that each fit the battery flight time set in the dialog (20
+      minutes until changed) less a 30 % reserve, counting the legs from home and
+      back and take-off and landing. Each flight ends with RTL. The first flight
+      goes into the mission; **Inspection → Inspection flights** lists them all
+      and puts the chosen one in place of the inspection rows after the battery
+      change. Each flight is also saved as its own mission file,
+      `missions/inspection_<date>_<time>/flight_<n>_of_<count>.waypoints` in the
+      per-user folder (with home and any mission rows before the inspection), to
+      open later with **Load WP File** or on another computer;
+      **Inspection flights → Open the folder of flight files** opens it.
+  - **Inspection photos**: from arming to disarming, where each photo is taken (the vehicle's
+    CAMERA_FEEDBACK) is recorded and saved in `photos/flight_<date>_<time>_photos.csv` in the
+    per-user folder. After the flight, right-click the DATA map → **Inspection photos...**, choose
+    the folder with the photos from the camera's card and the flight. The photos are matched to the
+    positions recorded when they were taken (in order when the counts agree, else by time), and copies
+    are made in `FSEMI_<name>` next to them, named by floor and side, e.g.
+    `BuildingA_F03_NE_0012.jpg` (`TOP` for photos over the top), with the GPS
+    position written into each JPEG (EXIF). With them: `photos.csv`, `geo.txt`
+    (for WebODM/OpenDroneMap and other photogrammetry software) and
+    `photos.kml` (Google Earth, by floor). The originals are not changed.
+
+Planned: photo capture for 3D models of hills and mountain ranges (terrain following). See
 [process.md](process.md).
 
 ## How to compile

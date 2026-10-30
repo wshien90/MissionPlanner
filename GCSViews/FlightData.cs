@@ -430,8 +430,9 @@ namespace MissionPlanner.GCSViews
 
             gMapControl1.Overlays.Add(poioverlay);
 
-            // FSEMI: payload release markers
+            // FSEMI: payload release markers, inspection photos
             InitDelivery();
+            InitPhotos();
 
             float gspeedMax = Settings.Instance.GetFloat("GspeedMAX");
             if (gspeedMax != 0)

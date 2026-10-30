@@ -173,4 +173,286 @@
   <data name="Voice_Released" xml:space="preserve">
     <value>Đã thả hàng</value>
   </data>
+  <data name="Insp_Bottom" xml:space="preserve">
+    <value>Độ cao dưới cùng</value>
+  </data>
+  <data name="Insp_Camera" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+  <data name="Insp_CameraFacade" xml:space="preserve">
+    <value>Camera được hướng vào tường bằng DO_SET_ROI, nên máy bay cần gimbal hoặc là multicopter tự xoay về ROI.</value>
+  </data>
+  <data name="Insp_CameraManual" xml:space="preserve">
+    <value>Tự nhập</value>
+  </data>
+  <data name="Insp_CameraManualNote" xml:space="preserve">
+    <value>Chọn camera để tự tính số ảnh mỗi vòng, khoảng cách giữa các ảnh và giữa các tầng bay theo độ chồng ảnh. Danh sách camera dùng chung với công cụ Survey; thêm camera của bạn ở đó.</value>
+  </data>
+  <data name="Insp_CameraOrbit" xml:space="preserve">
+    <value>Camera được hướng vào công trình bằng DO_SET_ROI, nên máy bay cần gimbal hoặc là multicopter tự xoay về ROI.</value>
+  </data>
+  <data name="Insp_Clear" xml:space="preserve">
+    <value>Độ cao trên cùng phải cao hơn công trình.</value>
+  </data>
+  <data name="Insp_ClearRtl" xml:space="preserve">
+    <value>Độ cao trên cùng và RTL_ALT đều phải cao hơn công trình, vì RTL bay thẳng về home từ điểm cuối.</value>
+  </data>
+  <data name="Insp_Clockwise" xml:space="preserve">
+    <value>Theo chiều kim đồng hồ</value>
+  </data>
+  <data name="Insp_CounterClockwise" xml:space="preserve">
+    <value>Ngược chiều kim đồng hồ</value>
+  </data>
+  <data name="Insp_Coverage" xml:space="preserve">
+    <value>Mỗi ảnh phủ {2:0.0} × {3:0.0} m bề mặt công trình từ khoảng cách {1:0.0} m: {0:0.0} mm mỗi pixel. Để đạt 2 mm mỗi pixel (thấy vết nứt nhỏ), hãy bay cách bề mặt {4:0.0} m.</value>
+  </data>
+  <data name="Insp_Direction" xml:space="preserve">
+    <value>Chiều bay</value>
+  </data>
+  <data name="Insp_Distance" xml:space="preserve">
+    <value>Khoảng cách tới tường</value>
+  </data>
+  <data name="Insp_ErrorSize" xml:space="preserve">
+    <value>{0:0} waypoint, nhiều hơn mức {1} mà FC lưu được: hãy giảm số tầng hoặc số ảnh.</value>
+  </data>
+  <data name="Insp_ErrorWall" xml:space="preserve">
+    <value>Tường ngắn hơn 1 m.</value>
+  </data>
+  <data name="Insp_FlightLine" xml:space="preserve">
+    <value>Chuyến {0}: từ {1:0} xuống {2:0} {3}, khoảng {4:0} phút</value>
+  </data>
+  <data name="Insp_Flights" xml:space="preserve">
+    <value>Chia thành {0} chuyến, mỗi chuyến tối đa {1:0} phút (pin bay được khoảng {2:0} phút, chừa 30% dự phòng):</value>
+  </data>
+  <data name="Insp_FrontOverlap" xml:space="preserve">
+    <value>Độ chồng giữa các ảnh (%)</value>
+  </data>
+  <data name="Insp_Hover" xml:space="preserve">
+    <value>Lơ lửng tại mỗi điểm (giây)</value>
+  </data>
+  <data name="Insp_Left" xml:space="preserve">
+    <value>Bên trái</value>
+  </data>
+  <data name="Insp_LevelSpacing" xml:space="preserve">
+    <value>Khoảng cách tầng</value>
+  </data>
+  <data name="Insp_OneFlight" xml:space="preserve">
+    <value>Một chuyến là đủ: khoảng {0:0} phút trong {1:0} phút cho phép mỗi chuyến (pin bay được khoảng {2:0} phút, chừa 30% dự phòng).</value>
+  </data>
+  <data name="Insp_PhotoSpacing" xml:space="preserve">
+    <value>Khoảng cách chụp dọc tường</value>
+  </data>
+  <data name="Insp_Photos" xml:space="preserve">
+    <value>Chụp ảnh tại mỗi điểm (DO_DIGICAM_CONTROL)</value>
+  </data>
+  <data name="Insp_PhotosPerOrbit" xml:space="preserve">
+    <value>Số ảnh mỗi vòng</value>
+  </data>
+  <data name="Insp_Radius" xml:space="preserve">
+    <value>Bán kính</value>
+  </data>
+  <data name="Insp_Right" xml:space="preserve">
+    <value>Bên phải</value>
+  </data>
+  <data name="Insp_Rtl" xml:space="preserve">
+    <value>Quay về điểm cất cánh khi xong</value>
+  </data>
+  <data name="Insp_Side" xml:space="preserve">
+    <value>Bay ở phía</value>
+  </data>
+  <data name="Insp_SideOverlap" xml:space="preserve">
+    <value>Độ chồng giữa các tầng bay (%)</value>
+  </data>
+  <data name="Insp_Split" xml:space="preserve">
+    <value>Chia thành nhiều chuyến theo pin (mỗi chuyến kết thúc bằng RTL)</value>
+  </data>
+  <data name="Insp_StructureRadius" xml:space="preserve">
+    <value>Bán kính công trình</value>
+  </data>
+  <data name="Insp_Summary" xml:space="preserve">
+    <value>Thêm {0} lệnh vào cuối mission: {1} tầng từ {2} xuống {3} {4}, {5} waypoint, {6} ảnh, {7:0} {8} đường bay, khoảng {9:0} phút ở tốc độ tối đa {10:0.#} m/s.</value>
+  </data>
+  <data name="Insp_SummaryHold" xml:space="preserve">
+    <value>Sau đó giữ ở độ cao trên cùng cho tới khi bạn điều khiển.</value>
+  </data>
+  <data name="Insp_SummaryRtl" xml:space="preserve">
+    <value>Sau đó quay về điểm cất cánh.</value>
+  </data>
+  <data name="Insp_TitleFacade" xml:space="preserve">
+    <value>Kiểm tra: mặt đứng</value>
+  </data>
+  <data name="Insp_TitleOrbit" xml:space="preserve">
+    <value>Kiểm tra: bay vòng quanh công trình</value>
+  </data>
+  <data name="Insp_Top" xml:space="preserve">
+    <value>Độ cao trên cùng</value>
+  </data>
+  <data name="Insp_WarnCloseOrbit" xml:space="preserve">
+    <value>Bay cách tâm công trình {0:0.#} m, gần hơn {1} m: sai số GPS và gió có thể gây va chạm.</value>
+  </data>
+  <data name="Insp_WarnCloseWall" xml:space="preserve">
+    <value>Bay cách tường {0:0.#} m, gần hơn {1} m: sai số GPS và gió có thể gây va chạm.</value>
+  </data>
+  <data name="Insp_WarnItems" xml:space="preserve">
+    <value>Hơn {0} lệnh có thể không vừa bộ nhớ mission của FC; hãy giảm số tầng hoặc số ảnh.</value>
+  </data>
+  <data name="Insp_WarnLow" xml:space="preserve">
+    <value>Tầng thấp nhất dưới 3 m.</value>
+  </data>
+  <data name="Insp_WarnOverlap" xml:space="preserve">
+    <value>Không đạt được độ chồng ảnh mong muốn trong giới hạn cho phép: hãy bay xa hơn hoặc giảm độ chồng ảnh.</value>
+  </data>
+  <data name="Insp_WarnStructure" xml:space="preserve">
+    <value>Vòng bay cách bề mặt công trình chưa tới {0} m: hãy tăng bán kính vòng bay.</value>
+  </data>
+  <data name="Photo_Browse" xml:space="preserve">
+    <value>Chọn...</value>
+  </data>
+  <data name="Photo_DoneOrder" xml:space="preserve">
+    <value>Đã đặt tên và gắn vị trí cho {0}/{1} ảnh, theo thứ tự chụp.</value>
+  </data>
+  <data name="Photo_DoneTime" xml:space="preserve">
+    <value>Đã đặt tên và gắn vị trí cho {0}/{1} ảnh theo thời gian chụp (số ảnh và số lần chụp khác nhau).</value>
+  </data>
+  <data name="Photo_Files" xml:space="preserve">
+    <value>Đã lưu vào {0}, kèm photos.csv, geo.txt và photos.kml.</value>
+  </data>
+  <data name="Photo_Flight" xml:space="preserve">
+    <value>Chuyến bay</value>
+  </data>
+  <data name="Photo_FlightItem" xml:space="preserve">
+    <value>{0:g}: {1} ảnh ({2})</value>
+  </data>
+  <data name="Photo_FloorHeight" xml:space="preserve">
+    <value>Chiều cao mỗi tầng (m)</value>
+  </data>
+  <data name="Photo_FloorName" xml:space="preserve">
+    <value>Tầng {0}</value>
+  </data>
+  <data name="Photo_Folder" xml:space="preserve">
+    <value>Thư mục ảnh</value>
+  </data>
+  <data name="Photo_FolderPrompt" xml:space="preserve">
+    <value>Thư mục chứa ảnh của chuyến bay</value>
+  </data>
+  <data name="Photo_Geotag" xml:space="preserve">
+    <value>Ghi toạ độ GPS vào từng ảnh (EXIF)</value>
+  </data>
+  <data name="Photo_GroundHeight" xml:space="preserve">
+    <value>Tầng 1 ở độ cao so với điểm cất cánh (m)</value>
+  </data>
+  <data name="Photo_Intro" xml:space="preserve">
+    <value>Chép ảnh từ thẻ nhớ camera vào một thư mục, chọn chuyến bay đã chụp, FSEMI Mission Planner sẽ đặt tên từng bản sao theo tầng và hướng, ghi toạ độ GPS vào ảnh và liệt kê trong photos.csv (Metashape, Pix4D, RealityScan), geo.txt (WebODM/OpenDroneMap) và photos.kml (Google Earth). Ảnh gốc không bị thay đổi.</value>
+  </data>
+  <data name="Photo_NoFlight" xml:space="preserve">
+    <value>Hãy chọn chuyến bay: vị trí ảnh được ghi lại khi máy bay báo mỗi lần chụp (CAMERA_FEEDBACK).</value>
+  </data>
+  <data name="Photo_NoFolder" xml:space="preserve">
+    <value>Hãy chọn thư mục chứa ảnh.</value>
+  </data>
+  <data name="Photo_OpenFolder" xml:space="preserve">
+    <value>Mở thư mục</value>
+  </data>
+  <data name="Photo_Output" xml:space="preserve">
+    <value>Lưu vào: {0}</value>
+  </data>
+  <data name="Photo_Prefix" xml:space="preserve">
+    <value>Tên công trình</value>
+  </data>
+  <data name="Photo_Run" xml:space="preserve">
+    <value>Đặt tên và gắn toạ độ</value>
+  </data>
+  <data name="Photo_Title" xml:space="preserve">
+    <value>Ảnh kiểm tra công trình...</value>
+  </data>
+  <data name="Photo_Unplaced" xml:space="preserve">
+    <value>{0} ảnh không có vị trí: nằm trong thư mục unplaced.</value>
+  </data>
+  <data name="Plan_FacadeApproach" xml:space="preserve">
+    <value>Máy bay tới từ {0} ở độ cao trên cùng, vào đầu tường gần hơn.</value>
+  </data>
+  <data name="Plan_FacadeEnd" xml:space="preserve">
+    <value>Mặt đứng: cuối tường tại đây...</value>
+  </data>
+  <data name="Plan_FacadeInLine" xml:space="preserve">
+    <value>Máy bay tới từ {0}, thẳng hàng với tường: hãy tự chọn phía bay.</value>
+  </data>
+  <data name="Plan_FacadeNoApproach" xml:space="preserve">
+    <value>Không có home hay waypoint trước đó: hãy tự chọn phía bay.</value>
+  </data>
+  <data name="Plan_FacadeStart" xml:space="preserve">
+    <value>Mặt đứng: đầu tường tại đây</value>
+  </data>
+  <data name="Plan_FlightItem" xml:space="preserve">
+    <value>Chuyến {0}/{1}: từ {2:0} xuống {3:0} {4}, khoảng {5:0} phút</value>
+  </data>
+  <data name="Plan_FlightReplace" xml:space="preserve">
+    <value>Thay phần kiểm tra trong nhiệm vụ (từ lệnh {2}) bằng chuyến {0}/{1}?</value>
+  </data>
+  <data name="Plan_FlightReplaceChanged" xml:space="preserve">
+    <value>Nhiệm vụ đã thay đổi từ khi thêm phần kiểm tra. Thay toàn bộ từ lệnh {2} trở đi bằng chuyến {0}/{1}?</value>
+  </data>
+  <data name="Plan_Flights" xml:space="preserve">
+    <value>Các chuyến kiểm tra</value>
+  </data>
+  <data name="Plan_FlightsAdded" xml:space="preserve">
+    <value>Chuyến 1/{0} đã được đưa vào nhiệm vụ. Sau khi hạ cánh và thay pin, chọn chuyến tiếp theo ở Kiểm tra công trình &gt; Các chuyến kiểm tra, rồi ghi vào máy bay.</value>
+  </data>
+  <data name="Plan_FlightsGone" xml:space="preserve">
+    <value>Phần kiểm tra không còn trong nhiệm vụ.</value>
+  </data>
+  <data name="Plan_FlightsNotSaved" xml:space="preserve">
+    <value>Không lưu được các chuyến thành file; xem lý do trong log.</value>
+  </data>
+  <data name="Plan_FlightsOpenFolder" xml:space="preserve">
+    <value>Mở thư mục chứa file các chuyến</value>
+  </data>
+  <data name="Plan_FlightsSaved" xml:space="preserve">
+    <value>Mỗi chuyến cũng được lưu thành một file nhiệm vụ riêng trong {0}, để mở lại sau (Load WP File) hoặc trên máy khác.</value>
+  </data>
+  <data name="Plan_FromHome" xml:space="preserve">
+    <value>home</value>
+  </data>
+  <data name="Plan_FromItem" xml:space="preserve">
+    <value>điểm của lệnh {0}</value>
+  </data>
+  <data name="Plan_Inspection" xml:space="preserve">
+    <value>Kiểm tra công trình</value>
+  </data>
+  <data name="Plan_Orbit" xml:space="preserve">
+    <value>Bay vòng quanh công trình tại đây...</value>
+  </data>
+  <data name="Plan_OrbitApproach" xml:space="preserve">
+    <value>Máy bay tới từ {0} ở độ cao trên cùng và bắt đầu vòng bay ở phía đó.</value>
+  </data>
+  <data name="Plan_OrbitNoApproach" xml:space="preserve">
+    <value>Không có home hay waypoint trước đó: vòng bay bắt đầu ở phía bắc công trình.</value>
+  </data>
+  <data name="Plan_SideApproach" xml:space="preserve">
+    <value>Bên máy bay tới</value>
+  </data>
+  <data name="Plan_SideFar" xml:space="preserve">
+    <value>Bên kia tường</value>
+  </data>
+  <data name="Plan_SideLeft" xml:space="preserve">
+    <value>Bên trái, nhìn từ đầu tới cuối tường</value>
+  </data>
+  <data name="Plan_SideRight" xml:space="preserve">
+    <value>Bên phải, nhìn từ đầu tới cuối tường</value>
+  </data>
+  <data name="Plan_Wall" xml:space="preserve">
+    <value>Tường: dài {0:0.#} {1}, hướng {2:0}°</value>
+  </data>
+  <data name="Plan_WallEnd" xml:space="preserve">
+    <value>Cuối tường</value>
+  </data>
+  <data name="Plan_WallStartTip" xml:space="preserve">
+    <value>Đầu tường: giờ nhấp chuột phải vào cuối tường</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="Insp_Battery" xml:space="preserve">
+    <value>Thời gian bay một pin (phút)</value>
+  </data>
 </root>

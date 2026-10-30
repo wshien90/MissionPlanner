@@ -248,4 +248,60 @@
     <senh>2.76</senh>
     <senw>3.674</senw>
   </Camera>
+  <Camera>
+    <name>Sony A6400 16mm (A6100, A6600)</name>
+    <flen>16</flen>
+    <imgh>4000</imgh>
+    <imgw>6000</imgw>
+    <senh>15.6</senh>
+    <senw>23.5</senw>
+  </Camera>
+  <Camera>
+    <name>Sony A6400 20mm (A6100, A6600)</name>
+    <flen>20</flen>
+    <imgh>4000</imgh>
+    <imgw>6000</imgw>
+    <senh>15.6</senh>
+    <senw>23.5</senw>
+  </Camera>
+  <Camera>
+    <name>Sony A6400 35mm (A6100, A6600)</name>
+    <flen>35</flen>
+    <imgh>4000</imgh>
+    <imgw>6000</imgw>
+    <senh>15.6</senh>
+    <senw>23.5</senw>
+  </Camera>
+  <Camera>
+    <name>Sony A7R IV 35mm</name>
+    <flen>35</flen>
+    <imgh>6336</imgh>
+    <imgw>9504</imgw>
+    <senh>23.8</senh>
+    <senw>35.7</senw>
+  </Camera>
+  <Camera>
+    <name>DJI Zenmuse P1 35mm</name>
+    <flen>35</flen>
+    <imgh>5460</imgh>
+    <imgw>8192</imgw>
+    <senh>24.0</senh>
+    <senw>35.9</senw>
+  </Camera>
+  <Camera>
+    <name>DJI Mavic 3 Enterprise wide</name>
+    <flen>12.3</flen>
+    <imgh>3956</imgh>
+    <imgw>5280</imgw>
+    <senh>13.0</senh>
+    <senw>17.3</senw>
+  </Camera>
+  <Camera>
+    <name>DJI Phantom 4 Pro / RTK</name>
+    <flen>8.8</flen>
+    <imgh>3648</imgh>
+    <imgw>5472</imgw>
+    <senh>8.8</senh>
+    <senw>13.2</senw>
+  </Camera>
 </Cameras>

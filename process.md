@@ -63,26 +63,27 @@ Cập nhật lần cuối: 2026-10-30.
 | PR | Nội dung |
 |---|---|
 | #1 | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, logo/biểu tượng/màn hình khởi động FPT Semiconductor và theme FSEMI (navy #010837, xanh #6388F7) lấy từ website, bấm logo mở fpt-semiconductor.com, CI (chạy tay và với mỗi PR vào `fsemi`) kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
+| #2 | Giao hàng: tab Giao hàng (KHÓA/THẢ, gripper hoặc servo, trạng thái từ servo, danh sách lần thả), "Thả hàng tại đây" trên bản đồ Kế hoạch, đánh dấu điểm thả; chữ giao diện riêng `FsemiStrings.resx` (en, vi) |
 
 ## Đang làm
 
-- PR **Giao hàng** vào `fsemi`: chờ người dùng thử và merge.
-  - Code: `Controls/Delivery*.cs`, `GCSViews/FlightDataDelivery.cs`,
-    `GCSViews/FlightPlannerDelivery.cs`.
-  - Chữ giao diện: `Utilities/FsemiText.cs`, `FsemiStrings.resx` và `.vi-VN.resx`.
-  - Test: `FsemiStringsTests`, `DeliveryConfigTests`.
+- PR **Chụp ảnh 3D cho công trình** vào `fsemi`: chờ người dùng thử và merge.
+  - Bay vòng quanh công trình hoặc dọc mặt tường; camera và độ chồng ảnh; chia chuyến theo pin
+    (thời gian bay một pin nhập trong hộp thoại); lưu từng chuyến thành file `.waypoints`.
+  - `PhotoRecorder` ghi vị trí từng ảnh (CAMERA_FEEDBACK) từ lúc arm đến lúc disarm vào
+    `photos/flight_<ngày>_<giờ>_photos.csv`.
+  - Cửa sổ "Ảnh kiểm tra công trình" ở màn Dữ liệu: đặt tên ảnh theo tầng và hướng, ghi GPS vào
+    ảnh, xuất `photos.csv`, `geo.txt` và `photos.kml`.
+  - Code lấy từ bigWing: `Utilities/InspectionPattern.cs`, `CameraCoverage.cs`,
+    `InspectionPhotos.cs`, `InspectionPhotoFiles.cs`, `InspectionFlightFiles.cs`,
+    `Controls/InspectionForm.cs`, `InspectionPhotosForm.cs`, `GCSViews/FlightPlannerInspection.cs`.
+  - Test: `InspectionPatternTests`, `CameraCoverageTests`, `InspectionPhotosTests`.
 
 ## Cần làm
 
-1. **Chụp ảnh và dựng mô hình 3D** cho công trình, đồi núi, dãy núi:
-   - Công trình (lấy từ bigWing):
-     - bay vòng quanh công trình hoặc dọc mặt tường, camera hướng vào công trình;
-     - tính số ảnh và khoảng cách tầng theo camera và độ chồng ảnh, có sẵn danh sách camera phổ
-       biến;
-     - chia thành nhiều chuyến theo pin, lưu mỗi chuyến thành file;
-     - sau chuyến bay: đặt tên ảnh, ghi GPS vào ảnh, xuất CSV, `geo.txt` và KML cho phần mềm
-       dựng 3D.
-   - Đồi núi, dãy núi (mới): bay theo lưới, giữ độ cao đều so với mặt đất (theo dữ liệu
-     SRTM/địa hình), kèm các tuyến chụp nghiêng để dựng 3D, chia theo pin.
+1. **Chụp ảnh 3D cho đồi núi, dãy núi** (mới, chưa có bên bigWing):
+   - bay theo lưới trên một vùng vẽ trên bản đồ;
+   - giữ độ cao đều so với mặt đất, theo dữ liệu SRTM hoặc địa hình;
+   - thêm các tuyến chụp nghiêng để dựng 3D;
+   - chia theo pin và lưu file như phần công trình.
 
-   Nên tách thành 2 PR: công trình, rồi địa hình.
