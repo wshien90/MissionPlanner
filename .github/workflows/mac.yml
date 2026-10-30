@@ -104,7 +104,7 @@ jobs:
             ExtLibs/Xamarin/Xamarin.MacOS/bin/Release/*.dmg
 
       - uses: "marvinpinto/action-automatic-releases@v1.2.1"
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && github.repository == 'ArduPilot/MissionPlanner' }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "osxlatest"

@@ -74,7 +74,7 @@ jobs:
           git log --pretty=oneline --abbrev-commit -5 > whatsnew\whatsnew-en-GB
 
       - name: Sign AAB
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && github.repository == 'ArduPilot/MissionPlanner' }}
         id: sign
         uses: r0adkll/sign-android-release@v1
         with:
@@ -90,7 +90,7 @@ jobs:
           path: ExtLibs\Xamarin\Xamarin.Android\bin\Release\*.aab
 
       - name: Upload Android Release to Play Store
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && github.repository == 'ArduPilot/MissionPlanner' }}
         uses: r0adkll/upload-google-play@v1.0.11
         continue-on-error: true
         with:
@@ -172,7 +172,7 @@ jobs:
           }
 
       - name: Sign APK
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && github.repository == 'ArduPilot/MissionPlanner' }}
         id: sign2
         uses: r0adkll/sign-android-release@v1
         with:
@@ -190,7 +190,7 @@ jobs:
           path: ExtLibs\Xamarin\Xamarin.Android\bin\Release/${{ github.event_name == 'push' && '*-signed.apk' || '*.apk' }}
           
       - uses: "marvinpinto/action-automatic-releases@v1.2.1"
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && github.repository == 'ArduPilot/MissionPlanner' }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
