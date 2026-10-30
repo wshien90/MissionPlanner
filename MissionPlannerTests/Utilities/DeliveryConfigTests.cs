@@ -20,17 +20,5 @@ namespace MissionPlanner.Utilities.Tests
             Assert.AreEqual((MAVLink.MAV_CMD.DO_SET_SERVO, 10.0, 1100.0),
                 DeliveryConfig.Command(DeliveryMethod.Servo, false, 10, 1100, 1900));
         }
-
-        [TestMethod]
-        public void DropsAreMarkedAtPlacesTheVehicleFliesTo()
-        {
-            Assert.IsTrue(DeliveryConfig.IsFlyTo((ushort)MAVLink.MAV_CMD.WAYPOINT));
-            Assert.IsTrue(DeliveryConfig.IsFlyTo((ushort)MAVLink.MAV_CMD.LOITER_TIME));
-            Assert.IsTrue(DeliveryConfig.IsFlyTo((ushort)MAVLink.MAV_CMD.PAYLOAD_PLACE));
-            // an ROI has a position the vehicle doesn't fly to; take-off has none
-            Assert.IsFalse(DeliveryConfig.IsFlyTo((ushort)MAVLink.MAV_CMD.DO_SET_ROI));
-            Assert.IsFalse(DeliveryConfig.IsFlyTo((ushort)MAVLink.MAV_CMD.TAKEOFF));
-            Assert.IsFalse(DeliveryConfig.IsFlyTo((ushort)MAVLink.MAV_CMD.DO_GRIPPER));
-        }
     }
 }

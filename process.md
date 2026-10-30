@@ -63,26 +63,38 @@ Cập nhật lần cuối: 2026-10-30.
 | PR | Nội dung |
 |---|---|
 | #1 | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, logo/biểu tượng/màn hình khởi động FPT Semiconductor và theme FSEMI (navy #010837, xanh #6388F7) lấy từ website, bấm logo mở fpt-semiconductor.com, CI (chạy tay và với mỗi PR vào `fsemi`) kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
+| #2 | Giao hàng: tab Giao hàng (KHÓA/THẢ, gripper hoặc servo, trạng thái từ servo, danh sách lần thả), "Thả hàng tại đây" trên bản đồ Kế hoạch, đánh dấu điểm thả; chữ giao diện riêng `FsemiStrings.resx` (en, vi) |
 
 ## Đang làm
 
-- PR **Giao hàng** vào `fsemi`: chờ người dùng thử và merge.
-  - Code: `Controls/Delivery*.cs`, `GCSViews/FlightDataDelivery.cs`,
-    `GCSViews/FlightPlannerDelivery.cs`.
-  - Chữ giao diện: `Utilities/FsemiText.cs`, `FsemiStrings.resx` và `.vi-VN.resx`.
-  - Test: `FsemiStringsTests`, `DeliveryConfigTests`.
+- PR #3 **Chụp ảnh 3D cho công trình, đồi núi, dãy núi** vào `fsemi`: chờ người dùng thử và merge.
+  - Công trình (lấy từ bigWing):
+    - bay vòng quanh hoặc dọc mặt tường;
+    - chọn camera và độ chồng ảnh;
+    - chia chuyến theo pin (thời gian bay một pin nhập trong hộp thoại) và lưu từng chuyến thành
+      file `.waypoints`.
+  - `PhotoRecorder` ghi vị trí từng ảnh (CAMERA_FEEDBACK) vào
+    `photos/flight_<ngày>_<giờ>_photos.csv`.
+  - "Ảnh kiểm tra công trình": đặt tên ảnh, ghi GPS vào ảnh, xuất CSV, `geo.txt` và KML.
+  - Đồi núi, dãy núi (mới), menu "Chụp ảnh địa hình vùng đa giác (3D)":
+    - bay đi bay về theo các tuyến song song trên vùng đã vẽ bằng Đa giác, ở độ cao cố định so
+      với mặt đất;
+    - camera chụp theo quãng đường (DO_SET_CAM_TRIGG_DIST);
+    - thêm lượt chụp nghiêng vuông góc với các tuyến (camera nghiêng 45°);
+    - giữ độ cao theo dữ liệu địa hình của máy bay (khung terrain, cần TERRAIN_ENABLE = 1) hoặc
+      theo SRTM của phần mềm (độ cao so với mực nước biển, thêm waypoint mỗi 30 m);
+    - chia chuyến theo pin.
 
-## Cần làm
+    Code: `Utilities/TerrainSurvey.cs`, `Controls/TerrainSurveyForm.cs`,
+    `GCSViews/FlightPlannerTerrain.cs`.
+  - Test: `InspectionPatternTests`, `CameraCoverageTests`, `InspectionPhotosTests`,
+    `TerrainSurveyTests`.
+- Workflow Android và OSX/iOS chỉ chạy khi bấm tay (người dùng đồng ý, để tiết kiệm phút chạy
+  Actions).
 
-1. **Chụp ảnh và dựng mô hình 3D** cho công trình, đồi núi, dãy núi:
-   - Công trình (lấy từ bigWing):
-     - bay vòng quanh công trình hoặc dọc mặt tường, camera hướng vào công trình;
-     - tính số ảnh và khoảng cách tầng theo camera và độ chồng ảnh, có sẵn danh sách camera phổ
-       biến;
-     - chia thành nhiều chuyến theo pin, lưu mỗi chuyến thành file;
-     - sau chuyến bay: đặt tên ảnh, ghi GPS vào ảnh, xuất CSV, `geo.txt` và KML cho phần mềm
-       dựng 3D.
-   - Đồi núi, dãy núi (mới): bay theo lưới, giữ độ cao đều so với mặt đất (theo dữ liệu
-     SRTM/địa hình), kèm các tuyến chụp nghiêng để dựng 3D, chia theo pin.
+## Cần làm / ý tưởng tiếp theo
 
-   Nên tách thành 2 PR: công trình, rồi địa hình.
+1. Thử bay thật phần địa hình: kiểm tra TERRAIN_ENABLE và dữ liệu địa hình trên máy bay; nếu
+   dùng SRTM thì cần tải dữ liệu trước khi ra hiện trường (máy không có mạng).
+2. Gửi ảnh lên WebODM để dựng mô hình 3D (cần máy chủ WebODM).
+3. Danh sách điểm giao hàng hay dùng.

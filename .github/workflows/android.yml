@@ -1,12 +1,7 @@
 name: Android Build
-on: 
+# by hand only (Actions, Android Build, Run workflow), to save Actions minutes
+on:
     workflow_dispatch:
-    pull_request:
-    push:
-        branches:
-            - master
-        tags:
-            - beta
 
 jobs:
   buildAAB:

@@ -122,7 +122,7 @@ namespace MissionPlanner.GCSViews
             {
                 var item = commands[i];
                 // only positions the vehicle flies to: an ROI has one it doesn't
-                if (DeliveryConfig.IsFlyTo(item.id) && (item.lat != 0 || item.lng != 0))
+                if (InspectionPattern.IsFlyTo(item.id) && (item.lat != 0 || item.lng != 0))
                     lastPosition = item;
 
                 if (!DeliveryConfig.IsRelease(item.id, item.p1, item.p2) || lastPosition == null)

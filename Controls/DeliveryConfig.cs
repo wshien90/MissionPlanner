@@ -168,25 +168,6 @@ namespace MissionPlanner.Controls
             }
         }
 
-        /// <summary>Whether a mission command flies the vehicle to its position (an ROI has one it doesn't).</summary>
-        public static bool IsFlyTo(ushort id)
-        {
-            switch ((MAVLink.MAV_CMD)id)
-            {
-                case MAVLink.MAV_CMD.WAYPOINT:
-                case MAVLink.MAV_CMD.SPLINE_WAYPOINT:
-                case MAVLink.MAV_CMD.LOITER_TIME:
-                case MAVLink.MAV_CMD.LOITER_TURNS:
-                case MAVLink.MAV_CMD.LOITER_UNLIM:
-                case MAVLink.MAV_CMD.LOITER_TO_ALT:
-                case MAVLink.MAV_CMD.LAND:
-                case MAVLink.MAV_CMD.PAYLOAD_PLACE:
-                    return true;
-                default:
-                    return false;
-            }
-        }
-
         static readonly List<DeliveryRelease> releases = new List<DeliveryRelease>();
 
         /// <summary>Raised on the thread that recorded the release.</summary>
