@@ -268,6 +268,25 @@ namespace MissionPlanner.GCSViews
 
             mymap.Paint += mymap_Paint;
 
+            // FSEMI delivery tab, after Quick
+            var tabDelivery = new TabPage(FsemiText.Get("Delivery_Tab")) { Name = "tabDelivery" };
+            tabDelivery.Controls.Add(new DeliveryPanel());
+            // TabPages.Insert is ignored on .NET Framework before the control has a handle, so rebuild the list
+            var pages = tabControlactions.TabPages.Cast<TabPage>().ToList();
+            pages.Insert(Math.Min(1, pages.Count), tabDelivery);
+            tabControlactions.TabPages.Clear();
+            tabControlactions.TabPages.AddRange(pages.ToArray());
+            // a tab list saved before the delivery tab existed gets it once, after its first tab
+            var savedTabs = Settings.Instance["tabcontrolactions"];
+            if (!string.IsNullOrEmpty(savedTabs) && !Settings.Instance.GetBoolean("delivery_tab_shown"))
+            {
+                var names = new List<string>(savedTabs.Split(';'));
+                if (!names.Contains(tabDelivery.Name))
+                    names.Insert(Math.Min(1, names.Count), tabDelivery.Name);
+                Settings.Instance["tabcontrolactions"] = string.Join(";", names);
+            }
+            Settings.Instance["delivery_tab_shown"] = true.ToString();
+
             // populate the unmodified base list
             tabControlactions.TabPages.ForEach(i => { TabListOriginal.Add((TabPage) i); });
 
@@ -410,6 +429,9 @@ namespace MissionPlanner.GCSViews
             gMapControl1.Overlays.Add(rallypointoverlay);
 
             gMapControl1.Overlays.Add(poioverlay);
+
+            // FSEMI: payload release markers
+            InitDelivery();
 
             float gspeedMax = Settings.Instance.GetFloat("GspeedMAX");
             if (gspeedMax != 0)

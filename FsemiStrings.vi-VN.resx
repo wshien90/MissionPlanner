@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Common_AddToMission" xml:space="preserve">
+    <value>Thêm vào mission</value>
+  </data>
+  <data name="Common_Armed" xml:space="preserve">
+    <value>Đã arm</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="Common_Disarmed" xml:space="preserve">
+    <value>Chưa arm</value>
+  </data>
+  <data name="Delivery_Confirm" xml:space="preserve">
+    <value>Thả hàng ngay bây giờ?
+
+Độ cao {0:0.0} {1}, tốc độ {2:0.0} {3}</value>
+  </data>
+  <data name="Delivery_ConfirmDisarmed" xml:space="preserve">
+    <value>Máy bay chưa arm.</value>
+  </data>
+  <data name="Delivery_ConfirmTitle" xml:space="preserve">
+    <value>Thả hàng</value>
+  </data>
+  <data name="Delivery_ConfirmYes" xml:space="preserve">
+    <value>Thả</value>
+  </data>
+  <data name="Delivery_Flight" xml:space="preserve">
+    <value>Cao {0:0.0} {1}   Tốc độ {2:0.0} {3}   {4}</value>
+  </data>
+  <data name="Delivery_Gripper" xml:space="preserve">
+    <value>Gripper</value>
+  </data>
+  <data name="Delivery_GripperOnServo" xml:space="preserve">
+    <value>Gripper ở servo {0}</value>
+  </data>
+  <data name="Delivery_Lock" xml:space="preserve">
+    <value>KHÓA</value>
+  </data>
+  <data name="Delivery_LockFailed" xml:space="preserve">
+    <value>Khóa thất bại: máy bay không phản hồi</value>
+  </data>
+  <data name="Delivery_LockPwm" xml:space="preserve">
+    <value>PWM khóa</value>
+  </data>
+  <data name="Delivery_LockSent" xml:space="preserve">
+    <value>Đã gửi lệnh khóa lúc {0}</value>
+  </data>
+  <data name="Delivery_Locked" xml:space="preserve">
+    <value>ĐÃ KHÓA</value>
+  </data>
+  <data name="Delivery_Locking" xml:space="preserve">
+    <value>Đang khóa...</value>
+  </data>
+  <data name="Delivery_MarkerReleased" xml:space="preserve">
+    <value>Đã thả {0}</value>
+  </data>
+  <data name="Delivery_Method" xml:space="preserve">
+    <value>Cách thả</value>
+  </data>
+  <data name="Delivery_NotConnected" xml:space="preserve">
+    <value>CHƯA KẾT NỐI</value>
+  </data>
+  <data name="Delivery_Record" xml:space="preserve">
+    <value>{0:HH:mm:ss}  {1:0.000000}, {2:0.000000}  cao {3:0.0} {4}</value>
+  </data>
+  <data name="Delivery_RecordByVehicle" xml:space="preserve">
+    <value>(mission/RC)</value>
+  </data>
+  <data name="Delivery_Release" xml:space="preserve">
+    <value>THẢ</value>
+  </data>
+  <data name="Delivery_ReleaseFailed" xml:space="preserve">
+    <value>Thả thất bại: máy bay không phản hồi</value>
+  </data>
+  <data name="Delivery_ReleasePwm" xml:space="preserve">
+    <value>PWM thả</value>
+  </data>
+  <data name="Delivery_ReleaseSent" xml:space="preserve">
+    <value>Đã gửi lệnh thả lúc {0}</value>
+  </data>
+  <data name="Delivery_Released" xml:space="preserve">
+    <value>ĐÃ THẢ</value>
+  </data>
+  <data name="Delivery_Releases" xml:space="preserve">
+    <value>Các lần thả</value>
+  </data>
+  <data name="Delivery_Releasing" xml:space="preserve">
+    <value>Đang thả...</value>
+  </data>
+  <data name="Delivery_Servo" xml:space="preserve">
+    <value>Servo</value>
+  </data>
+  <data name="Delivery_ServoN" xml:space="preserve">
+    <value>Servo {0}</value>
+  </data>
+  <data name="Delivery_Tab" xml:space="preserve">
+    <value>Giao hàng</value>
+  </data>
+  <data name="Delivery_Title" xml:space="preserve">
+    <value>HÀNG</value>
+  </data>
+  <data name="Delivery_Unknown" xml:space="preserve">
+    <value>KHÔNG RÕ</value>
+  </data>
+  <data name="Drop_Cruise" xml:space="preserve">
+    <value>Độ cao hành trình</value>
+  </data>
+  <data name="Drop_DropAlt" xml:space="preserve">
+    <value>Độ cao thả</value>
+  </data>
+  <data name="Drop_Gripper" xml:space="preserve">
+    <value>Gripper (DO_GRIPPER)</value>
+  </data>
+  <data name="Drop_HoverAfter" xml:space="preserve">
+    <value>Lơ lửng sau khi thả (giây)</value>
+  </data>
+  <data name="Drop_HoverBefore" xml:space="preserve">
+    <value>Lơ lửng trước khi thả (giây)</value>
+  </data>
+  <data name="Drop_LockAfter" xml:space="preserve">
+    <value>Khóa móc lại sau khi bay lên</value>
+  </data>
+  <data name="Drop_Rtl" xml:space="preserve">
+    <value>Quay về điểm cất cánh sau khi thả</value>
+  </data>
+  <data name="Drop_Servo" xml:space="preserve">
+    <value>Servo {0}: thả {1}, khóa {2} (DO_SET_SERVO)</value>
+  </data>
+  <data name="Drop_Summary" xml:space="preserve">
+    <value>Thêm vào cuối mission: bay tới điểm ở {0} {2}, hạ xuống {1} {2}, lơ lửng {3} giây, thả, lơ lửng {4} giây, bay lên lại {0} {2}</value>
+  </data>
+  <data name="Drop_SummaryHold" xml:space="preserve">
+    <value>, rồi lơ lửng tại chỗ cho tới khi bạn điều khiển</value>
+  </data>
+  <data name="Drop_SummaryLock" xml:space="preserve">
+    <value>, khóa móc</value>
+  </data>
+  <data name="Drop_SummaryRtl" xml:space="preserve">
+    <value>, quay về điểm cất cánh</value>
+  </data>
+  <data name="Drop_Title" xml:space="preserve">
+    <value>Thả hàng</value>
+  </data>
+  <data name="Drop_WarnAltitude" xml:space="preserve">
+    <value>Độ cao thả phải thấp hơn độ cao hành trình.</value>
+  </data>
+  <data name="Drop_With" xml:space="preserve">
+    <value>Thả bằng</value>
+  </data>
+  <data name="Plan_DropHere" xml:space="preserve">
+    <value>Thả hàng tại đây</value>
+  </data>
+  <data name="Plan_DropMarker" xml:space="preserve">
+    <value>Thả {0}: lệnh {1}, cao {2:0.#} {3}</value>
+  </data>
+  <data name="Plan_MissionOnly" xml:space="preserve">
+    <value>Chuyển sang mission (không phải fence hay rally) để thêm mục này.</value>
+  </data>
+  <data name="Voice_Released" xml:space="preserve">
+    <value>Đã thả hàng</value>
+  </data>
+</root>
