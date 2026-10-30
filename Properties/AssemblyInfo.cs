@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FSEMI Mission Planner")]
 [assembly: AssemblyDescription("FSEMI Mission Planner ground control station, based on Mission Planner")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("FSEMI")]
+[assembly: AssemblyCompany("FPT Semiconductor")]
 [assembly: AssemblyProduct("FSEMI Mission Planner")]
-[assembly: AssemblyCopyright("Copyright © Michael Oborne 2010-2024, FSEMI 2026")]
+[assembly: AssemblyCopyright("Copyright © Michael Oborne 2010-2024, FPT Semiconductor 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

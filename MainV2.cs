@@ -702,9 +702,9 @@ namespace MissionPlanner
 
             InitializeComponent();
 
-            //Init Theme table and load BurntKermit as a default
+            //Init Theme table and load the FSEMI theme as a default
             ThemeManager.thmColor = new ThemeColorTable(); //Init colortable
-            ThemeManager.thmColor.InitColors(); //This fills up the table with BurntKermit defaults.
+            ThemeManager.thmColor.InitColors(); //This fills up the table with the FSEMI theme defaults.
             ThemeManager.thmColor
                 .SetTheme(); //Set the colors, this need to handle the case when not all colors are defined in the theme file
 
@@ -715,7 +715,7 @@ namespace MissionPlanner
                 if (File.Exists($"{running_directory}custom.mpsystheme"))
                     Settings.Instance["theme"] = "custom.mpsystheme";
                 else
-                    Settings.Instance["theme"] = "BurntKermit.mpsystheme";
+                    Settings.Instance["theme"] = "FSEMI.mpsystheme";
             }
 
             ThemeManager.LoadTheme(Settings.Instance["theme"]);
@@ -4682,11 +4682,11 @@ namespace MissionPlanner
         {
             try
             {
-                System.Diagnostics.Process.Start("https://ardupilot.org/?utm_source=Menu&utm_campaign=MP");
+                System.Diagnostics.Process.Start("https://fpt-semiconductor.com/");
             }
             catch
             {
-                CustomMessageBox.Show("Failed to open url https://ardupilot.org");
+                CustomMessageBox.Show("Failed to open url https://fpt-semiconductor.com/");
             }
         }
 

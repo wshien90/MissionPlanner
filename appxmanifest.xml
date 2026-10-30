@@ -5,7 +5,7 @@
             Publisher="CN=3B1842DF-8664-4A02-B840-61F61DA8A94E" />
   <Properties>
     <DisplayName>FSEMI Mission Planner</DisplayName>
-    <PublisherDisplayName>FSEMI</PublisherDisplayName>
+    <PublisherDisplayName>FPT Semiconductor</PublisherDisplayName>
     <Logo>mpdesktop150.png</Logo>
   </Properties>
   <Resources>

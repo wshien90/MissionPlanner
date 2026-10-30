@@ -994,23 +994,23 @@ namespace MissionPlanner.Controls
             get { return _skyColor2; }
             set { _skyColor2 = value; }
         }
-        [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values"), DefaultValue(typeof(Color), "0x9bb824")]
+        [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values"), DefaultValue(typeof(Color), "0x93c572")]
         public Color groundColor1
         {
             get { return _groundColor1; }
             set { _groundColor1 = value; }
         }
-        [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values"), DefaultValue(typeof(Color), "0x414f07")]
+        [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values"), DefaultValue(typeof(Color), "0x4e8a3e")]
         public Color groundColor2
         {
             get { return _groundColor2; }
             set { _groundColor2 = value; }
         }
 
-        private Color _skyColor1 = Color.Blue;
-        private Color _skyColor2 = Color.LightBlue;
-        private Color _groundColor1 = Color.FromArgb(0x9b, 0xb8, 0x24);
-        private Color _groundColor2 = Color.FromArgb(0x41, 0x4f, 0x07);
+        private Color _skyColor1 = Color.FromArgb(0x3d, 0x8f, 0xd9);
+        private Color _skyColor2 = Color.FromArgb(0xb7, 0xe0, 0xfa);
+        private Color _groundColor1 = Color.FromArgb(0x93, 0xc5, 0x72);
+        private Color _groundColor2 = Color.FromArgb(0x4e, 0x8a, 0x3e);
 
         private Color _hudcolor = Color.White;
         private Pen _whitePen = new Pen(Color.White, 2);

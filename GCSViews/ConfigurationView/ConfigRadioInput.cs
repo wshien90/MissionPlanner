@@ -441,14 +441,14 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             if (normalreverse)
             {
                 ((HorizontalProgressBar2)progressbar).reverse = true;
-                ((HorizontalProgressBar2)progressbar).BackgroundColor = Color.FromArgb(148, 193, 31);
-                ((HorizontalProgressBar2)progressbar).ValueColor = Color.FromArgb(0x43, 0x44, 0x45);
+                ((HorizontalProgressBar2)progressbar).BackgroundColor = ThemeManager.HorizontalPBValueColor;
+                ((HorizontalProgressBar2)progressbar).ValueColor = ThemeManager.ControlBGColor;
             }
             else
             {
                 ((HorizontalProgressBar2)progressbar).reverse = false;
-                ((HorizontalProgressBar2)progressbar).BackgroundColor = Color.FromArgb(0x43, 0x44, 0x45);
-                ((HorizontalProgressBar2)progressbar).ValueColor = Color.FromArgb(148, 193, 31);
+                ((HorizontalProgressBar2)progressbar).BackgroundColor = ThemeManager.ControlBGColor;
+                ((HorizontalProgressBar2)progressbar).ValueColor = ThemeManager.HorizontalPBValueColor;
             }
 
             if (startup)

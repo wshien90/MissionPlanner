@@ -20,10 +20,12 @@ Cập nhật lần cuối: 2026-10-30.
   - đổi `bigWing`/`BigWing` thành `Fsemi`;
   - bỏ phần riêng của bigW (logo, theme, vùng bay Hàn Quốc, tiếng Hàn).
 - Ngôn ngữ của các màn hình mới: tiếng Anh và tiếng Việt. Không làm tiếng Hàn.
-- Thương hiệu:
-  - đã đổi tên và tắt cập nhật, báo lỗi, thống kê gửi về server của Mission Planner;
-  - logo, màu và website của FSEMI sẽ làm khi người dùng gửi;
-  - chưa có server cập nhật.
+- Thương hiệu: FSEMI = **FPT Semiconductor**, website https://fpt-semiconductor.com/.
+  - Logo, biểu tượng và màu lấy từ website; nguồn và bảng màu ghi trong
+    `fsemi/branding/README.md`.
+  - Màu chính: navy `#010837`, xanh nhấn `#6388F7`. Màu logo: xanh `#2E65A5`, cam `#DB773A`,
+    lục `#50A657`.
+  - Chưa có server cập nhật.
 
 ## Cách làm việc đã thống nhất
 
@@ -57,7 +59,7 @@ Cập nhật lần cuối: 2026-10-30.
 
 | PR | Nội dung |
 |---|---|
-| (PR đầu tiên vào `fsemi`) | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, CI chạy tay kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
+| (PR đầu tiên vào `fsemi`) | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, logo/biểu tượng/màn hình khởi động FPT Semiconductor và theme FSEMI (navy #010837, xanh #6388F7) lấy từ website, bấm logo mở fpt-semiconductor.com, CI chạy tay kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
 
 ## Đang làm
 
@@ -87,4 +89,3 @@ Cập nhật lần cuối: 2026-10-30.
      SRTM/địa hình), kèm các tuyến chụp nghiêng để dựng 3D, chia theo pin.
 
    Nên tách thành 2 PR: công trình, rồi địa hình.
-3. Khi người dùng gửi: logo, biểu tượng, màu và website của FSEMI.

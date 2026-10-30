@@ -12,6 +12,9 @@ namespace MissionPlanner
         {
             InitializeComponent();
 
+            // "by Michael Oborne" doesn't suit the FSEMI splash; the credit is in About and the README
+            label1.Visible = false;
+
             string strVersion = typeof(Splash).GetType().Assembly.GetName().Version.ToString();
 
             TXT_version.Text = "Version: " + Application.ProductVersion; // +" Build " + strVersion;

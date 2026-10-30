@@ -1,8 +1,10 @@
 # FSEMI Mission Planner
 
-FSEMI Mission Planner is the ground control station (GCS) of **FSEMI** for UAVs running
-ArduPilot. It plans missions, configures and flashes the autopilot, and monitors the vehicle in
+FSEMI Mission Planner is the ground control station (GCS) of **FPT Semiconductor (FSEMI)** for UAVs
+running ArduPilot. It plans missions, configures and flashes the autopilot, and monitors the vehicle in
 flight over MAVLink.
+
+Website: [fpt-semiconductor.com](https://fpt-semiconductor.com/)
 
 FSEMI Mission Planner has its own version numbers, starting at 1.0.0. Version 1.0.0 is based on
 Mission Planner 1.3.83.
@@ -19,8 +21,13 @@ The source is the `fsemi` branch of this repository; `master` follows Mission Pl
 - Name, window title and installer are FSEMI Mission Planner; the executable is
   `FSEMIMissionPlanner.exe`. The code namespaces keep the `MissionPlanner` name, and plugins
   built for Mission Planner (which reference the `MissionPlanner` assembly) are redirected to it,
-  so existing plugins and scripts still load. The icon and logos are still Mission Planner's
-  until FSEMI's are added.
+  so existing plugins and scripts still load.
+- FPT Semiconductor's logo and icon: the app icon, the logo at the right of the menu bar (it
+  opens [fpt-semiconductor.com](https://fpt-semiconductor.com/)) and the start-up screen. Their
+  sources and colours are in [fsemi/branding](fsemi/branding/README.md).
+- The default theme `FSEMI` uses the website's colours: navy `#010837` with the accent blue
+  `#6388F7`, and the menu icons in the same blue. Mission Planner's green `BurntKermit` theme is
+  still available under **Config → Planner → Theme**.
 - Settings, logs, map cache and other data live in their own `FSEMI Mission Planner` folders
   (see [Paths used](#paths-used)), so it can be installed next to Mission Planner without sharing
   settings.

@@ -159,9 +159,9 @@ namespace wix
 <Wix xmlns=""http://schemas.microsoft.com/wix/2006/wi"" xmlns:netfx=""http://schemas.microsoft.com/wix/NetFxExtension"" xmlns:difx=""http://schemas.microsoft.com/wix/DifxAppExtension"" xmlns:iis='http://schemas.microsoft.com/wix/IIsExtension' >
 
 
-    <Product Id=""" + newid + @""" Name=""FSEMI Mission Planner"" Language=""1033"" Version=""" + version + @""" Manufacturer=""FSEMI"" UpgradeCode=""{A1D4B10C-8E25-47E3-B263-D479DD06425A}"">
+    <Product Id=""" + newid + @""" Name=""FSEMI Mission Planner"" Language=""1033"" Version=""" + version + @""" Manufacturer=""FPT Semiconductor"" UpgradeCode=""{A1D4B10C-8E25-47E3-B263-D479DD06425A}"">
 
-    <Package Description=""FSEMI Mission Planner Installer"" Comments=""FSEMI Mission Planner Installer"" Manufacturer=""FSEMI"" InstallerVersion=""200"" Compressed=""yes"" />
+    <Package Description=""FSEMI Mission Planner Installer"" Comments=""FSEMI Mission Planner Installer"" Manufacturer=""FPT Semiconductor"" InstallerVersion=""200"" Compressed=""yes"" />
 
     <Upgrade Id=""{A1D4B10C-8E25-47E3-B263-D479DD06425A}"">
         <UpgradeVersion OnlyDetect=""yes"" Minimum=""" + version + @""" Property=""NEWERVERSIONDETECTED"" IncludeMinimum=""no"" />
