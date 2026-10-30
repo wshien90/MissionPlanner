@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Common_AddToMission" xml:space="preserve">
+    <value>Add to mission</value>
+  </data>
+  <data name="Common_Armed" xml:space="preserve">
+    <value>Armed</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_Disarmed" xml:space="preserve">
+    <value>Disarmed</value>
+  </data>
+  <data name="Delivery_Confirm" xml:space="preserve">
+    <value>Release the payload now?
+
+Altitude {0:0.0} {1}, speed {2:0.0} {3}</value>
+  </data>
+  <data name="Delivery_ConfirmDisarmed" xml:space="preserve">
+    <value>The vehicle is disarmed.</value>
+  </data>
+  <data name="Delivery_ConfirmTitle" xml:space="preserve">
+    <value>Release payload</value>
+  </data>
+  <data name="Delivery_ConfirmYes" xml:space="preserve">
+    <value>Release</value>
+  </data>
+  <data name="Delivery_Flight" xml:space="preserve">
+    <value>Alt {0:0.0} {1}   Speed {2:0.0} {3}   {4}</value>
+  </data>
+  <data name="Delivery_Gripper" xml:space="preserve">
+    <value>Gripper</value>
+  </data>
+  <data name="Delivery_GripperOnServo" xml:space="preserve">
+    <value>Gripper on servo {0}</value>
+  </data>
+  <data name="Delivery_Lock" xml:space="preserve">
+    <value>LOCK</value>
+  </data>
+  <data name="Delivery_LockFailed" xml:space="preserve">
+    <value>Lock failed: no reply from the vehicle</value>
+  </data>
+  <data name="Delivery_LockPwm" xml:space="preserve">
+    <value>Lock PWM</value>
+  </data>
+  <data name="Delivery_LockSent" xml:space="preserve">
+    <value>Lock sent {0}</value>
+  </data>
+  <data name="Delivery_Locked" xml:space="preserve">
+    <value>LOCKED</value>
+  </data>
+  <data name="Delivery_Locking" xml:space="preserve">
+    <value>Locking...</value>
+  </data>
+  <data name="Delivery_MarkerReleased" xml:space="preserve">
+    <value>Released {0}</value>
+  </data>
+  <data name="Delivery_Method" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="Delivery_NotConnected" xml:space="preserve">
+    <value>NOT CONNECTED</value>
+  </data>
+  <data name="Delivery_Record" xml:space="preserve">
+    <value>{0:HH:mm:ss}  {1:0.000000}, {2:0.000000}  alt {3:0.0} {4}</value>
+  </data>
+  <data name="Delivery_RecordByVehicle" xml:space="preserve">
+    <value>(mission/RC)</value>
+  </data>
+  <data name="Delivery_Release" xml:space="preserve">
+    <value>RELEASE</value>
+  </data>
+  <data name="Delivery_ReleaseFailed" xml:space="preserve">
+    <value>Release failed: no reply from the vehicle</value>
+  </data>
+  <data name="Delivery_ReleasePwm" xml:space="preserve">
+    <value>Release PWM</value>
+  </data>
+  <data name="Delivery_ReleaseSent" xml:space="preserve">
+    <value>Release sent {0}</value>
+  </data>
+  <data name="Delivery_Released" xml:space="preserve">
+    <value>RELEASED</value>
+  </data>
+  <data name="Delivery_Releases" xml:space="preserve">
+    <value>Releases</value>
+  </data>
+  <data name="Delivery_Releasing" xml:space="preserve">
+    <value>Releasing...</value>
+  </data>
+  <data name="Delivery_Servo" xml:space="preserve">
+    <value>Servo</value>
+  </data>
+  <data name="Delivery_ServoN" xml:space="preserve">
+    <value>Servo {0}</value>
+  </data>
+  <data name="Delivery_Tab" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="Delivery_Title" xml:space="preserve">
+    <value>PAYLOAD</value>
+  </data>
+  <data name="Delivery_Unknown" xml:space="preserve">
+    <value>UNKNOWN</value>
+  </data>
+  <data name="Drop_Cruise" xml:space="preserve">
+    <value>Cruise altitude</value>
+  </data>
+  <data name="Drop_DropAlt" xml:space="preserve">
+    <value>Drop altitude</value>
+  </data>
+  <data name="Drop_Gripper" xml:space="preserve">
+    <value>Gripper (DO_GRIPPER)</value>
+  </data>
+  <data name="Drop_HoverAfter" xml:space="preserve">
+    <value>Hover after release (s)</value>
+  </data>
+  <data name="Drop_HoverBefore" xml:space="preserve">
+    <value>Hover before release (s)</value>
+  </data>
+  <data name="Drop_LockAfter" xml:space="preserve">
+    <value>Lock the hook again after climbing</value>
+  </data>
+  <data name="Drop_Rtl" xml:space="preserve">
+    <value>Return to launch after the drop</value>
+  </data>
+  <data name="Drop_Servo" xml:space="preserve">
+    <value>Servo {0}: release {1}, lock {2} (DO_SET_SERVO)</value>
+  </data>
+  <data name="Drop_Summary" xml:space="preserve">
+    <value>Adds to the end of the mission: fly to the point at {0} {2}, descend to {1} {2}, hover {3} s, release, hover {4} s, climb back to {0} {2}</value>
+  </data>
+  <data name="Drop_SummaryHold" xml:space="preserve">
+    <value>, then hover there until you take over</value>
+  </data>
+  <data name="Drop_SummaryLock" xml:space="preserve">
+    <value>, lock the hook</value>
+  </data>
+  <data name="Drop_SummaryRtl" xml:space="preserve">
+    <value>, return to launch</value>
+  </data>
+  <data name="Drop_Title" xml:space="preserve">
+    <value>Delivery drop</value>
+  </data>
+  <data name="Drop_WarnAltitude" xml:space="preserve">
+    <value>The drop altitude should be below the cruise altitude.</value>
+  </data>
+  <data name="Drop_With" xml:space="preserve">
+    <value>Release with</value>
+  </data>
+  <data name="Plan_DropHere" xml:space="preserve">
+    <value>Delivery drop here</value>
+  </data>
+  <data name="Plan_DropMarker" xml:space="preserve">
+    <value>Drop {0}: item {1}, alt {2:0.#} {3}</value>
+  </data>
+  <data name="Plan_MissionOnly" xml:space="preserve">
+    <value>Switch to the mission (not fence or rally) to add this.</value>
+  </data>
+  <data name="Voice_Released" xml:space="preserve">
+    <value>Payload released</value>
+  </data>
+</root>

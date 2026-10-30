@@ -214,6 +214,9 @@ namespace MissionPlanner.GCSViews
 
             MainMap.Overlays.Add(poioverlay);
 
+            // FSEMI delivery drop menu item and drop markers
+            InitDelivery();
+
             prop = new Propagation(MainMap);
 
             top = new GMapOverlay("top");
@@ -1472,6 +1475,8 @@ namespace MissionPlanner.GCSViews
                     }
 
                     pointlist = wpOverlay.pointlist;
+
+                    ShowDeliveryDrops(commandlist);
 
                     {
                         foreach (var pointLatLngAlt in pointlist.PrevNowNext())

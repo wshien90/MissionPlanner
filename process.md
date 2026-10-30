@@ -45,6 +45,9 @@ Cập nhật lần cuối: 2026-10-30.
 
 ## Kỹ thuật (môi trường cloud Linux)
 
+- Thử với SITL: kết nối qua giao diện (bấm TCP rồi Kết nối). Chạy app với `-port TCP` thì app bị
+  treo ở hộp thoại lấy tham số trên Mono.
+
 - Build:
   `dotnet build MissionPlanner.csproj --configuration Release -p:MissionPlannerLinuxBuild=true -p:EnableWindowsTargeting=true "-p:DirectoryBuildTargetsPath=$PWD/Linux/Build.targets" -p:MonoPosixPath=/usr/lib/mono/4.5/Mono.Posix.dll -v:q`
   Kết quả ra `bin/Release/net461/FSEMIMissionPlanner.exe`.
@@ -59,25 +62,19 @@ Cập nhật lần cuối: 2026-10-30.
 
 | PR | Nội dung |
 |---|---|
-| (PR đầu tiên vào `fsemi`) | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, logo/biểu tượng/màn hình khởi động FPT Semiconductor và theme FSEMI (navy #010837, xanh #6388F7) lấy từ website, bấm logo mở fpt-semiconductor.com, CI chạy tay kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
+| #1 | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, logo/biểu tượng/màn hình khởi động FPT Semiconductor và theme FSEMI (navy #010837, xanh #6388F7) lấy từ website, bấm logo mở fpt-semiconductor.com, CI (chạy tay và với mỗi PR vào `fsemi`) kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
 
 ## Đang làm
 
-- PR đầu tiên (đổi tên, tắt server Mission Planner): chờ người dùng thử và merge vào `fsemi`.
+- PR **Giao hàng** vào `fsemi`: chờ người dùng thử và merge.
+  - Code: `Controls/Delivery*.cs`, `GCSViews/FlightDataDelivery.cs`,
+    `GCSViews/FlightPlannerDelivery.cs`.
+  - Chữ giao diện: `Utilities/FsemiText.cs`, `FsemiStrings.resx` và `.vi-VN.resx`.
+  - Test: `FsemiStringsTests`, `DeliveryConfigTests`.
 
 ## Cần làm
 
-1. **Giao hàng**, lấy từ bigWing Command:
-   - tab Giao hàng dưới HUD: nút KHOÁ / THẢ lớn, có hỏi xác nhận trước khi thả; dùng gripper
-     ArduPilot hoặc một kênh servo;
-   - menu chuột phải "Thả hàng tại đây" trên bản đồ Kế hoạch: bay tới điểm, hạ độ cao, thả, bay
-     lên, quay về;
-   - đánh dấu các lần thả trên bản đồ;
-   - lớp chữ giao diện riêng (`FsemiStrings.resx` + `.vi-VN.resx`, `FsemiText`).
-
-   Code bên bigWing: `Controls/Delivery*.cs`, `GCSViews/FlightDataDelivery.cs`,
-   `GCSViews/FlightPlannerDelivery.cs`, `Utilities/BigWingText.cs`.
-2. **Chụp ảnh và dựng mô hình 3D** cho công trình, đồi núi, dãy núi:
+1. **Chụp ảnh và dựng mô hình 3D** cho công trình, đồi núi, dãy núi:
    - Công trình (lấy từ bigWing):
      - bay vòng quanh công trình hoặc dọc mặt tường, camera hướng vào công trình;
      - tính số ảnh và khoảng cách tầng theo camera và độ chồng ảnh, có sẵn danh sách camera phổ

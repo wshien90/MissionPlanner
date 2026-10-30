@@ -36,9 +36,25 @@ The source is the `fsemi` branch of this repository; `master` follows Mission Pl
 - The whole interface is also in Vietnamese: **Config → Planner → UI Language → Tiếng Việt
   (vi-VN)**, then restart.
 - No question about Altitude Angel or restart prompt for the Drone ID tab on first start.
+- **Delivery**:
+  - The **Delivery** tab under the HUD locks and releases the payload with large LOCK / RELEASE
+    buttons (release asks for confirmation), shows whether the payload is locked from the servo
+    output, and lists where it was released. It uses the ArduPilot gripper when `GRIP_ENABLE` is set
+    (servo function 28, `GRIP_GRAB` / `GRIP_RELEASE` PWM), otherwise a servo channel with its own
+    lock and release PWM (default servo 9, 1100 / 1900). The method can also be forced in the tab.
+  - On the **PLAN** map, right-click → **Delivery drop here** adds a drop to the end of the
+    mission: fly to the point at cruise altitude, descend to the drop altitude and hover, release,
+    hover, climb back, then optionally lock the hook and return to launch. Planned drops are marked
+    in orange on the PLAN map.
+  - Every release seen this session, from the Delivery tab or by the vehicle itself (a mission or
+    an RC switch, seen on the servo output), is listed in the Delivery tab and marked in orange on
+    the DATA map. With **Config → Planner → Enable Speech** on, a release is announced (in
+    English).
+  - These screens are in English and Vietnamese; their text is in `FsemiStrings.resx` and
+    `FsemiStrings.vi-VN.resx`, apart from Mission Planner's Crowdin translations.
 
-Planned: delivery (lock and release a payload, drops planned on the map) and photo capture for
-3D models of structures, hills and mountain ranges. See [process.md](process.md).
+Planned: photo capture for 3D models of structures, hills and mountain ranges. See
+[process.md](process.md).
 
 ## How to compile
 
