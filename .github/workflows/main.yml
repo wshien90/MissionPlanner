@@ -5,6 +5,12 @@ on:
   pull_request:
     branches: [fsemi]
 
+# one run per branch at a time: a newer push cancels the older run, so two runs never replace the
+# test-build release at once
+concurrency:
+  group: dotnet-build-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Build Release
