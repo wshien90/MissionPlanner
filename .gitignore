@@ -33,6 +33,8 @@ packages/
 /ExtLibs/Xamarin/opentk
 *.binlog
 docs/
+# FSEMI: the user guide at the top of the repository
+!/docs/
 *.Test/
 *.jar
 *.cache
