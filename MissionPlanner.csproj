@@ -1,15 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <ApplicationIcon>mpdesktop.ico</ApplicationIcon>
+    <ApplicationIcon>fsemi\fsemi.ico</ApplicationIcon>
     <OutputType>Exe</OutputType>
+    <!-- the exe is FSEMIMissionPlanner.exe; types and resources keep the MissionPlanner namespace -->
+    <AssemblyName>FSEMIMissionPlanner</AssemblyName>
+    <RootNamespace>MissionPlanner</RootNamespace>
     <StartupObject>MissionPlanner.Program</StartupObject>
     <Authors>Michael Oborne</Authors>
-    <Version>1.3.83</Version>
-    <Company>Michael Oborne</Company>
-    <Product>Mission Planner</Product>
-    <Description>Mission Planner ground control station for ardupilot</Description>
-    <Copyright>Copyright © Michael Oborne 2010-2024</Copyright>
+    <Version>1.0.0</Version>
+    <Company>FPT Semiconductor</Company>
+    <Product>FSEMI Mission Planner</Product>
+    <Description>FSEMI Mission Planner ground control station, based on Mission Planner</Description>
+    <Copyright>Copyright © Michael Oborne 2010-2024, FPT Semiconductor 2026</Copyright>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
@@ -703,6 +706,21 @@
     </Content>
     <None Include="plugins\example-watchbutton.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="fsemi\icon.png">
+      <Link>icon.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="fsemi\logo2.png">
+      <Link>logo2.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="fsemi\splashbg.png">
+      <Link>splashbg.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="FSEMI.mpsystheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="BurntKermit.mpsystheme">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

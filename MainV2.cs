@@ -702,9 +702,9 @@ namespace MissionPlanner
 
             InitializeComponent();
 
-            //Init Theme table and load BurntKermit as a default
+            //Init Theme table and load the FSEMI theme as a default
             ThemeManager.thmColor = new ThemeColorTable(); //Init colortable
-            ThemeManager.thmColor.InitColors(); //This fills up the table with BurntKermit defaults.
+            ThemeManager.thmColor.InitColors(); //This fills up the table with the FSEMI theme defaults.
             ThemeManager.thmColor
                 .SetTheme(); //Set the colors, this need to handle the case when not all colors are defined in the theme file
 
@@ -715,7 +715,7 @@ namespace MissionPlanner
                 if (File.Exists($"{running_directory}custom.mpsystheme"))
                     Settings.Instance["theme"] = "custom.mpsystheme";
                 else
-                    Settings.Instance["theme"] = "BurntKermit.mpsystheme";
+                    Settings.Instance["theme"] = "FSEMI.mpsystheme";
             }
 
             ThemeManager.LoadTheme(Settings.Instance["theme"]);
@@ -3650,13 +3650,10 @@ namespace MissionPlanner
                 Common.MessageShowAgain("Windows XP",
                     "This is the last version that will support Windows XP, please update your OS");
 
-                // invalidate update url
-                System.Configuration.ConfigurationManager.AppSettings["UpdateLocationVersion"] =
-                    "https://firmware.ardupilot.org/MissionPlanner/xp/";
-                System.Configuration.ConfigurationManager.AppSettings["UpdateLocation"] =
-                    "https://firmware.ardupilot.org/MissionPlanner/xp/";
-                System.Configuration.ConfigurationManager.AppSettings["UpdateLocationMD5"] =
-                    "https://firmware.ardupilot.org/MissionPlanner/xp/checksums.txt";
+                // no FSEMI Mission Planner builds for XP: disable updates rather than pull Mission Planner's XP build
+                System.Configuration.ConfigurationManager.AppSettings["UpdateLocationVersion"] = "";
+                System.Configuration.ConfigurationManager.AppSettings["UpdateLocation"] = "";
+                System.Configuration.ConfigurationManager.AppSettings["UpdateLocationMD5"] = "";
                 System.Configuration.ConfigurationManager.AppSettings["BetaUpdateLocationVersion"] = "";
             }
 
@@ -4685,11 +4682,11 @@ namespace MissionPlanner
         {
             try
             {
-                System.Diagnostics.Process.Start("https://ardupilot.org/?utm_source=Menu&utm_campaign=MP");
+                System.Diagnostics.Process.Start("https://fpt-semiconductor.com/");
             }
             catch
             {
-                CustomMessageBox.Show("Failed to open url https://ardupilot.org");
+                CustomMessageBox.Show("Failed to open url https://fpt-semiconductor.com/");
             }
         }
 

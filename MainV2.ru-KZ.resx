@@ -133,7 +133,7 @@
     <value>Конфигурация оборудования</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Планировщик миссии - Майкл Оборн</value>
+    <value>FSEMI Mission Planner</value>
   </data>
   <data name="connectionOptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Параметры подключения</value>

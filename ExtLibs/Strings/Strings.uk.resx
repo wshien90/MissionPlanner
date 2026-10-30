@@ -324,7 +324,7 @@
   </data>
   <data name="Only1HbD" xml:space="preserve">
     <value>Було зчитано лише 1 серцебиття MAVLink з порта. Переконайтеся, що ваше обладнання вірно налаштовано.
-MissionPlanner очікує на дійсних 2 серцебиття перед під'єднанням</value>
+FSEMI Mission Planner очікує на дійсних 2 серцебиття перед під'єднанням</value>
   </data>
   <data name="Trying" xml:space="preserve">
     <value>Спроба під'єднатись

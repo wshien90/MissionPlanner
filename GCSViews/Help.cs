@@ -2,6 +2,7 @@
 using MissionPlanner.Properties;
 using MissionPlanner.Utilities;
 using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -28,6 +29,15 @@ namespace MissionPlanner.GCSViews
             {
                 BUT_betaupdate.Visible = false;
                 BUT_updatecheck.Visible = false;
+            }
+
+            // no update server configured in app.config: the update buttons and the
+            // upstream Mission Planner changelog don't apply to this build
+            if (string.IsNullOrEmpty(ConfigurationManager.AppSettings["UpdateLocationMD5"]))
+            {
+                BUT_betaupdate.Visible = false;
+                BUT_updatecheck.Visible = false;
+                linkLabel1.Visible = false;
             }
         }
 

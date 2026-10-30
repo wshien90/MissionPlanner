@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>MissionPlanner</string>
+	<string>FSEMI Mission Planner</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.MichaelOborne.MissionPlanner</string>
 	<key>CFBundleShortVersionString</key>

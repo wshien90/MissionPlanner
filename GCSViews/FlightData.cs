@@ -3142,9 +3142,9 @@ namespace MissionPlanner.GCSViews
             }
             else
             {
-                // green
-                hud1.groundColor1 = Color.FromArgb(0x9b, 0xb8, 0x24);
-                hud1.groundColor2 = Color.FromArgb(0x41, 0x4f, 0x07);
+                // green, from the theme
+                hud1.groundColor1 = ThemeManager.HudGroundTop;
+                hud1.groundColor2 = ThemeManager.HudGroundBot;
             }
 
             Settings.config["groundColorToolStripMenuItem"] = groundColorToolStripMenuItem.Checked.ToString();
@@ -5284,8 +5284,8 @@ namespace MissionPlanner.GCSViews
             // Define the default color of the brush as black.
             Brush myBrush = Brushes.Black;
 
-            LinearGradientBrush linear = new LinearGradientBrush(e.Bounds, Color.FromArgb(0x94, 0xc1, 0x1f),
-                Color.FromArgb(0xcd, 0xe2, 0x96), LinearGradientMode.Vertical);
+            LinearGradientBrush linear = new LinearGradientBrush(e.Bounds, ThemeManager.ButBG,
+                ThemeManager.ButBGBot, LinearGradientMode.Vertical);
 
             e.Graphics.FillRectangle(linear, e.Bounds);
 

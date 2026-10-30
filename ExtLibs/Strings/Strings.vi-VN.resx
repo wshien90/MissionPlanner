@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BadCoords" xml:space="preserve">
+    <value>Lat/Lng sai</value>
+  </data>
+  <data name="CannotGraphField" xml:space="preserve">
+    <value>Không thể vẽ đồ thị trường này</value>
+  </data>
+  <data name="CommandFailed" xml:space="preserve">
+    <value>Lệnh thực hiện thất bại
+</value>
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="ErrorClosingLogFile" xml:space="preserve">
+    <value>Lỗi khi đóng file log</value>
+  </data>
+  <data name="ErrorCommunicating" xml:space="preserve">
+    <value>Lỗi khi giao tiếp với autopilot</value>
+  </data>
+  <data name="ErrorConnecting" xml:space="preserve">
+    <value>Lỗi kết nối
+</value>
+  </data>
+  <data name="ErrorFeatureNotEnabled" xml:space="preserve">
+    <value>Tính năng này chưa được bật trong firmware của bạn.</value>
+  </data>
+  <data name="ErrorFirmwareFile" xml:space="preserve">
+    <value>Lỗi khi nạp file firmware</value>
+  </data>
+  <data name="ErrorLogList" xml:space="preserve">
+    <value>Lỗi khi nhận danh sách log</value>
+  </data>
+  <data name="ErrorNoResponse" xml:space="preserve">
+    <value>Lỗi: MAV không phản hồi</value>
+  </data>
+  <data name="ErrorNotConnected" xml:space="preserve">
+    <value>Bạn chưa kết nối.</value>
+  </data>
+  <data name="ErrorReceivingParams" xml:space="preserve">
+    <value>Lỗi khi nhận danh sách
+</value>
+  </data>
+  <data name="ErrorRejectedByMAV" xml:space="preserve">
+    <value>Lỗi: MAV từ chối lệnh</value>
+  </data>
+  <data name="ErrorRenameFile" xml:space="preserve">
+    <value>Lỗi khi đổi tên file</value>
+  </data>
+  <data name="ErrorSettingParameter" xml:space="preserve">
+    <value>Lỗi khi đặt tham số </value>
+  </data>
+  <data name="ErrorSetValueFailed" xml:space="preserve">
+    <value>Đặt {0} thất bại</value>
+  </data>
+  <data name="InvalidAlt" xml:space="preserve">
+    <value>Độ cao không hợp lệ</value>
+  </data>
+  <data name="InvalidBaudRate" xml:space="preserve">
+    <value>Baud rate không hợp lệ</value>
+  </data>
+  <data name="InvalidField" xml:space="preserve">
+    <value>Trường không hợp lệ</value>
+  </data>
+  <data name="InvalidFileName" xml:space="preserve">
+    <value>Tên file không hợp lệ</value>
+  </data>
+  <data name="InvalidNumberEntered" xml:space="preserve">
+    <value>Số nhập vào không hợp lệ
+</value>
+  </data>
+  <data name="InvalidPanRange" xml:space="preserve">
+    <value>Dải Pan không hợp lệ</value>
+  </data>
+  <data name="InvalidPortName" xml:space="preserve">
+    <value>Tên cổng không hợp lệ</value>
+  </data>
+  <data name="InvalidTiltRange" xml:space="preserve">
+    <value>Dải Tilt không hợp lệ</value>
+  </data>
+  <data name="InvalidUpdateRate" xml:space="preserve">
+    <value>Tần số cập nhật không hợp lệ</value>
+  </data>
+  <data name="NoFMTMessage" xml:space="preserve">
+    <value>Không có thông điệp FMT cho </value>
+  </data>
+  <data name="PleaseConnect" xml:space="preserve">
+    <value>Hãy kết nối trước</value>
+  </data>
+  <data name="PleaseLoadValidFile" xml:space="preserve">
+    <value>Hãy nạp một file hợp lệ</value>
+  </data>
+  <data name="PleaseSelectCell" xml:space="preserve">
+    <value>Hãy chọn một ô trước</value>
+  </data>
+  <data name="SelectComport" xml:space="preserve">
+    <value>Hãy chọn cổng COM</value>
+  </data>
+  <data name="WarningLogBrowseFMTMissing" xml:space="preserve">
+    <value>Log Browse sẽ không hoạt động đúng nếu log không có thông điệp FMT.
+Có vẻ log của bạn đang thiếu các thông điệp này.</value>
+  </data>
+  <data name="WarningUpdateParamList" xml:space="preserve">
+    <value>Cập nhật tham số
+ĐỪNG LÀM VIỆC NÀY KHI ĐANG BAY
+</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Đang kiểm tra </value>
+  </data>
+  <data name="DownloadedFromInternet" xml:space="preserve">
+    <value>Đã tải từ internet</value>
+  </data>
+  <data name="Getting" xml:space="preserve">
+    <value>Đang lấy </value>
+  </data>
+  <data name="GettingUpdatedParams" xml:space="preserve">
+    <value>Đang lấy các tham số đã cập nhật</value>
+  </data>
+  <data name="AdvancedParams" xml:space="preserve">
+    <value>Tham số nâng cao</value>
+  </data>
+  <data name="BasicTuning" xml:space="preserve">
+    <value>Tinh chỉnh cơ bản</value>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>Mô tả: </value>
+  </data>
+  <data name="ExtendedTuning" xml:space="preserve">
+    <value>Tinh chỉnh mở rộng</value>
+  </data>
+  <data name="FlightModes" xml:space="preserve">
+    <value>Chế độ bay</value>
+  </data>
+  <data name="FullParameterList" xml:space="preserve">
+    <value>Tham số đầy đủ</value>
+  </data>
+  <data name="FullParameterTree" xml:space="preserve">
+    <value>Cây tham số</value>
+  </data>
+  <data name="StandardParams" xml:space="preserve">
+    <value>Tham số chuẩn</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Đơn vị: {0}{1}</value>
+  </data>
+  <data name="ProgrammedOK" xml:space="preserve">
+    <value>Nạp thành công</value>
+  </data>
+  <data name="CONNECTc" xml:space="preserve">
+    <value>KẾT NỐI</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Ngắt kết nối</value>
+  </data>
+  <data name="DISCONNECTc" xml:space="preserve">
+    <value>NGẮT KẾT NỐI</value>
+  </data>
+  <data name="Failclog" xml:space="preserve">
+    <value>Không tạo được log trạm mặt đất - phiên này sẽ không được ghi log</value>
+  </data>
+  <data name="NewFirmware" xml:space="preserve">
+    <value>Firmware mới</value>
+  </data>
+  <data name="NewFirmwareA" xml:space="preserve">
+    <value>Có firmware mới
+</value>
+  </data>
+  <data name="Pleaseup" xml:space="preserve">
+    <value>
+Hãy nâng cấp</value>
+  </data>
+  <data name="Stillmoving" xml:space="preserve">
+    <value>Máy bay vẫn đang di chuyển, bạn có chắc muốn ngắt kết nối?</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Hết thời gian chờ tự dò/không có thiết bị mavlink nào được kết nối</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>Kết nối thất bại</value>
+  </data>
+  <data name="ConnectingMavlink" xml:space="preserve">
+    <value>Đang kết nối Mavlink</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Xong</value>
+  </data>
+  <data name="GettingParams" xml:space="preserve">
+    <value>Đang lấy tham số</value>
+  </data>
+  <data name="GettingParamsD" xml:space="preserve">
+    <value>Đang lấy tham số...</value>
+  </data>
+  <data name="Gotparam" xml:space="preserve">
+    <value>Đã nhận tham số </value>
+  </data>
+  <data name="MavlinkConnecting" xml:space="preserve">
+    <value>Đang kết nối Mavlink...</value>
+  </data>
+  <data name="Only1Hb" xml:space="preserve">
+    <value>Chỉ nhận được 1 Heartbeat</value>
+  </data>
+  <data name="Only1HbD" xml:space="preserve">
+    <value>Chỉ đọc được 1 gói Heartbeat Mavlink từ cổng này - hãy kiểm tra phần cứng đã được cài đặt đúng
+FSEMI Mission Planner chờ 2 gói heartbeat hợp lệ trước khi kết nối</value>
+  </data>
+  <data name="Trying" xml:space="preserve">
+    <value>Đang thử kết nối.
+Hết thời gian sau {0}</value>
+  </data>
+  <data name="CantDetectBoardVersion" xml:space="preserve">
+    <value>Không nhận ra phiên bản bo mạch. Hãy kiểm tra dây cáp</value>
+  </data>
+  <data name="CheckPortSettingsOr" xml:space="preserve">
+    <value>Kiểm tra cài đặt cổng, hoặc cổng đang được dùng?</value>
+  </data>
+  <data name="CommunicationErrorNoConnection" xml:space="preserve">
+    <value>Lỗi giao tiếp - không có kết nối</value>
+  </data>
+  <data name="DetectedA" xml:space="preserve">
+    <value>Đã phát hiện </value>
+  </data>
+  <data name="DetectingBoardVersion" xml:space="preserve">
+    <value>Đang dò phiên bản bo mạch</value>
+  </data>
+  <data name="DownloadingFromInternet" xml:space="preserve">
+    <value>Đang tải từ Internet</value>
+  </data>
+  <data name="EppromChanged" xml:space="preserve">
+    <value>EEPROM đã thay đổi, mọi cài đặt sẽ bị mất khi cập nhật,
+Bạn có muốn tiếp tục?</value>
+  </data>
+  <data name="EppromFormatChanged" xml:space="preserve">
+    <value>Định dạng EEPROM đã thay đổi ({0) vs {1})</value>
+  </data>
+  <data name="FailedDownload" xml:space="preserve">
+    <value>Tải xuống thất bại</value>
+  </data>
+  <data name="FailedReadHEX" xml:space="preserve">
+    <value>Đọc HEX thất bại</value>
+  </data>
+  <data name="FailedToReadHex" xml:space="preserve">
+    <value>Không đọc được firmware.hex :</value>
+  </data>
+  <data name="FailedUpload" xml:space="preserve">
+    <value>Tải lên thất bại</value>
+  </data>
+  <data name="GettingFWList" xml:space="preserve">
+    <value>Đang lấy danh sách FW</value>
+  </data>
+  <data name="GettingFWVersion" xml:space="preserve">
+    <value>Đang lấy phiên bản FW</value>
+  </data>
+  <data name="InvalidBoardType" xml:space="preserve">
+    <value>Loại bo mạch không hợp lệ</value>
+  </data>
+  <data name="PleaseConnectAndBackupConfig" xml:space="preserve">
+    <value>Hãy kết nối và sao lưu cấu hình trong tab cấu hình.</value>
+  </data>
+  <data name="ReadingHexFile" xml:space="preserve">
+    <value>Đang đọc file Hex</value>
+  </data>
+  <data name="ReceivedList" xml:space="preserve">
+    <value>Đã nhận danh sách</value>
+  </data>
+  <data name="UploadComplete" xml:space="preserve">
+    <value>Tải lên hoàn tất</value>
+  </data>
+  <data name="UploadingBytesToBoard" xml:space="preserve">
+    <value>Đang tải {0} bytes lên bo mạch:</value>
+  </data>
+  <data name="VerifyComplete" xml:space="preserve">
+    <value>Kiểm tra hoàn tất</value>
+  </data>
+  <data name="VerifyFirmware" xml:space="preserve">
+    <value>Kiểm tra firmware</value>
+  </data>
+  <data name="UploadSucceededButVerifyFailed" xml:space="preserve">
+    <value>Tải lên thành công nhưng kiểm tra thất bại: cần {0} nhận {1} tại </value>
+  </data>
+  <data name="ReadingHex" xml:space="preserve">
+    <value>Đang đọc Hex</value>
+  </data>
+  <data name="Warningrallypointdistance" xml:space="preserve">
+    <value>Cảnh báo: có điểm rally xa hơn RALLY_LIMIT_KM</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Cảnh báo</value>
+  </data>
+  <data name="WarningAC32" xml:space="preserve">
+    <value>Cảnh báo: nếu bạn cài AC 3.2 lần đầu, bạn PHẢI hiệu chuẩn lại la bàn.</value>
+  </data>
+  <data name="WarningAC31" xml:space="preserve">
+    <value>Cảnh báo: từ AC 3.1 motor sẽ quay khi arm, có thể chỉnh bằng tham số MOT_SPIN_ARMED</value>
+  </data>
+  <data name="MagCalibMsg" xml:space="preserve">
+    <value>Hãy bấm OK và xoay autopilot theo vòng tròn quanh mọi trục</value>
+  </data>
+  <data name="MissingDataPoints" xml:space="preserve">
+    <value>Bạn đang thiếu điểm dữ liệu. Bạn vẫn muốn chạy hiệu chuẩn?</value>
+  </data>
+  <data name="RunAnyway" xml:space="preserve">
+    <value>vẫn chạy</value>
+  </data>
+  <data name="UpdateFound" xml:space="preserve">
+    <value>Đã có bản cập nhật
+
+Bạn có muốn cập nhật ngay? </value>
+  </data>
+  <data name="UpdateNow" xml:space="preserve">
+    <value>Cập nhật ngay</value>
+  </data>
+  <data name="RawParamWarning" xml:space="preserve">
+    <value>Cảnh báo tham số thô</value>
+  </data>
+  <data name="RawParamWarningi" xml:space="preserve">
+    <value>Các giá trị trên màn hình này không được kiểm tra min/max. Hãy kiểm tra kỹ dữ liệu nhập.
+Hãy dùng Tham số chuẩn/nâng cao để cài đặt an toàn</value>
+  </data>
+  <data name="ShowMeAgain" xml:space="preserve">
+    <value>Hiện lại thông báo này?</value>
+  </data>
+  <data name="LinkStats" xml:space="preserve">
+    <value>Thống kê kết nối</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Kết nối</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="AreYouSureYouWantToUpload" xml:space="preserve">
+    <value>Bạn có chắc muốn tải lên </value>
+  </data>
+  <data name="BetaWarning" xml:space="preserve">
+    <value>Đây là firmware beta, tự chịu rủi ro khi dùng!!!</value>
+  </data>
+  <data name="CanNotConnectToComPortAnd" xml:space="preserve">
+    <value>Không thể kết nối tới cổng COM và nhận diện loại bo mạch</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="ErrorUploadingFirmware" xml:space="preserve">
+    <value>Lỗi khi tải firmware lên</value>
+  </data>
+  <data name="TrunkWarning" xml:space="preserve">
+    <value>Đây là firmware trunk mới nhất, tự chịu rủi ro khi dùng!!!</value>
+  </data>
+  <data name="BadGPSHealth" xml:space="preserve">
+    <value>Tín hiệu GPS không tốt</value>
+  </data>
+  <data name="BadAirspeed" xml:space="preserve">
+    <value>Cảm biến tốc độ gió không tốt</value>
+  </data>
+  <data name="BadGyroHealth" xml:space="preserve">
+    <value>Con quay hồi chuyển lỗi</value>
+  </data>
+  <data name="BadAccelHealth" xml:space="preserve">
+    <value>Gia tốc kế lỗi</value>
+  </data>
+  <data name="BadCompassHealth" xml:space="preserve">
+    <value>La bàn lỗi</value>
+  </data>
+  <data name="BadBaroHealth" xml:space="preserve">
+    <value>Khí áp kế lỗi</value>
+  </data>
+  <data name="BadLiDARHealth" xml:space="preserve">
+    <value>LiDAR lỗi</value>
+  </data>
+  <data name="BadOptFlowHealth" xml:space="preserve">
+    <value>Optical flow lỗi</value>
+  </data>
+  <data name="BadorNoTerrainData" xml:space="preserve">
+    <value>Dữ liệu địa hình lỗi hoặc không có</value>
+  </data>
+  <data name="GeofenceBreach" xml:space="preserve">
+    <value>Vượt hàng rào địa lý</value>
+  </data>
+  <data name="BadAHRS" xml:space="preserve">
+    <value>AHRS không tốt</value>
+  </data>
+  <data name="NORCReceiver" xml:space="preserve">
+    <value>KHÔNG có bộ thu RC</value>
+  </data>
+  <data name="EnsurePropsNotOn" xml:space="preserve">
+    <value>Hãy chắc chắn đã tháo cánh quạt khỏi máy bay</value>
+  </data>
+  <data name="Error_binding" xml:space="preserve">
+    <value>Lỗi khi bind</value>
+  </data>
+  <data name="Put_the_transmitter_in_bind_mode__Receiver_is_waiting" xml:space="preserve">
+    <value>Hãy đưa tay điều khiển vào chế độ bind. Bộ thu đang chờ.</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Hoàn tất</value>
+  </data>
+  <data name="Click_when_Done" xml:space="preserve">
+    <value>Bấm khi xong</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Đang lưu</value>
+  </data>
+  <data name="InvalidCert" xml:space="preserve">
+    <value>Chứng chỉ không hợp lệ</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Lưu ý</value>
+  </data>
+  <data name="PleaseUnplugTheBoardAnd" xml:space="preserve">
+    <value>Hãy rút bo mạch ra, sau đó bấm OK rồi cắm lại.
+FSEMI Mission Planner sẽ tìm bo mạch trong 30 giây</value>
+  </data>
+  <data name="ThisBoardHasBeenRetired" xml:space="preserve">
+    <value>Bo mạch này đã ngừng hỗ trợ, FSEMI Mission Planner sẽ tải lên phiên bản cuối cùng có cho bo mạch của bạn (AC 3.2.1/AP 3.4.0)</value>
+  </data>
+  <data name="YouAreUsingUnsupportedHardware" xml:space="preserve">
+    <value>Bạn đang dùng phần cứng không được hỗ trợ.
+Bo mạch này không có chứng chỉ xác thực hợp lệ.
+Hãy liên hệ nhà cung cấp phần cứng về việc ký phần cứng.</value>
+  </data>
+  <data name="NoNeedToUpload" xml:space="preserve">
+    <value>Không cần tải lên. Firmware đã có trên bo mạch</value>
+  </data>
+  <data name="PleaseWaitForTheMusicalTones" xml:space="preserve">
+    <value>Hãy chờ các tiếng nhạc kết thúc rồi mới bấm OK</value>
+  </data>
+  <data name="ObtainFromModule" xml:space="preserve">
+    <value>Lấy từ module</value>
+  </data>
+  <data name="SetHere" xml:space="preserve">
+    <value>Đặt tại đây</value>
+  </data>
+  <data name="TrackerHome" xml:space="preserve">
+    <value>Home của Tracker</value>
+  </data>
+  <data name="velocity_variance" xml:space="preserve">
+    <value>phương sai vận tốc</value>
+  </data>
+  <data name="compass_variance" xml:space="preserve">
+    <value>phương sai la bàn</value>
+  </data>
+  <data name="pos_horiz_variance" xml:space="preserve">
+    <value>phương sai vị trí ngang</value>
+  </data>
+  <data name="pos_vert_variance" xml:space="preserve">
+    <value>phương sai vị trí dọc</value>
+  </data>
+  <data name="terrain_alt_variance" xml:space="preserve">
+    <value>phương sai độ cao địa hình</value>
+  </data>
+  <data name="ChangeThrottle" xml:space="preserve">
+    <value>Đổi ga</value>
+  </data>
+  <data name="Invalid_home_location" xml:space="preserve">
+    <value>Vị trí home không hợp lệ</value>
+  </data>
+  <data name="Converting_bin_to_log" xml:space="preserve">
+    <value>Đang chuyển bin sang log</value>
+  </data>
+  <data name="UpdateNotFound" xml:space="preserve">
+    <value>Không có bản cập nhật.</value>
+  </data>
+  <data name="Failed_to_connect_to_SITL_instance" xml:space="preserve">
+    <value>Không kết nối được tới SITL</value>
+  </data>
+  <data name="Scanning_File" xml:space="preserve">
+    <value>Đang quét file</value>
+  </data>
+  <data name="Zoom_to_the_center_or_the_loaded_file" xml:space="preserve">
+    <value>Phóng tới tâm của file đã nạp?</value>
+  </data>
+  <data name="Zoom_To" xml:space="preserve">
+    <value>Phóng tới</value>
+  </data>
+  <data name="Do_you_want_to_load_this_into_the_flight_data_screen" xml:space="preserve">
+    <value>Bạn có muốn nạp dữ liệu này vào màn hình Dữ liệu bay?</value>
+  </data>
+  <data name="Load_data" xml:space="preserve">
+    <value>Nạp dữ liệu</value>
+  </data>
+  <data name="Bad_KML_File" xml:space="preserve">
+    <value>File KML lỗi :</value>
+  </data>
+  <data name="No_valid_heartbeats_read_from_port" xml:space="preserve">
+    <value>Không đọc được heartbeat hợp lệ nào từ cổng</value>
+  </data>
+  <data name="Bad_Vision_Position" xml:space="preserve">
+    <value>Vị trí Vision lỗi</value>
+  </data>
+  <data name="BadLogging" xml:space="preserve">
+    <value>Ghi log lỗi</value>
+  </data>
+  <data name="ParamRefreshRequired" xml:space="preserve">
+    <value>Cần làm mới tham số - Hãy bấm F5
+cũ #{0}  mới #{1}</value>
+  </data>
+  <data name="Failed_to_download_the_SITL_image" xml:space="preserve">
+    <value>Không tải được image SITL.</value>
+  </data>
+  <data name="Not_available_when_used_as_a_windows_store_app" xml:space="preserve">
+    <value>Không dùng được khi chạy dạng ứng dụng Windows Store</value>
+  </data>
+  <data name="No_firmware_available_for_this_board" xml:space="preserve">
+    <value>Không có firmware cho bo mạch này!</value>
+  </data>
+  <data name="OnboardOSD" xml:space="preserve">
+    <value>OSD trên máy bay</value>
+  </data>
+  <data name="User_Params" xml:space="preserve">
+    <value>Tham số người dùng</value>
+  </data>
+  <data name="Planner" xml:space="preserve">
+    <value>Lập kế hoạch</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="No_valid_sik_radio" xml:space="preserve">
+    <value>Không có radio SiK hợp lệ</value>
+  </data>
+  <data name="Bad_Battery" xml:space="preserve">
+    <value>Pin lỗi</value>
+  </data>
+  <data name="Bad_Proximity" xml:space="preserve">
+    <value>Cảm biến tiệm cận lỗi</value>
+  </data>
+  <data name="Bad_SatCom" xml:space="preserve">
+    <value>SatCom lỗi</value>
+  </data>
+  <data name="Prearm_check_failed" xml:space="preserve">
+    <value>Kiểm tra trước khi arm thất bại - xem các thông báo</value>
+  </data>
+  <data name="Invalid_Location" xml:space="preserve">
+    <value>Vị trí không hợp lệ</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Đang nạp</value>
+  </data>
+  <data name="ZeroAltWarningCopter" xml:space="preserve">
+    <value>WP# {0} có độ cao bằng 0, nghĩa là không đổi độ cao! Nếu bạn muốn độ cao bằng 0, hãy đổi thành 0.01. Bạn muốn tiếp tục hay hủy tải waypoint lên?</value>
+  </data>
+  <data name="ZeroAltWarningTitle" xml:space="preserve">
+    <value>Cảnh báo độ cao bằng 0</value>
+  </data>
+  <data name="ZeroAltWarningPlane" xml:space="preserve">
+    <value>WP# {0} có độ cao bằng 0. Nếu bạn thật sự muốn độ cao bằng 0, hãy đổi thành 0.01 để máy bay hoạt động như dự đoán.
+
+Trên ArduPlane, độ cao 0 có thể được hiểu theo hai cách: độ cao 0 thật, hoặc giữ độ cao hiện tại. Lệnh WAYPOINT thường dùng đúng độ cao 0, còn lệnh LOITER thường hiểu là "dùng độ cao hiện tại", nhưng chỉ khi hệ độ cao là "relative". Có thể còn ngoại lệ khác và điều này có thể thay đổi ở các phiên bản sau.
+
+CHỈ ĐẶT BẰNG 0 NẾU BẠN HIỂU CHÍNH XÁC ĐIỀU GÌ SẼ XẢY RA TRONG TRƯỜNG HỢP CỦA BẠN (hãy dùng trình mô phỏng để chắc chắn).[link;https://ardupilot.org/plane/docs/common-mavlink-mission-command-messages-mav_cmd.html;Tài liệu lệnh]</value>
+  </data>
+</root>

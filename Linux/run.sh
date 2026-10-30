@@ -2,12 +2,12 @@
 set -euo pipefail
 
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-if [[ -f "$script_dir/MissionPlanner.exe" ]]; then
+if [[ -f "$script_dir/FSEMIMissionPlanner.exe" ]]; then
     app_dir=$script_dir
-elif [[ -f "$script_dir/../bin/linux/MissionPlanner-linux-x86_64/MissionPlanner.exe" ]]; then
-    app_dir="$script_dir/../bin/linux/MissionPlanner-linux-x86_64"
+elif [[ -f "$script_dir/../bin/linux/FSEMIMissionPlanner-linux-x86_64/FSEMIMissionPlanner.exe" ]]; then
+    app_dir="$script_dir/../bin/linux/FSEMIMissionPlanner-linux-x86_64"
 else
-    echo 'MissionPlanner.exe not found. Run Linux/build.sh or extract the complete Linux archive.' >&2
+    echo 'FSEMIMissionPlanner.exe not found. Run Linux/build.sh or extract the complete Linux archive.' >&2
     exit 1
 fi
 if ! command -v mono >/dev/null; then
@@ -35,4 +35,4 @@ if [[ ${1:-} == --self-test ]]; then
     shift
     exec mono LinuxSmokeTest.exe "$@"
 fi
-exec mono MissionPlanner.exe "$@"
+exec mono FSEMIMissionPlanner.exe "$@"

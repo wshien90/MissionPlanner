@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="recordHudToAVIToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ghi HUD ra AVI</value>
+  </data>
+  <data name="stopRecordToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dừng ghi</value>
+  </data>
+  <data name="setMJPEGSourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đặt nguồn MJPEG</value>
+  </data>
+  <data name="startCameraToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bật camera</value>
+  </data>
+  <data name="setGStreamerSourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đặt nguồn GStreamer</value>
+  </data>
+  <data name="gStreamerStopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dừng GStreamer</value>
+  </data>
+  <data name="setAspectRatioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đặt tỉ lệ khung hình</value>
+  </data>
+  <data name="userItemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mục người dùng</value>
+  </data>
+  <data name="russianHudToolStripMenuItem.Text" xml:space="preserve">
+    <value>HUD kiểu Nga</value>
+  </data>
+  <data name="swapWithMapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đổi chỗ với bản đồ</value>
+  </data>
+  <data name="groundColorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Màu mặt đất</value>
+  </data>
+  <data name="setBatteryCellCountToolStripMenuItem.Text" xml:space="preserve">
+    <value>Điện áp mỗi cell pin</value>
+  </data>
+  <data name="showIconsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hiện biểu tượng</value>
+  </data>
+  <data name="customizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tuỳ chỉnh</value>
+  </data>
+  <data name="multiLineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nhiều dòng</value>
+  </data>
+  <data name="setViewCountToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đặt số ô hiển thị</value>
+  </data>
+  <data name="undockToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tách cửa sổ</value>
+  </data>
+  <data name="quickView1.ToolTip" xml:space="preserve">
+    <value>Nhấp đúp để đổi</value>
+  </data>
+  <data name="tabQuick.Text" xml:space="preserve">
+    <value>Nhanh</value>
+  </data>
+  <data name="BUT_SendMSG.Text" xml:space="preserve">
+    <value>Tin nhắn</value>
+  </data>
+  <data name="BUT_SendMSG.ToolTip" xml:space="preserve">
+    <value>Gửi tin nhắn để lưu vào log của máy bay</value>
+  </data>
+  <data name="BUT_abortland.Text" xml:space="preserve">
+    <value>Huỷ hạ cánh</value>
+  </data>
+  <data name="BUT_abortland.ToolTip" xml:space="preserve">
+    <value>Chỉ cho máy bay cánh bằng</value>
+  </data>
+  <data name="BUT_clear_track.Text" xml:space="preserve">
+    <value>Xoá vệt bay</value>
+  </data>
+  <data name="BUT_clear_track.ToolTip" xml:space="preserve">
+    <value>Xoá đường bay đã ghi trên bản đồ</value>
+  </data>
+  <data name="BUTactiondo.Text" xml:space="preserve">
+    <value>Thực hiện</value>
+  </data>
+  <data name="BUTactiondo.ToolTip" xml:space="preserve">
+    <value>Thực hiện hành động ở bên trái</value>
+  </data>
+  <data name="BUT_resumemis.Text" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="BUT_ARM.ToolTip" xml:space="preserve">
+    <value>Arm máy bay</value>
+  </data>
+  <data name="BUT_mountmode.Text" xml:space="preserve">
+    <value>Đặt gimbal</value>
+  </data>
+  <data name="BUT_mountmode.ToolTip" xml:space="preserve">
+    <value>Chuyển sang chế độ ở bên trái</value>
+  </data>
+  <data name="BUT_joystick.Text" xml:space="preserve">
+    <value>Tay cầm</value>
+  </data>
+  <data name="BUT_joystick.ToolTip" xml:space="preserve">
+    <value>Cài đặt và bật tay cầm</value>
+  </data>
+  <data name="BUT_RAWSensor.Text" xml:space="preserve">
+    <value>Cảm biến thô</value>
+  </data>
+  <data name="BUT_RAWSensor.ToolTip" xml:space="preserve">
+    <value>Xem giá trị thô của con quay, gia tốc kế và đầu vào/ra Radio</value>
+  </data>
+  <data name="BUT_Homealt.Text" xml:space="preserve">
+    <value>Độ cao home</value>
+  </data>
+  <data name="BUT_Homealt.ToolTip" xml:space="preserve">
+    <value>Lấy độ cao hiển thị hiện tại làm 0, tức độ cao home hiển thị là 0</value>
+  </data>
+  <data name="BUTrestartmission.Text" xml:space="preserve">
+    <value>Chạy lại</value>
+  </data>
+  <data name="BUTrestartmission.ToolTip" xml:space="preserve">
+    <value>Chạy lại mission từ đầu</value>
+  </data>
+  <data name="BUT_quickrtl.ToolTip" xml:space="preserve">
+    <value>Chuyển chế độ sang RTL</value>
+  </data>
+  <data name="BUT_quickmanual.ToolTip" xml:space="preserve">
+    <value>Chuyển chế độ sang Manual/Stabilize</value>
+  </data>
+  <data name="BUT_setwp.Text" xml:space="preserve">
+    <value>Đặt WP</value>
+  </data>
+  <data name="BUT_setwp.ToolTip" xml:space="preserve">
+    <value>Đổi waypoint mục tiêu hiện tại</value>
+  </data>
+  <data name="BUT_quickauto.ToolTip" xml:space="preserve">
+    <value>Chuyển chế độ sang Auto</value>
+  </data>
+  <data name="BUT_setmode.Text" xml:space="preserve">
+    <value>Đặt chế độ</value>
+  </data>
+  <data name="BUT_setmode.ToolTip" xml:space="preserve">
+    <value>Chuyển sang chế độ ở bên trái</value>
+  </data>
+  <data name="tabActions.Text" xml:space="preserve">
+    <value>Thao tác</value>
+  </data>
+  <data name="tabPagemessages.Text" xml:space="preserve">
+    <value>Tin nhắn</value>
+  </data>
+  <data name="myButton1.ToolTip" xml:space="preserve">
+    <value>Chuyển chế độ sang Manual/Stabilize</value>
+  </data>
+  <data name="myButton2.ToolTip" xml:space="preserve">
+    <value>Chuyển chế độ sang RTL</value>
+  </data>
+  <data name="myButton3.ToolTip" xml:space="preserve">
+    <value>Chuyển chế độ sang Auto</value>
+  </data>
+  <data name="tabActionsSimple.Text" xml:space="preserve">
+    <value>Thao tác</value>
+  </data>
+  <data name="tabPagePreFlight.Text" xml:space="preserve">
+    <value>Trước khi bay</value>
+  </data>
+  <data name="Gspeed.ToolTip" xml:space="preserve">
+    <value>Nhấp đúp để đổi giá trị Max</value>
+  </data>
+  <data name="tabGauges.Text" xml:space="preserve">
+    <value>Đồng hồ</value>
+  </data>
+  <data name="fault_clb.Items" xml:space="preserve">
+    <value>Cần bảo trì</value>
+  </data>
+  <data name="fault_clb.Items1" xml:space="preserve">
+    <value>Không có GPS</value>
+  </data>
+  <data name="fault_clb.Items2" xml:space="preserve">
+    <value>GPS chưa fix</value>
+  </data>
+  <data name="fault_clb.Items3" xml:space="preserve">
+    <value>Lỗi hệ thống TX</value>
+  </data>
+  <data name="fault_clb.Items4" xml:space="preserve">
+    <value>Trên mặt đất</value>
+  </data>
+  <data name="XPDRConnect_btn.Text" xml:space="preserve">
+    <value>Kết nối tới transponder</value>
+  </data>
+  <data name="tabStatus.Text" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="tabAuxFunction.Text" xml:space="preserve">
+    <value>Chức năng phụ</value>
+  </data>
+  <data name="checkBoxRedirectOutput.Text" xml:space="preserve">
+    <value>Chuyển hướng đầu ra chương trình</value>
+  </data>
+  <data name="BUT_edit_selected.Text" xml:space="preserve">
+    <value>Sửa script đã chọn</value>
+  </data>
+  <data name="labelSelectedScript.Text" xml:space="preserve">
+    <value>Script đã chọn: Không có</value>
+  </data>
+  <data name="BUT_run_script.Text" xml:space="preserve">
+    <value>Chạy script</value>
+  </data>
+  <data name="BUT_abort_script.Text" xml:space="preserve">
+    <value>Dừng script đang chạy</value>
+  </data>
+  <data name="labelScriptStatus.Text" xml:space="preserve">
+    <value>Trạng thái script: Không có script nào đang chạy</value>
+  </data>
+  <data name="BUT_select_script.Text" xml:space="preserve">
+    <value>Chọn script</value>
+  </data>
+  <data name="tabScripts.Text" xml:space="preserve">
+    <value>Script</value>
+  </data>
+  <data name="BUT_GimbalVideo.Text" xml:space="preserve">
+    <value>Điều khiển video</value>
+  </data>
+  <data name="BUT_resetGimbalPos.Text" xml:space="preserve">
+    <value>Đặt lại vị trí</value>
+  </data>
+  <data name="groupBoxPitch.Text" xml:space="preserve">
+    <value>Nghiêng</value>
+  </data>
+  <data name="tabPayload.Text" xml:space="preserve">
+    <value>Điều khiển tải trọng</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Tốc độ</value>
+  </data>
+  <data name="BUT_loadtelem.Text" xml:space="preserve">
+    <value>Nạp log</value>
+  </data>
+  <data name="BUT_log2kml.Text" xml:space="preserve">
+    <value>Tlog &gt; Kml hoặc đồ thị</value>
+  </data>
+  <data name="BUT_playlog.Text" xml:space="preserve">
+    <value>Phát/Tạm dừng</value>
+  </data>
+  <data name="tabTLogs.Text" xml:space="preserve">
+    <value>Log telemetry</value>
+  </data>
+  <data name="BUT_DFMavlink.Text" xml:space="preserve">
+    <value>Tải log DataFlash qua Mavlink</value>
+  </data>
+  <data name="BUT_georefimage.Text" xml:space="preserve">
+    <value>Gắn toạ độ cho ảnh</value>
+  </data>
+  <data name="BUT_logbrowse.Text" xml:space="preserve">
+    <value>Xem lại log</value>
+  </data>
+  <data name="BUT_matlab.Text" xml:space="preserve">
+    <value>Tạo file Matlab</value>
+  </data>
+  <data name="but_bintolog.Text" xml:space="preserve">
+    <value>Chuyển .Bin sang .Log</value>
+  </data>
+  <data name="but_dflogtokml.Text" xml:space="preserve">
+    <value>Tạo KML + gpx</value>
+  </data>
+  <data name="BUT_loganalysis.Text" xml:space="preserve">
+    <value>Tự phân tích</value>
+  </data>
+  <data name="tablogbrowse.Text" xml:space="preserve">
+    <value>Log DataFlash</value>
+  </data>
+  <data name="goHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bay tới đây</value>
+  </data>
+  <data name="flyToHereAltToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bay tới đây (nhập độ cao)</value>
+  </data>
+  <data name="flyToCoordsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bay tới toạ độ</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="saveFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lưu file</value>
+  </data>
+  <data name="loadFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nạp file</value>
+  </data>
+  <data name="poiatcoordsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Toạ độ</value>
+  </data>
+  <data name="addPoiToolStripMenuItem.Text" xml:space="preserve">
+    <value>Thêm POI</value>
+  </data>
+  <data name="pointCameraHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hướng camera vào đây</value>
+  </data>
+  <data name="PointCameraCoordsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Hướng camera vào toạ độ</value>
+  </data>
+  <data name="triggerCameraToolStripMenuItem.Text" xml:space="preserve">
+    <value>Chụp ảnh NGAY</value>
+  </data>
+  <data name="flightPlannerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lập kế hoạch bay</value>
+  </data>
+  <data name="setEKFHomeHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đặt gốc EKF tại đây</value>
+  </data>
+  <data name="setHomeHereToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Đặt home tại đây</value>
+  </data>
+  <data name="setHomeHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đặt home tại đây</value>
+  </data>
+  <data name="takeOffToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cất cánh</value>
+  </data>
+  <data name="onOffCameraOverlapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Độ chồng ảnh</value>
+  </data>
+  <data name="jumpToTagToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nhảy tới tag</value>
+  </data>
+  <data name="gimbalVideoFullSizedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kích thước đầy đủ</value>
+  </data>
+  <data name="gimbalVideoMiniToolStripMenuItem.Text" xml:space="preserve">
+    <value>Thu nhỏ</value>
+  </data>
+  <data name="gimbalVideoPopOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tách ra</value>
+  </data>
+  <data name="gimbalVideoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Video gimbal</value>
+  </data>
+  <data name="but_disablejoystick.Text" xml:space="preserve">
+    <value>Tắt tay cầm</value>
+  </data>
+  <data name="Zoomlevel.ToolTip" xml:space="preserve">
+    <value>Đổi mức phóng</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Vệt GPS (đen)</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Hướng đích</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tới WP</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Hướng mũi</value>
+  </data>
+  <data name="lbl_hdop.ToolTip" xml:space="preserve">
+    <value>HDOP của GPS</value>
+  </data>
+  <data name="lbl_sats.Text" xml:space="preserve">
+    <value>Vệ tinh: 0</value>
+  </data>
+  <data name="lbl_sats.ToolTip" xml:space="preserve">
+    <value>Số vệ tinh</value>
+  </data>
+  <data name="CHK_autopan.Text" xml:space="preserve">
+    <value>Tự cuộn bản đồ</value>
+  </data>
+  <data name="CHK_autopan.ToolTip" xml:space="preserve">
+    <value>Tự cuộn bản đồ theo vị trí hiện tại</value>
+  </data>
+  <data name="CB_tuning.Text" xml:space="preserve">
+    <value>Đồ thị</value>
+  </data>
+  <data name="CB_tuning.ToolTip" xml:space="preserve">
+    <value>Hiện đồ thị tinh chỉnh, so sánh tư thế mục tiêu với thực tế</value>
+  </data>
+</root>

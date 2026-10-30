@@ -218,6 +218,13 @@ namespace MissionPlanner.Utilities
                 return;
             }
 
+            // no update server configured in app.config
+            if (string.IsNullOrEmpty(ConfigurationManager.AppSettings["UpdateLocationMD5"]))
+            {
+                CustomMessageBox.Show("Updates are not available for this build");
+                return;
+            }
+
             IProgressReporterDialogue frmProgressReporter = new ProgressReporterDialogue()
             {
                 Text = "Check for Updates",

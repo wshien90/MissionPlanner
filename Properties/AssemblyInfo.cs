@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mission Planner")]
-[assembly: AssemblyDescription("Mission Planner ground control station for ardupilot")]
+[assembly: AssemblyTitle("FSEMI Mission Planner")]
+[assembly: AssemblyDescription("FSEMI Mission Planner ground control station, based on Mission Planner")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Michael Oborne")]
-[assembly: AssemblyProduct("Mission Planner")]
-[assembly: AssemblyCopyright("Copyright ©  2010-2024")]
+[assembly: AssemblyCompany("FPT Semiconductor")]
+[assembly: AssemblyProduct("FSEMI Mission Planner")]
+[assembly: AssemblyCopyright("Copyright © Michael Oborne 2010-2024, FPT Semiconductor 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,7 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.3.*")]
-[assembly: AssemblyFileVersion("1.3.83")]
+// The revision is the build number: the DotNet Build workflow sets it to the run number,
+// local builds are 0. The updater compares this version (written to version.txt).
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0")]

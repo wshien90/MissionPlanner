@@ -41,7 +41,7 @@ namespace MissionPlanner.Utilities
         public static bool OptOut = false;
 
         static string version = "1";
-        static string tid = "UA-43098846-1";
+        static string tid = "";
 
         public static Guid cid
         {
@@ -292,7 +292,7 @@ namespace MissionPlanner.Utilities
 
         static void track(object temp)
         {
-            if (OptOut)
+            if (OptOut || tid == "")
                 return;
 
             try

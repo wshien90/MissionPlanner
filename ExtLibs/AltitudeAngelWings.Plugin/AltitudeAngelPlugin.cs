@@ -42,10 +42,7 @@ namespace AltitudeAngelWings.Plugin
                 {
                     _enabled = Host.config.GetBoolean("AA_CheckEnableAltitudeAngel");
                 }
-                else
-                {
-                    AskToEnableAltitudeAngel();
-                }
+                // FSEMI Mission Planner: off until enabled from the map menu, no question on first start
                 if (_enabled)
                 {
                     EnableAltitudeAngel();

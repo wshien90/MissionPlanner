@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Cảm biến</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Định dạng video</value>
+  </data>
+  <data name="CHK_GDIPlus.Text" xml:space="preserve">
+    <value>GDI+ (kiểu cũ)</value>
+  </data>
+  <data name="CHK_loadwponconnect.Text" xml:space="preserve">
+    <value>Nạp waypoint khi kết nối?</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Độ dài vệt bay</value>
+  </data>
+  <data name="CHK_speechaltwarning.Text" xml:space="preserve">
+    <value>Cảnh báo độ cao</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Đặt lại khi kết nối</value>
+  </data>
+  <data name="CHK_resetapmonconnect.Text" xml:space="preserve">
+    <value>Đặt lại khi kết nối USB (đảo DTR)</value>
+  </data>
+  <data name="CHK_mavdebug.Text" xml:space="preserve">
+    <value>Gỡ lỗi thông điệp Mavlink</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Chế độ/Trạng thái</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Vị trí</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Tư thế</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Tần số telemetry</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>LƯU Ý: Tab Cấu hình sẽ KHÔNG hiển thị theo các đơn vị này, vì đó là giá trị thô.
+</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>ĐV tốc độ</value>
+  </data>
+  <data name="label97.Text" xml:space="preserve">
+    <value>ĐV khoảng cách</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Tay cầm</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Giọng nói</value>
+  </data>
+  <data name="CHK_speechbattery.Text" xml:space="preserve">
+    <value>Cảnh báo pin</value>
+  </data>
+  <data name="CHK_speechcustom.Text" xml:space="preserve">
+    <value>Mỗi 30 giây</value>
+  </data>
+  <data name="CHK_speechmode.Text" xml:space="preserve">
+    <value>Chế độ </value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="CHK_enablespeech.Text" xml:space="preserve">
+    <value>Bật giọng nói</value>
+  </data>
+  <data name="CHK_hudshow.Text" xml:space="preserve">
+    <value>Bật lớp phủ HUD</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>Thiết bị video</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Bản đồ bám theo</value>
+  </data>
+  <data name="CHK_maprotation.Text" xml:space="preserve">
+    <value>Bản đồ xoay theo hướng máy bay</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Khoảng cách tới home</value>
+  </data>
+  <data name="CHK_disttohomeflightdata.Text" xml:space="preserve">
+    <value>Hiển thị ở Dữ liệu bay</value>
+  </data>
+  <data name="BUT_Joystick.Text" xml:space="preserve">
+    <value>Cài đặt tay cầm</value>
+  </data>
+  <data name="BUT_videostop.Text" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="BUT_videostart.Text" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Thư mục log</value>
+  </data>
+  <data name="BUT_logdirbrowse.Text" xml:space="preserve">
+    <value>Chọn...</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Giao diện</value>
+  </data>
+  <data name="BUT_themecustom.Text" xml:space="preserve">
+    <value>Tuỳ chỉnh</value>
+  </data>
+  <data name="BUT_Vario.Text" xml:space="preserve">
+    <value>Bật/tắt Vario</value>
+  </data>
+  <data name="chk_analytics.Text" xml:space="preserve">
+    <value>Tắt thống kê</value>
+  </data>
+  <data name="CHK_beta.Text" xml:space="preserve">
+    <value>Bản beta</value>
+  </data>
+  <data name="CHK_Password.Text" xml:space="preserve">
+    <value>Mật khẩu cấu hình</value>
+  </data>
+  <data name="CHK_speechlowspeed.Text" xml:space="preserve">
+    <value>Tốc độ thấp</value>
+  </data>
+  <data name="CHK_showairports.Text" xml:space="preserve">
+    <value>Hiện sân bay</value>
+  </data>
+  <data name="chk_tfr.Text" xml:space="preserve">
+    <value>Vùng hạn chế bay tạm thời (TFR)</value>
+  </data>
+  <data name="chk_temp.Text" xml:space="preserve">
+    <value>Màn hình thử nghiệm</value>
+  </data>
+  <data name="chk_norcreceiver.Text" xml:space="preserve">
+    <value>Không có bộ thu RC</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Bố cục</value>
+  </data>
+  <data name="CHK_AutoParamCommit.Text" xml:space="preserve">
+    <value>Tự áp dụng tham số</value>
+  </data>
+  <data name="chk_shownofly.Text" xml:space="preserve">
+    <value>Vùng cấm bay</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>ĐV độ cao</value>
+  </data>
+  <data name="CHK_params_bg.Text" xml:space="preserve">
+    <value>Tải tham số chạy nền</value>
+  </data>
+  <data name="chk_slowMachine.Text" xml:space="preserve">
+    <value>Đang chạy trên máy tính chậm</value>
+  </data>
+  <data name="CHK_speechArmedOnly.Text" xml:space="preserve">
+    <value>Chỉ khi đã arm</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>LƯU Ý: Đặt mức SEVERITY thấp nhất sẽ được đọc</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Máy bay nghỉ</value>
+  </data>
+  <data name="chk_displaycog.Text" xml:space="preserve">
+    <value>Hiện COG</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Biểu tượng</value>
+  </data>
+  <data name="chk_displayheading.Text" xml:space="preserve">
+    <value>Hiện hướng mũi</value>
+  </data>
+  <data name="chk_displaynavbearing.Text" xml:space="preserve">
+    <value>Hiện hướng bay</value>
+  </data>
+  <data name="chk_displayradius.Text" xml:space="preserve">
+    <value>Hiện bán kính rẽ</value>
+  </data>
+  <data name="chk_displaytarget.Text" xml:space="preserve">
+    <value>Hiện mục tiêu</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Độ dài đường</value>
+  </data>
+  <data name="chk_displaytooltip.Text" xml:space="preserve">
+    <value>Hiện chú thích</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Truy cập bản đồ</value>
+  </data>
+  <data name="BUT_mapCacheDir.Text" xml:space="preserve">
+    <value>Mở cache bản đồ</value>
+  </data>
+  <data name="CHK_rtsresetesp32.Text" xml:space="preserve">
+    <value>Tắt reset RTS trên ESP32 SerialUSB</value>
+  </data>
+</root>

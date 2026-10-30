@@ -48,7 +48,7 @@ Start Xephyr on an unused display, then run:
 ```sh
 Xephyr :102 -screen 1400x1000 -ac -noreset
 DISPLAY=:102 MissionPlannerTests/Mavlink/run-sysid32-sitl.sh \
-    /path/to/linux-checkout/bin/linux/MissionPlanner-linux-x86_64
+    /path/to/linux-checkout/bin/linux/FSEMIMissionPlanner-linux-x86_64
 ```
 
 The harness uses GCS ID `2147483649`, connects the actual FlightData GUI to vehicle

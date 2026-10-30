@@ -33,7 +33,7 @@ namespace Installer
         private static readonly ILog log =
             LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        private string installlocation = @"C:\Program Files (x86)\Mission Planner";
+        private string installlocation = @"C:\Program Files (x86)\FSEMI Mission Planner";
 
         private string md5s = "";
         private string zip = "";
