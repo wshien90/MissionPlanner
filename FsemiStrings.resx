@@ -455,4 +455,70 @@ Altitude {0:0.0} {1}, speed {2:0.0} {3}</value>
   <data name="Insp_Battery" xml:space="preserve">
     <value>Battery flight time (min)</value>
   </data>
+  <data name="Terrain_Menu" xml:space="preserve">
+    <value>Terrain survey of the drawn polygon (3D)...</value>
+  </data>
+  <data name="Terrain_Title" xml:space="preserve">
+    <value>Terrain survey for a 3D model</value>
+  </data>
+  <data name="Terrain_NeedPolygon" xml:space="preserve">
+    <value>Draw the area first: right-click the map, Polygon, Draw a Polygon, then click at least 3 points around the hill or range.</value>
+  </data>
+  <data name="Terrain_Area" xml:space="preserve">
+    <value>Area {0:0.00} ha, {1} points. The lines are flown back and forth over it at a height above the ground, the camera triggered by distance.</value>
+  </data>
+  <data name="Terrain_Height" xml:space="preserve">
+    <value>Height above the ground (m)</value>
+  </data>
+  <data name="Terrain_Angle" xml:space="preserve">
+    <value>Direction of the lines (°)</value>
+  </data>
+  <data name="Terrain_Oblique" xml:space="preserve">
+    <value>Add an oblique pass across the lines (for steep slopes and cliffs)</value>
+  </data>
+  <data name="Terrain_ObliquePitch" xml:space="preserve">
+    <value>Oblique camera pitch (° below horizon)</value>
+  </data>
+  <data name="Terrain_Mode" xml:space="preserve">
+    <value>Keep the height with</value>
+  </data>
+  <data name="Terrain_ModeTerrain" xml:space="preserve">
+    <value>The autopilot's terrain data (TERRAIN_ENABLE)</value>
+  </data>
+  <data name="Terrain_ModeElevation" xml:space="preserve">
+    <value>This program's elevation data (SRTM), above sea level</value>
+  </data>
+  <data name="Terrain_Coverage" xml:space="preserve">
+    <value>{0:0.0} mm a pixel on flat ground; lines {1:0.0} m apart, a photo every {2:0.0} m.</value>
+  </data>
+  <data name="Terrain_Summary" xml:space="preserve">
+    <value>{0} lines, {1} mission items, about {2} photos, {3:0.00} km, about {4:0} min at up to {5:0.0} m/s.</value>
+  </data>
+  <data name="Terrain_Ground" xml:space="preserve">
+    <value>The ground is {0:0} to {1:0} m above sea level ({2:0} m difference).</value>
+  </data>
+  <data name="Terrain_NoGround" xml:space="preserve">
+    <value>No elevation data for this area yet: the autopilot needs its own terrain data (from its SD card or sent by this program once downloaded).</value>
+  </data>
+  <data name="Terrain_FlightLine" xml:space="preserve">
+    <value>Flight {0}: lines {1} to {2}, about {3:0} min</value>
+  </data>
+  <data name="Plan_FlightItemLines" xml:space="preserve">
+    <value>Flight {0}/{1}: lines {2} to {3}, about {4:0} min</value>
+  </data>
+  <data name="Terrain_WarnHigh" xml:space="preserve">
+    <value>Above {0:0} m over the ground needs a flight permit.</value>
+  </data>
+  <data name="Terrain_WarnTerrainEnable" xml:space="preserve">
+    <value>The vehicle has TERRAIN_ENABLE = 0: set it to 1, or keep the height with this program's elevation data.</value>
+  </data>
+  <data name="Terrain_ErrorNoLines" xml:space="preserve">
+    <value>The area is too small for one line at this spacing.</value>
+  </data>
+  <data name="Terrain_ErrorNoElevation" xml:space="preserve">
+    <value>No elevation data at {0:0.000000}, {1:0.000000}: keep the height with the autopilot's terrain data, or wait for the data to download.</value>
+  </data>
+  <data name="Terrain_SideOverlap" xml:space="preserve">
+    <value>Overlap between lines (%)</value>
+  </data>
 </root>

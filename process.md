@@ -67,23 +67,34 @@ Cập nhật lần cuối: 2026-10-30.
 
 ## Đang làm
 
-- PR **Chụp ảnh 3D cho công trình** vào `fsemi`: chờ người dùng thử và merge.
-  - Bay vòng quanh công trình hoặc dọc mặt tường; camera và độ chồng ảnh; chia chuyến theo pin
-    (thời gian bay một pin nhập trong hộp thoại); lưu từng chuyến thành file `.waypoints`.
-  - `PhotoRecorder` ghi vị trí từng ảnh (CAMERA_FEEDBACK) từ lúc arm đến lúc disarm vào
+- PR #3 **Chụp ảnh 3D cho công trình, đồi núi, dãy núi** vào `fsemi`: chờ người dùng thử và merge.
+  - Công trình (lấy từ bigWing):
+    - bay vòng quanh hoặc dọc mặt tường;
+    - chọn camera và độ chồng ảnh;
+    - chia chuyến theo pin (thời gian bay một pin nhập trong hộp thoại) và lưu từng chuyến thành
+      file `.waypoints`.
+  - `PhotoRecorder` ghi vị trí từng ảnh (CAMERA_FEEDBACK) vào
     `photos/flight_<ngày>_<giờ>_photos.csv`.
-  - Cửa sổ "Ảnh kiểm tra công trình" ở màn Dữ liệu: đặt tên ảnh theo tầng và hướng, ghi GPS vào
-    ảnh, xuất `photos.csv`, `geo.txt` và `photos.kml`.
-  - Code lấy từ bigWing: `Utilities/InspectionPattern.cs`, `CameraCoverage.cs`,
-    `InspectionPhotos.cs`, `InspectionPhotoFiles.cs`, `InspectionFlightFiles.cs`,
-    `Controls/InspectionForm.cs`, `InspectionPhotosForm.cs`, `GCSViews/FlightPlannerInspection.cs`.
-  - Test: `InspectionPatternTests`, `CameraCoverageTests`, `InspectionPhotosTests`.
+  - "Ảnh kiểm tra công trình": đặt tên ảnh, ghi GPS vào ảnh, xuất CSV, `geo.txt` và KML.
+  - Đồi núi, dãy núi (mới), menu "Chụp ảnh địa hình vùng đa giác (3D)":
+    - bay đi bay về theo các tuyến song song trên vùng đã vẽ bằng Đa giác, ở độ cao cố định so
+      với mặt đất;
+    - camera chụp theo quãng đường (DO_SET_CAM_TRIGG_DIST);
+    - thêm lượt chụp nghiêng vuông góc với các tuyến (camera nghiêng 45°);
+    - giữ độ cao theo dữ liệu địa hình của máy bay (khung terrain, cần TERRAIN_ENABLE = 1) hoặc
+      theo SRTM của phần mềm (độ cao so với mực nước biển, thêm waypoint mỗi 30 m);
+    - chia chuyến theo pin.
 
-## Cần làm
+    Code: `Utilities/TerrainSurvey.cs`, `Controls/TerrainSurveyForm.cs`,
+    `GCSViews/FlightPlannerTerrain.cs`.
+  - Test: `InspectionPatternTests`, `CameraCoverageTests`, `InspectionPhotosTests`,
+    `TerrainSurveyTests`.
+- Workflow Android và OSX/iOS chỉ chạy khi bấm tay (người dùng đồng ý, để tiết kiệm phút chạy
+  Actions).
 
-1. **Chụp ảnh 3D cho đồi núi, dãy núi** (mới, chưa có bên bigWing):
-   - bay theo lưới trên một vùng vẽ trên bản đồ;
-   - giữ độ cao đều so với mặt đất, theo dữ liệu SRTM hoặc địa hình;
-   - thêm các tuyến chụp nghiêng để dựng 3D;
-   - chia theo pin và lưu file như phần công trình.
+## Cần làm / ý tưởng tiếp theo
 
+1. Thử bay thật phần địa hình: kiểm tra TERRAIN_ENABLE và dữ liệu địa hình trên máy bay; nếu
+   dùng SRTM thì cần tải dữ liệu trước khi ra hiện trường (máy không có mạng).
+2. Gửi ảnh lên WebODM để dựng mô hình 3D (cần máy chủ WebODM).
+3. Danh sách điểm giao hàng hay dùng.

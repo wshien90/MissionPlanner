@@ -40,7 +40,7 @@ namespace MissionPlanner.GCSViews
             facadeEndMenuItem = new ToolStripMenuItem(FsemiText.Get("Plan_FacadeEnd")) { Enabled = false };
             facadeEndMenuItem.Click += facadeEndToolStripMenuItem_Click;
             flightsMenuItem = new ToolStripMenuItem(FsemiText.Get("Plan_Flights")) { Visible = false };
-            menu.DropDownItems.AddRange(new ToolStripItem[] { orbit, start, facadeEndMenuItem, flightsMenuItem });
+            menu.DropDownItems.AddRange(new ToolStripItem[] { orbit, start, facadeEndMenuItem, TerrainMenuItem(), flightsMenuItem });
             contextMenuStrip1.Items.Insert(contextMenuStrip1.Items.IndexOf(setROIToolStripMenuItem) + 1, menu);
 
             inspectionoverlay = new GMapOverlay("inspection");
@@ -218,11 +218,17 @@ namespace MissionPlanner.GCSViews
         {
             var list = form.Split ? split(form) : null;
             if (list == null || list.Count <= 1)
-            {
                 AddInspection(list?.FirstOrDefault()?.Items ?? build(form));
-                return;
-            }
+            else
+                AddFlights(list);
+        }
 
+        /// <summary>
+        /// Adds the first of several flights to the mission, saves each to a file and lists them all under
+        /// Inspection flights on the map menu.
+        /// </summary>
+        void AddFlights(List<InspectionFlight> list)
+        {
             flights = list;
             flightsStart = Commands.Rows.Count;
             currentFlight = 0;
@@ -286,9 +292,11 @@ namespace MissionPlanner.GCSViews
             {
                 var k = i;
                 var f = flights[i];
-                var item = new ToolStripMenuItem(FsemiText.Format("Plan_FlightItem", i + 1, flights.Count,
-                    f.TopAlt * CurrentState.multiplieralt, f.BottomAlt * CurrentState.multiplieralt, CurrentState.AltUnit,
-                    f.Seconds / 60)) { Checked = i == currentFlight };
+                var text = f.FirstLine > 0
+                    ? FsemiText.Format("Plan_FlightItemLines", i + 1, flights.Count, f.FirstLine, f.LastLine, f.Seconds / 60)
+                    : FsemiText.Format("Plan_FlightItem", i + 1, flights.Count, f.TopAlt * CurrentState.multiplieralt,
+                        f.BottomAlt * CurrentState.multiplieralt, CurrentState.AltUnit, f.Seconds / 60);
+                var item = new ToolStripMenuItem(text) { Checked = i == currentFlight };
                 item.Click += (s, e) => LoadFlight(k);
                 flightsMenuItem.DropDownItems.Add(item);
             }
@@ -349,8 +357,12 @@ namespace MissionPlanner.GCSViews
             try
             {
                 foreach (var item in items)
+                {
                     AddMissionItem(item.Cmd, item.P1, item.P2, item.Lat, item.Lng,
                         item.HasPosition ? item.Alt * CurrentState.multiplieralt : item.Alt, item.HasPosition);
+                    if (item.Frame.HasValue)
+                        Commands.Rows[selectedrow].Cells[Frame.Index].Value = (int)item.Frame.Value;
+                }
             }
             finally
             {

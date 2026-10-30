@@ -455,4 +455,70 @@
   <data name="Insp_Battery" xml:space="preserve">
     <value>Thời gian bay một pin (phút)</value>
   </data>
+  <data name="Terrain_Menu" xml:space="preserve">
+    <value>Chụp ảnh địa hình vùng đa giác (3D)...</value>
+  </data>
+  <data name="Terrain_Title" xml:space="preserve">
+    <value>Chụp ảnh địa hình để dựng mô hình 3D</value>
+  </data>
+  <data name="Terrain_NeedPolygon" xml:space="preserve">
+    <value>Hãy vẽ vùng trước: chuột phải trên bản đồ, Đa giác, Vẽ đa giác, rồi bấm ít nhất 3 điểm bao quanh đồi núi.</value>
+  </data>
+  <data name="Terrain_Area" xml:space="preserve">
+    <value>Diện tích {0:0.00} ha, {1} điểm. Máy bay bay đi bay về theo các tuyến song song ở một độ cao so với mặt đất, camera chụp theo quãng đường.</value>
+  </data>
+  <data name="Terrain_Height" xml:space="preserve">
+    <value>Độ cao so với mặt đất (m)</value>
+  </data>
+  <data name="Terrain_Angle" xml:space="preserve">
+    <value>Hướng các tuyến bay (°)</value>
+  </data>
+  <data name="Terrain_Oblique" xml:space="preserve">
+    <value>Thêm lượt chụp nghiêng vuông góc (cho sườn dốc, vách đá)</value>
+  </data>
+  <data name="Terrain_ObliquePitch" xml:space="preserve">
+    <value>Góc nghiêng camera (° dưới phương ngang)</value>
+  </data>
+  <data name="Terrain_Mode" xml:space="preserve">
+    <value>Giữ độ cao theo</value>
+  </data>
+  <data name="Terrain_ModeTerrain" xml:space="preserve">
+    <value>Dữ liệu địa hình của máy bay (TERRAIN_ENABLE)</value>
+  </data>
+  <data name="Terrain_ModeElevation" xml:space="preserve">
+    <value>Dữ liệu độ cao (SRTM) của phần mềm, so với mực nước biển</value>
+  </data>
+  <data name="Terrain_Coverage" xml:space="preserve">
+    <value>{0:0.0} mm mỗi pixel trên nền phẳng; các tuyến cách nhau {1:0.0} m, chụp mỗi {2:0.0} m.</value>
+  </data>
+  <data name="Terrain_Summary" xml:space="preserve">
+    <value>{0} tuyến, {1} lệnh, khoảng {2} ảnh, {3:0.00} km, khoảng {4:0} phút ở tốc độ tối đa {5:0.0} m/s.</value>
+  </data>
+  <data name="Terrain_Ground" xml:space="preserve">
+    <value>Mặt đất cao từ {0:0} đến {1:0} m so với mực nước biển (chênh {2:0} m).</value>
+  </data>
+  <data name="Terrain_NoGround" xml:space="preserve">
+    <value>Chưa có dữ liệu độ cao cho vùng này: máy bay cần dữ liệu địa hình riêng (trên thẻ nhớ, hoặc do phần mềm gửi khi đã tải về).</value>
+  </data>
+  <data name="Terrain_FlightLine" xml:space="preserve">
+    <value>Chuyến {0}: tuyến {1} đến {2}, khoảng {3:0} phút</value>
+  </data>
+  <data name="Plan_FlightItemLines" xml:space="preserve">
+    <value>Chuyến {0}/{1}: tuyến {2} đến {3}, khoảng {4:0} phút</value>
+  </data>
+  <data name="Terrain_WarnHigh" xml:space="preserve">
+    <value>Bay cao hơn {0:0} m so với mặt đất cần giấy phép bay.</value>
+  </data>
+  <data name="Terrain_WarnTerrainEnable" xml:space="preserve">
+    <value>Máy bay đang đặt TERRAIN_ENABLE = 0: hãy đặt 1, hoặc chọn giữ độ cao theo dữ liệu độ cao của phần mềm.</value>
+  </data>
+  <data name="Terrain_ErrorNoLines" xml:space="preserve">
+    <value>Vùng quá nhỏ, không đủ cho một tuyến ở khoảng cách này.</value>
+  </data>
+  <data name="Terrain_ErrorNoElevation" xml:space="preserve">
+    <value>Không có dữ liệu độ cao tại {0:0.000000}, {1:0.000000}: hãy giữ độ cao theo dữ liệu địa hình của máy bay, hoặc chờ tải dữ liệu xong.</value>
+  </data>
+  <data name="Terrain_SideOverlap" xml:space="preserve">
+    <value>Độ chồng giữa các tuyến bay (%)</value>
+  </data>
 </root>

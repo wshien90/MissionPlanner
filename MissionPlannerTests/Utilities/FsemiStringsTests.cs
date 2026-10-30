@@ -79,7 +79,7 @@ namespace MissionPlanner.Utilities.Tests
             {
                 // every literal shaped like a key, so keys picked with ?: count too
                 foreach (Match m in Regex.Matches(File.ReadAllText(file),
-                             @"""((?:Delivery|Common|Drop|Plan|Voice|Insp|Photo)_[A-Za-z]+)"""))
+                             @"""((?:Delivery|Common|Drop|Plan|Voice|Insp|Photo|Terrain)_[A-Za-z]+)"""))
                 {
                     used++;
                     Assert.IsTrue(english.ContainsKey(m.Groups[1].Value), Path.GetFileName(file) + ": " + m.Groups[1].Value);

@@ -24,7 +24,7 @@ namespace MissionPlanner.Controls
         const double CloseMetres = 5;
 
         // bigW's camera, until another is chosen
-        const string DefaultCamera = "Sony A6400 16mm (A6100, A6600)";
+        public const string DefaultCamera = "Sony A6400 16mm (A6100, A6600)";
 
         // a mission this long may not fit the vehicle's storage
         const int ManyItems = 700;

@@ -53,7 +53,7 @@ The source is the `fsemi` branch of this repository; `master` follows Mission Pl
     an RC switch, seen on the servo output), is listed in the Delivery tab and marked in orange on
     the DATA map. With **Config → Planner → Enable Speech** on, a release is announced (in
     English).
-- **Photos for 3D models of structures**:
+- **Photos for 3D models of structures, hills and mountain ranges**:
   - On the **PLAN** map, right-click → **Inspection** adds a structure inspection
     to the end of the mission, levels flown from the top down with the camera
     pointed at the structure (DO_SET_ROI) and a photo at each point
@@ -100,9 +100,23 @@ The source is the `fsemi` branch of this repository; `master` follows Mission Pl
     position written into each JPEG (EXIF). With them: `photos.csv`, `geo.txt`
     (for WebODM/OpenDroneMap and other photogrammetry software) and
     `photos.kml` (Google Earth, by floor). The originals are not changed.
+  - **Terrain survey of the drawn polygon (3D)...** (right-click the PLAN map → **Inspection**,
+    after drawing the area with **Polygon → Draw a Polygon**): parallel lines over the area, flown
+    back and forth at a height above the ground with the camera triggered by distance
+    (DO_SET_CAM_TRIGG_DIST) and pointed down (DO_MOUNT_CONTROL). The camera, height and overlaps
+    set the line spacing and the photo spacing; the lines run along the area's longest edge unless
+    another direction is chosen.
+    - **Oblique pass** (on by default): a second set of lines at right angles with the camera tilted
+      (45° below the horizon by default), so steep slopes and cliffs are seen from the side too.
+    - **Keep the height with**: the autopilot's terrain data (waypoints in the terrain frame; needs
+      `TERRAIN_ENABLE` = 1, warned when it is 0), or this program's elevation data (SRTM): waypoints
+      above sea level every 30 m along each line, the ground's height plus the height asked for.
+    - The dialog shows the area, the millimetres per pixel, the number of lines, photos, the length
+      and time, and the lowest and highest ground when elevation data is there, and warns above
+      120 m over the ground. It is split into flights by battery like an inspection (the lines
+      grouped in order), each saved as its own mission file.
 
-Planned: photo capture for 3D models of hills and mountain ranges (terrain following). See
-[process.md](process.md).
+Progress notes and plans: [process.md](process.md).
 
 ## How to compile
 

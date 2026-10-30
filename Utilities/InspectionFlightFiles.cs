@@ -56,7 +56,7 @@ namespace MissionPlanner.Utilities
             foreach (var c in before)
                 Row(c.frame, c.id, c.p1, c.p2, c.p3, c.p4, c.lat, c.lng, c.alt);
             foreach (var i in flight)
-                Row(frame, (ushort)i.Cmd, i.P1, i.P2, 0, 0, i.Lat, i.Lng, i.Alt);
+                Row(i.Frame.HasValue ? (byte)i.Frame.Value : frame, (ushort)i.Cmd, i.P1, i.P2, 0, 0, i.Lat, i.Lng, i.Alt);
             return text.ToString();
         }
 

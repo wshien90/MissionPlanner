@@ -14,6 +14,9 @@ namespace MissionPlanner.Utilities
         /// <summary>True when Lat, Lng and Alt are a position (waypoints and ROI), false for other commands.</summary>
         public bool HasPosition;
 
+        /// <summary>The altitude frame, or null for the planner's (relative to home for the patterns).</summary>
+        public MAVLink.MAV_FRAME? Frame;
+
         public static InspectionItem Waypoint(PointLatLngAlt at, double alt, double hover)
         {
             return new InspectionItem { Cmd = MAVLink.MAV_CMD.WAYPOINT, P1 = hover, Lat = at.Lat, Lng = at.Lng, Alt = alt, HasPosition = true };
@@ -50,6 +53,8 @@ namespace MissionPlanner.Utilities
         public double Seconds;
         /// <summary>Metres above home.</summary>
         public double TopAlt, BottomAlt;
+        /// <summary>A terrain survey's flight: its first and last line, from 1; 0 for an inspection.</summary>
+        public int FirstLine, LastLine;
     }
 
     /// <summary>
