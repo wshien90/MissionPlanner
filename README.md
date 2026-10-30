@@ -144,6 +144,9 @@ build is published as the **test-build** pre-release
 download `FSEMIMissionPlannerBeta.zip`, unzip it and run `FSEMIMissionPlanner.exe`. Each
 run replaces the previous test build.
 
+The **Android Build** and **OSX Build** workflows run only by hand (**Actions → … → Run
+workflow**) to save Actions minutes; **Linux Build** runs on each pull request.
+
 ### On Linux
 
 See [Linux/README.md](Linux/README.md). Build with `./Linux/build.sh` and launch
