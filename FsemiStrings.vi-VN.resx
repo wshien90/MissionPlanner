@@ -521,4 +521,7 @@
   <data name="Terrain_SideOverlap" xml:space="preserve">
     <value>Độ chồng giữa các tuyến bay (%)</value>
   </data>
+  <data name="Sitl_FsemiParams" xml:space="preserve">
+    <value>Thông số thử FSEMI (giao hàng, camera, gimbal)</value>
+  </data>
 </root>

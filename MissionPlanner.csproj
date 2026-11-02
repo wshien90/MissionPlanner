@@ -711,6 +711,10 @@
       <Link>icon.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="docs\fsemi-sitl.parm">
+      <Link>fsemi-sitl.parm</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="fsemi\logo2.png">
       <Link>logo2.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

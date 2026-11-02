@@ -1,0 +1,29 @@
+# FSEMI Mission Planner: parameters for trying the FSEMI functions on the simulator (SITL).
+# Loaded with "FSEMI test parameters (delivery, camera, gimbal)" in the SIMULATION tab, or by hand with
+# CONFIG > Full Parameter List > Load from file > Write Params, then reboot (in Vietnamese: CẤU HÌNH >
+# Tham số đầy đủ > Nạp từ file > Ghi tham số).
+# Simulation only: SIM_ parameters don't exist on a real vehicle.
+
+# Delivery: ArduPilot gripper on servo 9 (servo function 28) and the simulated gripper
+GRIP_ENABLE      1
+GRIP_TYPE        1
+GRIP_GRAB        1900
+GRIP_RELEASE     1100
+SERVO9_FUNCTION  28
+SIM_GRPS_ENABLE  1
+SIM_GRPS_PIN     9
+SIM_GRPS_GRAB    1900
+SIM_GRPS_RELEASE 1100
+
+# Photos: a servo-triggered camera on servo 10 (servo function 10), sends CAMERA_FEEDBACK
+CAM1_TYPE        1
+SERVO10_FUNCTION 10
+
+# Camera gimbal: a servo mount tilting on servo 11 (servo function 7), for DO_MOUNT_CONTROL
+MNT1_TYPE        1
+SERVO11_FUNCTION 7
+MNT1_PITCH_MIN   -90
+MNT1_PITCH_MAX   0
+
+# Terrain following from the terrain data this program sends
+TERRAIN_ENABLE   1
