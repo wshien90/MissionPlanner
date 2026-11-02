@@ -18,6 +18,7 @@ không có ảnh vệ tinh.
 ## Mục lục
 
 1. [Bắt đầu](#1-bắt-đầu)
+   - [1.4. Ba kiểu độ cao: Relative, Absolute, Terrain](#14-ba-kiểu-độ-cao-relative-absolute-terrain)
 2. [Giao hàng](#2-giao-hàng)
 3. [Chụp ảnh 3D cho công trình](#3-chụp-ảnh-3d-cho-công-trình)
 4. [Chụp ảnh 3D cho đồi núi, dãy núi](#4-chụp-ảnh-3d-cho-đồi-núi-dãy-núi)
@@ -72,6 +73,30 @@ Bấm logo FPT Semiconductor ở góc trên bên phải sẽ mở trang
 [fpt-semiconductor.com](https://fpt-semiconductor.com/).
 
 ![Màn hình Dữ liệu](images/02-man-hinh-du-lieu.png)
+
+### 1.4. Ba kiểu độ cao: Relative, Absolute, Terrain
+
+Khi nhập độ cao, ví dụ trong hộp thoại "Bay tới đây", ở cột **Frame** của bảng nhiệm vụ hay ô
+chọn cạnh **Cao m.định** ở màn KẾ HOẠCH, phần mềm hỏi độ cao đó **tính so với cái gì**:
+
+| Kiểu | Độ cao tính so với | Ví dụ nhập 20 m |
+|---|---|---|
+| **Relative** (tương đối) | **Điểm cất cánh (home)** | Máy bay bay cao hơn chỗ cất cánh 20 m. Đi qua một quả đồi cao 30 m thì máy bay **vẫn giữ 20 m so với home**, tức là sẽ đâm vào đồi. |
+| **Absolute** (tuyệt đối) | **Mực nước biển** (AMSL) | Máy bay bay ở 20 m so với mực nước biển. Chỗ cất cánh cao 10 m so với mực nước biển thì máy bay chỉ cách mặt đất khoảng 10 m. Nhập con số thấp hơn độ cao địa hình thì máy bay lao xuống đất. |
+| **Terrain** (theo địa hình) | **Mặt đất ngay bên dưới máy bay** | Máy bay luôn giữ cách mặt đất 20 m: lên dốc thì bay lên, xuống dốc thì hạ xuống. Cần dữ liệu địa hình (SRTM) và `TERRAIN_ENABLE = 1` (xem [phần 4.3](#43-giữ-độ-cao-so-với-mặt-đất)). |
+
+**Nên dùng kiểu nào?**
+
+- **Relative**: dùng cho hầu hết trường hợp, nhất là vùng bằng phẳng, và khi thử trong mô
+  phỏng. Đây là mặc định, dễ hiểu nhất.
+- **Terrain**: dùng khi bay qua **đồi núi**, địa hình lên xuống. Chức năng "Chụp ảnh địa hình
+  vùng đa giác (3D)" dùng kiểu này cho các waypoint (Frame 10).
+- **Absolute**: ít dùng. Chỉ dùng khi biết chính xác độ cao so với mực nước biển, ví dụ để bay
+  đúng một độ cao theo quy định vùng bay, hoặc tránh chướng ngại vật đã biết độ cao.
+
+> **An toàn:** quy định thường giới hạn độ cao **so với mặt đất** (ví dụ 120 m). Ở vùng đồi núi,
+> nếu dùng Relative thì độ cao thật so với mặt đất có thể cao hơn hoặc thấp hơn nhiều so với con
+> số bạn nhập.
 
 ---
 
@@ -388,7 +413,8 @@ disarm):
 4. Muốn cho máy bay bay tới chỗ khác: chuột phải lên bản đồ, ở điểm cách máy bay khoảng 100–200 m
    cho dễ thấy → **Bay tới đây** hoặc **Bay tới đây (nhập độ cao)**.
    - Lần đầu, phần mềm hỏi độ cao bằng hộp thoại tiếng Anh **"Enter Guided Mode Alt"** (ô
-     *Relative*, số 10): nhập độ cao, ví dụ 20, rồi bấm **OK**. Bấm Cancel hoặc để hộp thoại bị
+     *Relative*, số 10): nhập độ cao, ví dụ 20, rồi bấm **OK**. Ô *Relative* là kiểu độ cao, xem
+     [phần 1.4](#14-ba-kiểu-độ-cao-relative-absolute-terrain); trong mô phỏng cứ để Relative. Bấm Cancel hoặc để hộp thoại bị
      che thì máy bay đứng yên. Từ lần sau phần mềm dùng lại độ cao này.
    - Lệnh chỉ có tác dụng khi HUD báo **ARMED** và máy bay đang bay. Nếu máy bay đã tự disarm, cho
      cất cánh lại.
