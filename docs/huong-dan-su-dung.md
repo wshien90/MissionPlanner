@@ -385,8 +385,13 @@ disarm):
 2. Bấm **Arm/ Disarm**. HUD chuyển từ *DISARMED* sang **ARMED**.
 3. **Chuột phải lên bản đồ** màn DỮ LIỆU → **Cất cánh**, nhập độ cao (ví dụ 20), rồi OK. Độ cao
    trên HUD và ô **Altitude** ở tab **Nhanh** tăng dần.
-4. Muốn cho máy bay bay tới chỗ khác: chuột phải lên bản đồ → **Bay tới đây** hoặc **Bay tới đây
-   (nhập độ cao)**.
+4. Muốn cho máy bay bay tới chỗ khác: chuột phải lên bản đồ, ở điểm cách máy bay khoảng 100–200 m
+   cho dễ thấy → **Bay tới đây** hoặc **Bay tới đây (nhập độ cao)**.
+   - Lần đầu, phần mềm hỏi độ cao bằng hộp thoại tiếng Anh **"Enter Guided Mode Alt"** (ô
+     *Relative*, số 10): nhập độ cao, ví dụ 20, rồi bấm **OK**. Bấm Cancel hoặc để hộp thoại bị
+     che thì máy bay đứng yên. Từ lần sau phần mềm dùng lại độ cao này.
+   - Lệnh chỉ có tác dụng khi HUD báo **ARMED** và máy bay đang bay. Nếu máy bay đã tự disarm, cho
+     cất cánh lại.
 
 **Chạy nhiệm vụ** (thả hàng, chụp ảnh công trình, chụp ảnh địa hình):
 
