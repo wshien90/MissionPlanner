@@ -521,4 +521,7 @@ Altitude {0:0.0} {1}, speed {2:0.0} {3}</value>
   <data name="Terrain_SideOverlap" xml:space="preserve">
     <value>Overlap between lines (%)</value>
   </data>
+  <data name="Sitl_FsemiParams" xml:space="preserve">
+    <value>FSEMI test parameters (delivery, camera, gimbal)</value>
+  </data>
 </root>

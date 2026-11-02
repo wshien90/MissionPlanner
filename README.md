@@ -29,6 +29,7 @@ FSEMI functions step by step, with screenshots.
 | Photos for 3D models of hills and mountain ranges | PLAN: draw a polygon, then **Inspection → Terrain survey** | [Đồi núi](docs/huong-dan-su-dung.md#4-chụp-ảnh-3d-cho-đồi-núi-dãy-núi) |
 | Long missions split by battery, each flight saved as a file | the inspection and terrain dialogs, **Inspection flights** | [Chia chuyến](docs/huong-dan-su-dung.md#5-chia-chuyến-theo-pin) |
 | Name and geotag the photos, lists for 3D software | DATA map → right-click → **Inspection photos...** | [Xử lý ảnh](docs/huong-dan-su-dung.md#6-xử-lý-ảnh-sau-chuyến-bay) |
+| Try all of these without a drone: the simulator loads FSEMI test parameters (simulated gripper, camera, gimbal) | **SIMULATION** tab → **FSEMI test parameters**, then **Multirotor** | [Mô phỏng](docs/huong-dan-su-dung.md#8-mô-phỏng-sitl-thử-khi-chưa-có-drone) |
 
 ## Differences from Mission Planner
 
@@ -53,6 +54,11 @@ FSEMI functions step by step, with screenshots.
   `FsemiStrings.resx` and `FsemiStrings.vi-VN.resx`, apart from Mission Planner's Crowdin
   translations.
 - No question about Altitude Angel or restart prompt for the Drone ID tab on first start.
+- **Simulator with FSEMI test parameters**: in the **SIMULATION** tab, **FSEMI test parameters
+  (delivery, camera, gimbal)** (on by default) adds `fsemi-sitl.parm` (from `docs/`, copied next to
+  the exe) to the simulated vehicle's defaults: a simulated gripper on servo 9, a camera on servo
+  10 that sends CAMERA_FEEDBACK, a servo gimbal on servo 11 and `TERRAIN_ENABLE` 1. Tick **Wipe**
+  the first time so a vehicle simulated before takes them.
 - **Delivery**:
   - The **Delivery** tab under the HUD locks and releases the payload with large LOCK / RELEASE
     buttons (release asks for confirmation), shows whether the payload is locked from the servo

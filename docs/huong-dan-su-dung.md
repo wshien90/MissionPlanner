@@ -6,7 +6,8 @@ Tài liệu này hướng dẫn dùng các chức năng riêng của **FSEMI Mis
 - chụp ảnh để dựng mô hình 3D cho công trình;
 - chụp ảnh để dựng mô hình 3D cho đồi núi, dãy núi;
 - chia chuyến theo pin;
-- xử lý ảnh sau chuyến bay.
+- xử lý ảnh sau chuyến bay;
+- thử tất cả các chức năng trên bằng máy bay giả lập, không cần drone thật.
 
 Các chức năng còn lại giống Mission Planner, xem tài liệu tại
 [ardupilot.org/planner](https://ardupilot.org/planner/).
@@ -23,7 +24,8 @@ không có ảnh vệ tinh.
 5. [Chia chuyến theo pin](#5-chia-chuyến-theo-pin)
 6. [Xử lý ảnh sau chuyến bay](#6-xử-lý-ảnh-sau-chuyến-bay)
 7. [Dựng mô hình 3D](#7-dựng-mô-hình-3d)
-8. [Câu hỏi thường gặp](#8-câu-hỏi-thường-gặp)
+8. [Mô phỏng (SITL): thử khi chưa có drone](#8-mô-phỏng-sitl-thử-khi-chưa-có-drone)
+9. [Câu hỏi thường gặp](#9-câu-hỏi-thường-gặp)
 
 ---
 
@@ -331,7 +333,74 @@ gian chụp. Ảnh không ghép được với vị trí nào được chép và
 
 ---
 
-## 8. Câu hỏi thường gặp
+## 8. Mô phỏng (SITL): thử khi chưa có drone
+
+Tab **MÔ PHỎNG** chạy một máy bay ArduPilot giả lập (SITL) ngay trên máy tính. Với nó, bạn thử được
+toàn bộ các chức năng ở phần 2–6 mà không cần drone thật.
+
+### 8.1. Khởi động máy bay giả lập
+
+1. Bấm **MÔ PHỎNG**.
+2. **Bấm lên bản đồ** của tab này để chọn chỗ cất cánh. Ví dụ chọn Hà Nội, cạnh một toà nhà, hoặc
+   vùng đồi núi như Ba Vì, Tam Đảo để thấy rõ chức năng bay theo địa hình. Ô **Hướng** là hướng
+   mũi máy bay lúc đầu.
+3. Để nguyên ô **Thông số thử FSEMI (giao hàng, camera, gimbal)** (bật sẵn). Phần mềm sẽ tự đặt
+   cho máy bay giả lập:
+   - **gripper giả lập** ở servo 9, để thử giao hàng;
+   - **camera** ở servo 10, gửi vị trí từng ảnh chụp;
+   - **gimbal** ở servo 11, để thấy lệnh xoay camera;
+   - **TERRAIN_ENABLE = 1**, để bay theo địa hình.
+4. **Lần đầu dùng** (hoặc khi muốn làm lại từ đầu), đánh dấu thêm **Xoá sạch**, để máy bay giả
+   lập bỏ hết các thông số cũ đã lưu và nhận bộ thông số mới.
+5. Bấm biểu tượng **Đa cánh quạt**.
+   - Lần đầu, phần mềm tải chương trình mô phỏng từ `firmware.ardupilot.org`, nên **cần Internet**.
+   - Chạy xong, phần mềm tự kết nối và chuyển sang màn **DỮ LIỆU**.
+6. Chờ HUD báo **Ready to Arm** và GPS **3D Fix**, mất khoảng 30–60 giây.
+
+![Tab Mô phỏng](images/12-mo-phong.png)
+
+Bộ thông số nằm trong file `fsemi-sitl.parm`, cạnh `FSEMIMissionPlanner.exe` (bản gốc ở
+`docs/fsemi-sitl.parm`). Nếu muốn tự nạp cho một máy bay giả lập đã chạy:
+
+1. **CẤU HÌNH → Tham số đầy đủ → Nạp từ file**, chọn `fsemi-sitl.parm`.
+2. Bấm **Ghi tham số**.
+3. Khởi động lại máy bay giả lập.
+
+> Chỉ dùng file này cho **mô phỏng**. Các thông số `SIM_...` không có trên máy bay thật, còn các
+> servo 9, 10, 11 phải đặt theo cách bạn đấu dây thật.
+
+### 8.2. Chạy một nhiệm vụ trên máy bay giả lập
+
+Máy bay giả lập là multicopter, nên lệnh **đầu tiên** của nhiệm vụ phải là **Cất cánh**. Ở
+**KẾ HOẠCH**, chuột phải lên bản đồ → **Cất cánh** (độ cao khoảng 20–30 m), rồi mới thêm phần thả
+hàng hoặc chụp ảnh.
+
+1. **KẾ HOẠCH**: lập nhiệm vụ, bấm **Ghi** để nạp vào máy bay.
+2. **DỮ LIỆU → tab Thao tác**: chọn chế độ **Auto**, bấm **Arm/Disarm**, rồi bấm **Start Mission**.
+3. Theo dõi máy bay trên bản đồ và HUD. Muốn dừng, chọn chế độ **RTL** để máy bay quay về.
+
+### 8.3. Thử từng chức năng
+
+| Chức năng | Cách thử trên máy bay giả lập | Kết quả mong đợi |
+|---|---|---|
+| Khoá / thả hàng | **DỮ LIỆU → Giao hàng**: bấm **KHÓA**, rồi **THẢ** và xác nhận. | Trạng thái chuyển **ĐÃ KHÓA** rồi **ĐÃ THẢ**; danh sách có một lần thả, bản đồ có điểm cam. |
+| Thả hàng theo nhiệm vụ | Cất cánh, rồi **Thả hàng tại đây** (phần 2.2), ghi và chạy. | Máy bay tới điểm, hạ xuống, thả; tab Giao hàng ghi một lần thả "(mission/RC)". |
+| Chụp ảnh công trình | Cất cánh, rồi **Bay vòng quanh công trình** với ít tầng (ví dụ 20 m xuống 10 m, cách 5 m). | Máy bay bay vòng, chụp ở mỗi điểm; hạ cánh xong có file `photos\flight_..._photos.csv`. |
+| Chụp ảnh địa hình | Vẽ vùng nhỏ (khoảng 200 × 200 m), cất cánh, rồi **Chụp ảnh địa hình vùng đa giác (3D)** với **Dữ liệu địa hình của máy bay**. | Máy bay bay đi bay về theo tuyến; độ cao so với mặt đất giữ đều. Cần Internet để phần mềm gửi dữ liệu địa hình. |
+| Chia chuyến theo pin | Đặt **Thời gian bay một pin** nhỏ (ví dụ 5 phút). Bay xong chuyến 1 thì chọn **Các chuyến kiểm tra → Chuyến 2**, ghi và chạy lại. | Mỗi chuyến kết thúc bằng RTL; các file `flight_<n>_of_<tổng>.waypoints` được lưu. |
+| Xử lý ảnh | Chép vào một thư mục **đúng số ảnh JPEG** bằng số lần chụp của chuyến (ảnh bất kỳ, ví dụ ảnh điện thoại), rồi làm theo phần 6. | Ảnh được đổi tên theo tầng và hướng, có toạ độ GPS, kèm `photos.csv`, `geo.txt`, `photos.kml`. |
+
+Máy bay giả lập chỉ giả lập **lệnh chụp và vị trí ảnh**, không tạo ra file ảnh thật. Vì vậy phải
+dùng ảnh bất kỳ với đúng số lượng: khi số ảnh bằng số lần chụp, phần mềm ghép theo thứ tự.
+
+### 8.4. Giới hạn của mô phỏng
+
+- Không thử được camera và móc hàng thật, gió, nhiễu GPS, sai số của dữ liệu địa hình.
+- Lần bay thật đầu tiên nên chọn chỗ trống, bay thấp, thử từng chức năng một.
+
+---
+
+## 9. Câu hỏi thường gặp
 
 **Bấm "Thả hàng tại đây" hoặc "Kiểm tra công trình" nhưng phần mềm báo phải chuyển sang
 mission?** Ô loại nhiệm vụ (góc trên bản đồ Kế hoạch) đang là Fence hoặc Rally. Chọn **MISSION**.
@@ -348,6 +417,10 @@ dụ vì không có mạng. Có hai cách:
 **Danh sách "Chuyến bay" trong cửa sổ ảnh trống?** Chỉ những chuyến có chụp ảnh (máy bay gửi
 CAMERA_FEEDBACK) và phần mềm kết nối suốt chuyến mới có file vị trí. Kiểm tra cấu hình camera
 (`CAMn_TYPE`, chân kích chụp) trên máy bay.
+
+**Máy bay giả lập không nhận thông số thử FSEMI (tab Giao hàng báo "Servo 9" thay vì "Gripper ở
+servo 9")?** Máy bay giả lập đang giữ thông số cũ. Ở tab **MÔ PHỎNG**, đánh dấu **Xoá sạch** và
+**Thông số thử FSEMI**, rồi chạy lại.
 
 **Muốn quay lại màu xanh lá của Mission Planner?** CẤU HÌNH → Planner → Giao diện →
 `BurntKermit.mpsystheme`.

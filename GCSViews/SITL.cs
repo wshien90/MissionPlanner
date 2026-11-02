@@ -123,7 +123,23 @@ namespace MissionPlanner.GCSViews
             cmb_version.DisplayMember = "Key";
             cmb_version.ValueMember = "Value";
             cmb_version.SelectedIndex = Settings.Instance.GetInt32("sitl_download_version");
+
+            // FSEMI: the parameters to try the delivery, camera and gimbal functions on the simulator
+            chk_fsemiparams = new CheckBox
+            {
+                Text = FsemiText.Get("Sitl_FsemiParams"), AutoSize = true,
+                Location = new System.Drawing.Point(chk_wipe.Left, chk_wipe.Bottom + 6),
+                Checked = Settings.Instance.GetBoolean("sitl_fsemi_params", true)
+            };
+            chk_fsemiparams.CheckedChanged += (s, e) =>
+                Settings.Instance["sitl_fsemi_params"] = chk_fsemiparams.Checked.ToString();
+            chk_wipe.Parent.Controls.Add(chk_fsemiparams);
         }
+
+        CheckBox chk_fsemiparams;
+
+        /// <summary>FSEMI's simulator parameters (gripper, camera, gimbal), next to the program.</summary>
+        static string FsemiParams => Path.Combine(Settings.GetRunningDirectory(), "fsemi-sitl.parm");
 
         public void Activate()
         {
@@ -640,6 +656,10 @@ namespace MissionPlanner.GCSViews
                 model = cmb_model.Text;
 
             var config = await GetDefaultConfig(model);
+
+            // FSEMI: after the vehicle's defaults, so the delivery, camera and gimbal ones win
+            if (chk_fsemiparams != null && chk_fsemiparams.Checked && File.Exists(FsemiParams))
+                config = string.IsNullOrEmpty(config) ? FsemiParams : config + "," + FsemiParams;
 
             if (!string.IsNullOrEmpty(config))
                 extraargs += @" --defaults """ + config + @"""";

@@ -3,7 +3,7 @@
 Ghi lại việc đã làm, đang làm và cần làm, để tiếp tục ở session mới. Cập nhật file này
 mỗi khi xong một PR.
 
-Cập nhật lần cuối: 2026-10-30 (sau PR #3; tạm dừng, sẽ phát triển tiếp sau).
+Cập nhật lần cuối: 2026-11-02 (thêm mô phỏng với thông số thử FSEMI).
 
 ## Sản phẩm
 
@@ -48,6 +48,11 @@ Cập nhật lần cuối: 2026-10-30 (sau PR #3; tạm dừng, sẽ phát tri�
 
 ## Kỹ thuật (môi trường cloud Linux)
 
+- `docs/fsemi-sitl.parm` đã thử trên SITL ArduCopter (2026-11-02): gripper giả lập khoá ở PWM
+  1900; camera servo 10 gửi CAMERA_FEEDBACK; servo gimbal 11 xoay theo DO_MOUNT_CONTROL
+  (-90° → 1100, 0° → 1500); TERRAIN_ENABLE 1. MP gốc truyền `--defaults <copter.parm>`; FSEMI
+  nối thêm `,<fsemi-sitl.parm>` (danh sách cách nhau bởi dấu phẩy, file sau thắng).
+
 - Thử với SITL: kết nối qua giao diện (bấm TCP rồi Kết nối). Chạy app với `-port TCP` thì app bị
   treo ở hộp thoại lấy tham số trên Mono.
 
@@ -68,7 +73,8 @@ Cập nhật lần cuối: 2026-10-30 (sau PR #3; tạm dừng, sẽ phát tri�
 | #1 | Đổi tên thành FSEMI Mission Planner (exe `FSEMIMissionPlanner.exe`, thư mục dữ liệu riêng, bộ cài riêng với UpgradeCode mới), tắt cập nhật, báo lỗi và Google Analytics của Mission Planner, phiên bản 1.0.0 (build N), dịch toàn bộ giao diện sang tiếng Việt (chọn vi-VN trong Config → Planner → UI Language), không hỏi Altitude Angel và Drone ID lúc mở lần đầu, logo/biểu tượng/màn hình khởi động FPT Semiconductor và theme FSEMI (navy #010837, xanh #6388F7) lấy từ website, bấm logo mở fpt-semiconductor.com, CI (chạy tay và với mỗi PR vào `fsemi`) kèm mở thử app và đăng bản test-build, README/PRIVACY/process.md |
 | #2 | Giao hàng: tab Giao hàng (KHÓA/THẢ, gripper hoặc servo, trạng thái từ servo, danh sách lần thả), "Thả hàng tại đây" trên bản đồ Kế hoạch, đánh dấu điểm thả; chữ giao diện riêng `FsemiStrings.resx` (en, vi) |
 | #3 | Chụp ảnh 3D: công trình (bay vòng quanh, dọc mặt tường, camera và độ chồng ảnh, chia chuyến theo pin với thời gian bay một pin nhập trong hộp thoại, lưu từng chuyến thành file), `PhotoRecorder` ghi vị trí ảnh, "Ảnh kiểm tra công trình" (đặt tên, ghi GPS, CSV/geo.txt/KML); đồi núi, dãy núi (tuyến song song trên vùng đa giác, giữ độ cao theo địa hình của máy bay hoặc SRTM, lượt chụp nghiêng, chia chuyến); Android/OSX chỉ chạy tay |
-| (sau #3) | README cập nhật, hướng dẫn sử dụng `docs/huong-dan-su-dung.md` (kèm ảnh màn hình trong `docs/images`) |
+| #4 | README cập nhật, hướng dẫn sử dụng `docs/huong-dan-su-dung.md` (kèm ảnh màn hình trong `docs/images`) |
+| (sau #4) | Mô phỏng: tab MÔ PHỎNG có ô "Thông số thử FSEMI (giao hàng, camera, gimbal)", bật sẵn, nạp thêm `docs/fsemi-sitl.parm` (chép cạnh exe) vào `--defaults` của SITL; mục 8 "Mô phỏng (SITL)" trong hướng dẫn |
 
 ## Đang làm
 
