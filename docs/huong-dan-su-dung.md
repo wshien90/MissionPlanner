@@ -369,21 +369,43 @@ Bộ thông số nằm trong file `fsemi-sitl.parm`, cạnh `FSEMIMissionPlanner
 > Chỉ dùng file này cho **mô phỏng**. Các thông số `SIM_...` không có trên máy bay thật, còn các
 > servo 9, 10, 11 phải đặt theo cách bạn đấu dây thật.
 
-### 8.2. Chạy một nhiệm vụ trên máy bay giả lập
+### 8.2. Cho máy bay giả lập bay lên và chạy nhiệm vụ
 
-Máy bay giả lập là multicopter, nên lệnh **đầu tiên** của nhiệm vụ phải là **Cất cánh**. Ở
-**KẾ HOẠCH**, chuột phải lên bản đồ → **Cất cánh** (độ cao khoảng 20–30 m), rồi mới thêm phần thả
-hàng hoặc chụp ảnh.
+Khi máy bay còn đứng dưới đất, độ cao là **0 m**, kể cả khi bấm THẢ trong tab Giao hàng. Muốn
+thấy máy bay bay thì phải **arm** rồi cho **cất cánh**.
 
-1. **KẾ HOẠCH**: lập nhiệm vụ, bấm **Ghi** để nạp vào máy bay.
-2. **DỮ LIỆU → tab Thao tác**: chọn chế độ **Auto**, bấm **Arm/Disarm**, rồi bấm **Start Mission**.
-3. Theo dõi máy bay trên bản đồ và HUD. Muốn dừng, chọn chế độ **RTL** để máy bay quay về.
+**Chuẩn bị:** chờ HUD báo **Ready to Arm** và **GPS: 3D Fix**, khoảng 30–60 giây sau khi bấm
+**Đa cánh quạt**. Nếu HUD báo *Not Ready to Arm*, xem lý do ở tab **Tin nhắn** dưới HUD.
+
+**Cất cánh** (làm liền các bước, vì máy bay đã arm mà không cất cánh trong khoảng 10 giây sẽ tự
+disarm):
+
+1. **DỮ LIỆU → tab Thao tác**: trong ô chọn chế độ (cạnh nút **Đặt chế độ**), chọn **GUIDED**, rồi
+   bấm **Đặt chế độ**.
+2. Bấm **Arm/ Disarm**. HUD chuyển từ *DISARMED* sang **ARMED**.
+3. **Chuột phải lên bản đồ** màn DỮ LIỆU → **Cất cánh**, nhập độ cao (ví dụ 20), rồi OK. Độ cao
+   trên HUD và ô **Altitude** ở tab **Nhanh** tăng dần.
+4. Muốn cho máy bay bay tới chỗ khác: chuột phải lên bản đồ → **Bay tới đây** hoặc **Bay tới đây
+   (nhập độ cao)**.
+
+**Chạy nhiệm vụ** (thả hàng, chụp ảnh công trình, chụp ảnh địa hình):
+
+1. **KẾ HOẠCH**: lập nhiệm vụ, lệnh đầu tiên là **Cất cánh** (chuột phải → **Cất cánh**, khoảng 20–30
+   m), rồi thêm phần thả hàng hoặc chụp ảnh. Bấm **Ghi** để nạp vào máy bay.
+2. **DỮ LIỆU**: cho máy bay cất cánh như các bước 1–3 ở trên.
+3. Khi máy bay đã ở trên cao, bấm nút **Auto** trong tab **Thao tác**. Máy bay tự bay theo nhiệm vụ.
+4. Theo dõi máy bay trên bản đồ (đánh dấu **Tự cuộn bản đồ** để bản đồ chạy theo máy bay) và trên
+   HUD. Muốn dừng, bấm **RTL** để máy bay quay về và tự hạ cánh.
+
+> Không chọn chế độ **Auto** rồi mới arm: ArduCopter mặc định không cho arm ở chế độ Auto (tham số
+> `AUTO_OPTIONS`). Lệnh bắt đầu nhiệm vụ cũng có trong ô danh sách hành động của tab Thao tác
+> (**Mission_Start**, bấm **Thực hiện**), nhưng cách trên đơn giản hơn.
 
 ### 8.3. Thử từng chức năng
 
 | Chức năng | Cách thử trên máy bay giả lập | Kết quả mong đợi |
 |---|---|---|
-| Khoá / thả hàng | **DỮ LIỆU → Giao hàng**: bấm **KHÓA**, rồi **THẢ** và xác nhận. | Trạng thái chuyển **ĐÃ KHÓA** rồi **ĐÃ THẢ**; danh sách có một lần thả, bản đồ có điểm cam. |
+| Khoá / thả hàng | Cho máy bay cất cánh (phần 8.2), rồi **DỮ LIỆU → Giao hàng**: bấm **KHÓA**, rồi **THẢ** và xác nhận. | Trạng thái chuyển **ĐÃ KHÓA** rồi **ĐÃ THẢ**; danh sách có một lần thả, bản đồ có điểm cam. |
 | Thả hàng theo nhiệm vụ | Cất cánh, rồi **Thả hàng tại đây** (phần 2.2), ghi và chạy. | Máy bay tới điểm, hạ xuống, thả; tab Giao hàng ghi một lần thả "(mission/RC)". |
 | Chụp ảnh công trình | Cất cánh, rồi **Bay vòng quanh công trình** với ít tầng (ví dụ 20 m xuống 10 m, cách 5 m). | Máy bay bay vòng, chụp ở mỗi điểm; hạ cánh xong có file `photos\flight_..._photos.csv`. |
 | Chụp ảnh địa hình | Vẽ vùng nhỏ (khoảng 200 × 200 m), cất cánh, rồi **Chụp ảnh địa hình vùng đa giác (3D)** với **Dữ liệu địa hình của máy bay**. | Máy bay bay đi bay về theo tuyến; độ cao so với mặt đất giữ đều. Cần Internet để phần mềm gửi dữ liệu địa hình. |
@@ -417,6 +439,10 @@ dụ vì không có mạng. Có hai cách:
 **Danh sách "Chuyến bay" trong cửa sổ ảnh trống?** Chỉ những chuyến có chụp ảnh (máy bay gửi
 CAMERA_FEEDBACK) và phần mềm kết nối suốt chuyến mới có file vị trí. Kiểm tra cấu hình camera
 (`CAMn_TYPE`, chân kích chụp) trên máy bay.
+
+**Trong mô phỏng, độ cao luôn là 0 m?** Máy bay đang đứng dưới đất. Làm theo
+[phần 8.2](#82-cho-máy-bay-giả-lập-bay-lên-và-chạy-nhiệm-vụ): chọn GUIDED, arm, rồi chuột phải bản
+đồ → **Cất cánh**.
 
 **Máy bay giả lập không nhận thông số thử FSEMI (tab Giao hàng báo "Servo 9" thay vì "Gripper ở
 servo 9")?** Máy bay giả lập đang giữ thông số cũ. Ở tab **MÔ PHỎNG**, đánh dấu **Xoá sạch** và
