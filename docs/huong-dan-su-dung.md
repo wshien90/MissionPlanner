@@ -18,6 +18,7 @@ không có ảnh vệ tinh.
 ## Mục lục
 
 1. [Bắt đầu](#1-bắt-đầu)
+   - [1.4. Ba kiểu độ cao: Relative, Absolute, Terrain](#14-ba-kiểu-độ-cao-relative-absolute-terrain)
 2. [Giao hàng](#2-giao-hàng)
 3. [Chụp ảnh 3D cho công trình](#3-chụp-ảnh-3d-cho-công-trình)
 4. [Chụp ảnh 3D cho đồi núi, dãy núi](#4-chụp-ảnh-3d-cho-đồi-núi-dãy-núi)
@@ -72,6 +73,30 @@ Bấm logo FPT Semiconductor ở góc trên bên phải sẽ mở trang
 [fpt-semiconductor.com](https://fpt-semiconductor.com/).
 
 ![Màn hình Dữ liệu](images/02-man-hinh-du-lieu.png)
+
+### 1.4. Ba kiểu độ cao: Relative, Absolute, Terrain
+
+Khi nhập độ cao, ví dụ trong hộp thoại "Bay tới đây", ở cột **Frame** của bảng nhiệm vụ hay ô
+chọn cạnh **Cao m.định** ở màn KẾ HOẠCH, phần mềm hỏi độ cao đó **tính so với cái gì**:
+
+| Kiểu | Độ cao tính so với | Ví dụ nhập 20 m |
+|---|---|---|
+| **Relative** (tương đối) | **Điểm cất cánh (home)** | Máy bay bay cao hơn chỗ cất cánh 20 m. Đi qua một quả đồi cao 30 m thì máy bay **vẫn giữ 20 m so với home**, tức là sẽ đâm vào đồi. |
+| **Absolute** (tuyệt đối) | **Mực nước biển** (AMSL) | Máy bay bay ở 20 m so với mực nước biển. Chỗ cất cánh cao 10 m so với mực nước biển thì máy bay chỉ cách mặt đất khoảng 10 m. Nhập con số thấp hơn độ cao địa hình thì máy bay lao xuống đất. |
+| **Terrain** (theo địa hình) | **Mặt đất ngay bên dưới máy bay** | Máy bay luôn giữ cách mặt đất 20 m: lên dốc thì bay lên, xuống dốc thì hạ xuống. Cần dữ liệu địa hình (SRTM) và `TERRAIN_ENABLE = 1` (xem [phần 4.3](#43-giữ-độ-cao-so-với-mặt-đất)). |
+
+**Nên dùng kiểu nào?**
+
+- **Relative**: dùng cho hầu hết trường hợp, nhất là vùng bằng phẳng, và khi thử trong mô
+  phỏng. Đây là mặc định, dễ hiểu nhất.
+- **Terrain**: dùng khi bay qua **đồi núi**, địa hình lên xuống. Chức năng "Chụp ảnh địa hình
+  vùng đa giác (3D)" dùng kiểu này cho các waypoint (Frame 10).
+- **Absolute**: ít dùng. Chỉ dùng khi biết chính xác độ cao so với mực nước biển, ví dụ để bay
+  đúng một độ cao theo quy định vùng bay, hoặc tránh chướng ngại vật đã biết độ cao.
+
+> **An toàn:** quy định thường giới hạn độ cao **so với mặt đất** (ví dụ 120 m). Ở vùng đồi núi,
+> nếu dùng Relative thì độ cao thật so với mặt đất có thể cao hơn hoặc thấp hơn nhiều so với con
+> số bạn nhập.
 
 ---
 
@@ -369,21 +394,49 @@ Bộ thông số nằm trong file `fsemi-sitl.parm`, cạnh `FSEMIMissionPlanner
 > Chỉ dùng file này cho **mô phỏng**. Các thông số `SIM_...` không có trên máy bay thật, còn các
 > servo 9, 10, 11 phải đặt theo cách bạn đấu dây thật.
 
-### 8.2. Chạy một nhiệm vụ trên máy bay giả lập
+### 8.2. Cho máy bay giả lập bay lên và chạy nhiệm vụ
 
-Máy bay giả lập là multicopter, nên lệnh **đầu tiên** của nhiệm vụ phải là **Cất cánh**. Ở
-**KẾ HOẠCH**, chuột phải lên bản đồ → **Cất cánh** (độ cao khoảng 20–30 m), rồi mới thêm phần thả
-hàng hoặc chụp ảnh.
+Khi máy bay còn đứng dưới đất, độ cao là **0 m**, kể cả khi bấm THẢ trong tab Giao hàng. Muốn
+thấy máy bay bay thì phải **arm** rồi cho **cất cánh**.
 
-1. **KẾ HOẠCH**: lập nhiệm vụ, bấm **Ghi** để nạp vào máy bay.
-2. **DỮ LIỆU → tab Thao tác**: chọn chế độ **Auto**, bấm **Arm/Disarm**, rồi bấm **Start Mission**.
-3. Theo dõi máy bay trên bản đồ và HUD. Muốn dừng, chọn chế độ **RTL** để máy bay quay về.
+**Chuẩn bị:** chờ HUD báo **Ready to Arm** và **GPS: 3D Fix**, khoảng 30–60 giây sau khi bấm
+**Đa cánh quạt**. Nếu HUD báo *Not Ready to Arm*, xem lý do ở tab **Tin nhắn** dưới HUD.
+
+**Cất cánh** (làm liền các bước, vì máy bay đã arm mà không cất cánh trong khoảng 10 giây sẽ tự
+disarm):
+
+1. **DỮ LIỆU → tab Thao tác**: trong ô chọn chế độ (cạnh nút **Đặt chế độ**), chọn **GUIDED**, rồi
+   bấm **Đặt chế độ**.
+2. Bấm **Arm/ Disarm**. HUD chuyển từ *DISARMED* sang **ARMED**.
+3. **Chuột phải lên bản đồ** màn DỮ LIỆU → **Cất cánh**, nhập độ cao (ví dụ 20), rồi OK. Độ cao
+   trên HUD và ô **Altitude** ở tab **Nhanh** tăng dần.
+4. Muốn cho máy bay bay tới chỗ khác: chuột phải lên bản đồ, ở điểm cách máy bay khoảng 100–200 m
+   cho dễ thấy → **Bay tới đây** hoặc **Bay tới đây (nhập độ cao)**.
+   - Lần đầu, phần mềm hỏi độ cao bằng hộp thoại tiếng Anh **"Enter Guided Mode Alt"** (ô
+     *Relative*, số 10): nhập độ cao, ví dụ 20, rồi bấm **OK**. Ô *Relative* là kiểu độ cao, xem
+     [phần 1.4](#14-ba-kiểu-độ-cao-relative-absolute-terrain); trong mô phỏng cứ để Relative. Bấm Cancel hoặc để hộp thoại bị
+     che thì máy bay đứng yên. Từ lần sau phần mềm dùng lại độ cao này.
+   - Lệnh chỉ có tác dụng khi HUD báo **ARMED** và máy bay đang bay. Nếu máy bay đã tự disarm, cho
+     cất cánh lại.
+
+**Chạy nhiệm vụ** (thả hàng, chụp ảnh công trình, chụp ảnh địa hình):
+
+1. **KẾ HOẠCH**: lập nhiệm vụ, lệnh đầu tiên là **Cất cánh** (chuột phải → **Cất cánh**, khoảng 20–30
+   m), rồi thêm phần thả hàng hoặc chụp ảnh. Bấm **Ghi** để nạp vào máy bay.
+2. **DỮ LIỆU**: cho máy bay cất cánh như các bước 1–3 ở trên.
+3. Khi máy bay đã ở trên cao, bấm nút **Auto** trong tab **Thao tác**. Máy bay tự bay theo nhiệm vụ.
+4. Theo dõi máy bay trên bản đồ (đánh dấu **Tự cuộn bản đồ** để bản đồ chạy theo máy bay) và trên
+   HUD. Muốn dừng, bấm **RTL** để máy bay quay về và tự hạ cánh.
+
+> Không chọn chế độ **Auto** rồi mới arm: ArduCopter mặc định không cho arm ở chế độ Auto (tham số
+> `AUTO_OPTIONS`). Lệnh bắt đầu nhiệm vụ cũng có trong ô danh sách hành động của tab Thao tác
+> (**Mission_Start**, bấm **Thực hiện**), nhưng cách trên đơn giản hơn.
 
 ### 8.3. Thử từng chức năng
 
 | Chức năng | Cách thử trên máy bay giả lập | Kết quả mong đợi |
 |---|---|---|
-| Khoá / thả hàng | **DỮ LIỆU → Giao hàng**: bấm **KHÓA**, rồi **THẢ** và xác nhận. | Trạng thái chuyển **ĐÃ KHÓA** rồi **ĐÃ THẢ**; danh sách có một lần thả, bản đồ có điểm cam. |
+| Khoá / thả hàng | Cho máy bay cất cánh (phần 8.2), rồi **DỮ LIỆU → Giao hàng**: bấm **KHÓA**, rồi **THẢ** và xác nhận. | Trạng thái chuyển **ĐÃ KHÓA** rồi **ĐÃ THẢ**; danh sách có một lần thả, bản đồ có điểm cam. |
 | Thả hàng theo nhiệm vụ | Cất cánh, rồi **Thả hàng tại đây** (phần 2.2), ghi và chạy. | Máy bay tới điểm, hạ xuống, thả; tab Giao hàng ghi một lần thả "(mission/RC)". |
 | Chụp ảnh công trình | Cất cánh, rồi **Bay vòng quanh công trình** với ít tầng (ví dụ 20 m xuống 10 m, cách 5 m). | Máy bay bay vòng, chụp ở mỗi điểm; hạ cánh xong có file `photos\flight_..._photos.csv`. |
 | Chụp ảnh địa hình | Vẽ vùng nhỏ (khoảng 200 × 200 m), cất cánh, rồi **Chụp ảnh địa hình vùng đa giác (3D)** với **Dữ liệu địa hình của máy bay**. | Máy bay bay đi bay về theo tuyến; độ cao so với mặt đất giữ đều. Cần Internet để phần mềm gửi dữ liệu địa hình. |
@@ -417,6 +470,10 @@ dụ vì không có mạng. Có hai cách:
 **Danh sách "Chuyến bay" trong cửa sổ ảnh trống?** Chỉ những chuyến có chụp ảnh (máy bay gửi
 CAMERA_FEEDBACK) và phần mềm kết nối suốt chuyến mới có file vị trí. Kiểm tra cấu hình camera
 (`CAMn_TYPE`, chân kích chụp) trên máy bay.
+
+**Trong mô phỏng, độ cao luôn là 0 m?** Máy bay đang đứng dưới đất. Làm theo
+[phần 8.2](#82-cho-máy-bay-giả-lập-bay-lên-và-chạy-nhiệm-vụ): chọn GUIDED, arm, rồi chuột phải bản
+đồ → **Cất cánh**.
 
 **Máy bay giả lập không nhận thông số thử FSEMI (tab Giao hàng báo "Servo 9" thay vì "Gripper ở
 servo 9")?** Máy bay giả lập đang giữ thông số cũ. Ở tab **MÔ PHỎNG**, đánh dấu **Xoá sạch** và
