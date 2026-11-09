@@ -16,8 +16,15 @@ GPL v3 (see [COPYING.txt](COPYING.txt)). Most of the
 
 The source is the `fsemi` branch of this repository; `master` follows Mission Planner.
 
+**Download (Windows):** the latest test build is the **test-build** pre-release,
+[FSEMIMissionPlannerBeta.zip](https://github.com/wshien90/MissionPlanner/releases/download/test-build/FSEMIMissionPlannerBeta.zip)
+([release page](https://github.com/wshien90/MissionPlanner/releases/tag/test-build)). Unzip it and
+run `FSEMIMissionPlanner.exe`; no installer is needed.
+
 **User guide (Vietnamese):** [docs/huong-dan-su-dung.md](docs/huong-dan-su-dung.md) explains the
-FSEMI functions step by step, with screenshots.
+FSEMI functions step by step, with screenshots, how to fly the simulated vehicle (arm, take off,
+run a mission), and the three altitude frames, Relative, Absolute and Terrain
+([1.4](docs/huong-dan-su-dung.md#14-ba-kiểu-độ-cao-relative-absolute-terrain)).
 
 ## FSEMI functions at a glance
 
@@ -172,7 +179,7 @@ The output is in `bin\Release\net461\` (the folder name is intentional). Run
 
 The **DotNet Build** workflow builds the Windows release, runs the unit tests and
 starts the app in English and Vietnamese as a smoke test. It
-only runs when started by hand: **Actions → DotNet Build → Run workflow**. The
+runs on each pull request into `fsemi`, and by hand: **Actions → DotNet Build → Run workflow**. The
 build is published as the **test-build** pre-release
 ([Releases → test-build](https://github.com/wshien90/MissionPlanner/releases/tag/test-build)):
 download `FSEMIMissionPlannerBeta.zip`, unzip it and run `FSEMIMissionPlanner.exe`. Each

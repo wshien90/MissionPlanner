@@ -3,7 +3,7 @@
 Ghi lại việc đã làm, đang làm và cần làm, để tiếp tục ở session mới. Cập nhật file này
 mỗi khi xong một PR.
 
-Cập nhật lần cuối: 2026-11-09 (sau PR #6: hướng dẫn bay mô phỏng, ba kiểu độ cao).
+Cập nhật lần cuối: 2026-11-09 (sau PR #7; README có link tải, đã rà lại hướng dẫn).
 
 ## Sản phẩm
 
@@ -43,8 +43,10 @@ Cập nhật lần cuối: 2026-11-09 (sau PR #6: hướng dẫn bay mô phỏng
 
   Người dùng thử trên Windows rồi tự merge.
 - Bản build thử: pre-release **test-build**
-  (https://github.com/wshien90/MissionPlanner/releases/tag/test-build). Mỗi lần chạy CI sẽ thay
-  bản cũ.
+  (https://github.com/wshien90/MissionPlanner/releases/tag/test-build), file tải trực tiếp
+  https://github.com/wshien90/MissionPlanner/releases/download/test-build/FSEMIMissionPlannerBeta.zip.
+  Mỗi lần chạy CI sẽ thay bản cũ; tên bản ghi số build và nhánh, ví dụ "Test build 14 (7/merge)"
+  (build 14 = code của `fsemi` sau PR #7).
 - Bảo mật: không dán key vào chat hay vào code trong repo.
 - File `.cs`: CRLF và UTF-8 có BOM. File `.resx`: giữ nguyên kiểu xuống dòng có sẵn.
 
@@ -86,10 +88,12 @@ Cập nhật lần cuối: 2026-11-09 (sau PR #6: hướng dẫn bay mô phỏng
 | #4 | README cập nhật, hướng dẫn sử dụng `docs/huong-dan-su-dung.md` (kèm ảnh màn hình trong `docs/images`) |
 | #5 | Mô phỏng: tab MÔ PHỎNG có ô "Thông số thử FSEMI (giao hàng, camera, gimbal)", bật sẵn, nạp thêm `docs/fsemi-sitl.parm` (chép cạnh exe) vào `--defaults` của SITL; mục 8 "Mô phỏng (SITL)" trong hướng dẫn |
 | #6 | Hướng dẫn: sửa mục 8.2 (GUIDED → Arm → Cất cánh → Auto, không có nút Start Mission), ghi chú hộp thoại "Enter Guided Mode Alt" của "Bay tới đây", mục mới 1.4 "Ba kiểu độ cao: Relative, Absolute, Terrain", câu hỏi thường gặp về độ cao 0 m |
+| #7 | `process.md`: PR #5, #6 và cách bay trong mô phỏng |
+| #8 | README: link tải bản build thử, sửa mô tả DotNet Build (chạy cả với PR vào `fsemi`), link tới mục 1.4; hướng dẫn mục 1.1: cảnh báo SmartScreen, Unblock file zip. Đã rà lại hướng dẫn: tên nút/menu khớp giao diện tiếng Việt, link nội bộ và ảnh đều đúng |
 
 ## Đang làm
 
-Không có. PR #6 đã merge. Người dùng đang thử các chức năng mới trong mô phỏng (SITL) vì chưa có
+Không có. PR #7 đã merge; PR #8 (README, rà hướng dẫn) chờ người dùng merge. Người dùng đang thử các chức năng mới trong mô phỏng (SITL) vì chưa có
 phần cứng drone; chờ người dùng chọn việc tiếp theo trong danh sách dưới.
 
 ## Cần làm / ý tưởng tiếp theo
