@@ -37,7 +37,14 @@ không có ảnh vệ tinh.
 1. Tải `FSEMIMissionPlannerBeta.zip` (bản build thử ở mục
    [Releases → test-build](https://github.com/wshien90/MissionPlanner/releases/tag/test-build)).
 2. Giải nén vào một thư mục, ví dụ `C:\FSEMI Mission Planner`.
-3. Chạy `FSEMIMissionPlanner.exe`.
+3. Chạy `FSEMIMissionPlanner.exe`. Không cần cài đặt.
+
+Nếu Windows hiện **"Windows protected your PC"** (SmartScreen), bấm **More info** → **Run anyway**:
+bản build thử chưa được ký số. Nếu phần mềm báo lỗi khi mở, chuột phải file zip → **Properties**
+→ đánh dấu **Unblock** → **OK**, rồi giải nén lại.
+
+Bản build thử được thay mỗi khi có thay đổi mới, nên thỉnh thoảng tải lại để có bản mới nhất. Tên
+bản (ví dụ *Test build 14*) ghi trên trang Releases.
 
 FSEMI Mission Planner có thư mục dữ liệu riêng (`Documents\FSEMI Mission Planner`), nên cài chung
 máy với Mission Planner hay bigWing Command được mà không lẫn cài đặt.
