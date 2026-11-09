@@ -3,7 +3,7 @@
 Ghi lại việc đã làm, đang làm và cần làm, để tiếp tục ở session mới. Cập nhật file này
 mỗi khi xong một PR.
 
-Cập nhật lần cuối: 2026-11-02 (thêm mô phỏng với thông số thử FSEMI).
+Cập nhật lần cuối: 2026-11-09 (sau PR #6: hướng dẫn bay mô phỏng, ba kiểu độ cao).
 
 ## Sản phẩm
 
@@ -38,6 +38,8 @@ Cập nhật lần cuối: 2026-11-02 (thêm mô phỏng với thông số thử
     Build cũng chạy tay được (Actions → DotNet Build → Run workflow).
   - **Android Build** và **OSX Build** chỉ chạy khi bấm tay (người dùng đồng ý, để tiết kiệm phút
     chạy Actions; máy macOS tính gấp 10).
+  - Có lần Actions bị tắt trên repo ("Actions has been disabled for this repository"): người dùng
+    bật lại trong Settings → Actions, rồi chạy tay DotNet Build và Linux Build.
 
   Người dùng thử trên Windows rồi tự merge.
 - Bản build thử: pre-release **test-build**
@@ -55,6 +57,14 @@ Cập nhật lần cuối: 2026-11-02 (thêm mô phỏng với thông số thử
 
 - Thử với SITL: kết nối qua giao diện (bấm TCP rồi Kết nối). Chạy app với `-port TCP` thì app bị
   treo ở hộp thoại lấy tham số trên Mono.
+- Bay trong mô phỏng (đã thử, ghi trong mục 8.2 của hướng dẫn):
+  - Copter mặc định không arm được ở AUTO (`AUTO_OPTIONS`). Chọn GUIDED → Arm, rồi trong khoảng
+    10 giây bấm chuột phải trên bản đồ → Cất cánh; sau đó chuyển Auto để bay nhiệm vụ, RTL để về.
+  - Không có nút "Start Mission" riêng; `Mission_Start` nằm trong danh sách lệnh ở tab Thao tác.
+  - "Bay tới đây" lần đầu hỏi độ cao ("Enter Guided Mode Alt"); phải nhập thì máy bay mới bay.
+  - Độ cao 0 m khi thả hàng nghĩa là máy bay chưa cất cánh.
+  - Ba kiểu độ cao: Relative (so với điểm cất cánh, frame 3), Absolute (so với mực nước biển,
+    frame 0), Terrain (so với mặt đất bên dưới, frame 10).
 
 - Build:
   `dotnet build MissionPlanner.csproj --configuration Release -p:MissionPlannerLinuxBuild=true -p:EnableWindowsTargeting=true "-p:DirectoryBuildTargetsPath=$PWD/Linux/Build.targets" -p:MonoPosixPath=/usr/lib/mono/4.5/Mono.Posix.dll -v:q`
@@ -74,11 +84,13 @@ Cập nhật lần cuối: 2026-11-02 (thêm mô phỏng với thông số thử
 | #2 | Giao hàng: tab Giao hàng (KHÓA/THẢ, gripper hoặc servo, trạng thái từ servo, danh sách lần thả), "Thả hàng tại đây" trên bản đồ Kế hoạch, đánh dấu điểm thả; chữ giao diện riêng `FsemiStrings.resx` (en, vi) |
 | #3 | Chụp ảnh 3D: công trình (bay vòng quanh, dọc mặt tường, camera và độ chồng ảnh, chia chuyến theo pin với thời gian bay một pin nhập trong hộp thoại, lưu từng chuyến thành file), `PhotoRecorder` ghi vị trí ảnh, "Ảnh kiểm tra công trình" (đặt tên, ghi GPS, CSV/geo.txt/KML); đồi núi, dãy núi (tuyến song song trên vùng đa giác, giữ độ cao theo địa hình của máy bay hoặc SRTM, lượt chụp nghiêng, chia chuyến); Android/OSX chỉ chạy tay |
 | #4 | README cập nhật, hướng dẫn sử dụng `docs/huong-dan-su-dung.md` (kèm ảnh màn hình trong `docs/images`) |
-| (sau #4) | Mô phỏng: tab MÔ PHỎNG có ô "Thông số thử FSEMI (giao hàng, camera, gimbal)", bật sẵn, nạp thêm `docs/fsemi-sitl.parm` (chép cạnh exe) vào `--defaults` của SITL; mục 8 "Mô phỏng (SITL)" trong hướng dẫn |
+| #5 | Mô phỏng: tab MÔ PHỎNG có ô "Thông số thử FSEMI (giao hàng, camera, gimbal)", bật sẵn, nạp thêm `docs/fsemi-sitl.parm` (chép cạnh exe) vào `--defaults` của SITL; mục 8 "Mô phỏng (SITL)" trong hướng dẫn |
+| #6 | Hướng dẫn: sửa mục 8.2 (GUIDED → Arm → Cất cánh → Auto, không có nút Start Mission), ghi chú hộp thoại "Enter Guided Mode Alt" của "Bay tới đây", mục mới 1.4 "Ba kiểu độ cao: Relative, Absolute, Terrain", câu hỏi thường gặp về độ cao 0 m |
 
 ## Đang làm
 
-Không có. Đã dừng sau PR #3 (đã merge), chờ người dùng chọn việc tiếp theo.
+Không có. PR #6 đã merge. Người dùng đang thử các chức năng mới trong mô phỏng (SITL) vì chưa có
+phần cứng drone; chờ người dùng chọn việc tiếp theo trong danh sách dưới.
 
 ## Cần làm / ý tưởng tiếp theo
 
