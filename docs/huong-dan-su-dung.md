@@ -12,8 +12,8 @@ Tài liệu này hướng dẫn dùng các chức năng riêng của **FSEMI Mis
 Các chức năng còn lại giống Mission Planner, xem tài liệu tại
 [ardupilot.org/planner](https://ardupilot.org/planner/).
 
-Ảnh minh hoạ chụp từ giao diện tiếng Việt, khi chạy với máy bay giả lập (SITL), nên bản đồ nền
-không có ảnh vệ tinh.
+Ảnh minh hoạ chụp trên Windows, giao diện tiếng Việt, bản đồ vệ tinh Google, khi chạy với máy bay
+giả lập (SITL), bản 1.0.0 (build 15).
 
 ## Mục lục
 
@@ -200,6 +200,11 @@ hướng vào công trình, chụp một ảnh ở mỗi điểm.
 
 ![Bay vòng quanh công trình](images/07-bay-vong-cong-trinh.png)
 
+Khi bay (ở đây là drone giả lập ở chế độ Auto, 100 m), màn **DỮ LIỆU** hiện các điểm chụp quanh công trình
+và đường bay:
+
+![Đang bay vòng quanh công trình](images/13-dang-bay-vong.png)
+
 ### 3.2. Bay dọc mặt tường (mặt đứng toà nhà)
 
 1. Chuột phải vào **một đầu tường** → **Kiểm tra công trình** → **Mặt đứng: đầu tường tại
@@ -249,6 +254,11 @@ dốc và vách đá.
 ![Chụp ảnh địa hình](images/10-chup-anh-dia-hinh.png)
 
 ![Nhiệm vụ chụp địa hình](images/11-nhiem-vu-dia-hinh.png)
+
+Khi bay, màn **DỮ LIỆU** hiện các tuyến của lượt chính và lượt nghiêng vuông góc; độ cao trên HUD là độ
+cao so với mực nước biển, thay đổi theo mặt đất:
+
+![Đang bay chụp ảnh địa hình](images/14-dang-bay-dia-hinh.png)
 
 ### 4.3. Giữ độ cao so với mặt đất
 
