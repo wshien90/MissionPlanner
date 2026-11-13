@@ -3,7 +3,7 @@
 Ghi lại việc đã làm, đang làm và cần làm, để tiếp tục ở session mới. Cập nhật file này
 mỗi khi xong một PR.
 
-Cập nhật lần cuối: 2026-11-09 (sau PR #7; README có link tải, đã rà lại hướng dẫn).
+Cập nhật lần cuối: 2026-11-11 (sau PR #9; ảnh hướng dẫn mới, deck trình bày, ý tưởng mô phỏng gió).
 
 ## Sản phẩm
 
@@ -90,11 +90,13 @@ Cập nhật lần cuối: 2026-11-09 (sau PR #7; README có link tải, đã r�
 | #6 | Hướng dẫn: sửa mục 8.2 (GUIDED → Arm → Cất cánh → Auto, không có nút Start Mission), ghi chú hộp thoại "Enter Guided Mode Alt" của "Bay tới đây", mục mới 1.4 "Ba kiểu độ cao: Relative, Absolute, Terrain", câu hỏi thường gặp về độ cao 0 m |
 | #7 | `process.md`: PR #5, #6 và cách bay trong mô phỏng |
 | #8 | README: link tải bản build thử, sửa mô tả DotNet Build (chạy cả với PR vào `fsemi`), link tới mục 1.4; hướng dẫn mục 1.1: cảnh báo SmartScreen, Unblock file zip. Đã rà lại hướng dẫn: tên nút/menu khớp giao diện tiếng Việt, link nội bộ và ảnh đều đúng |
+| #9 | Hướng dẫn: thay ảnh màn hình bằng ảnh người dùng chụp trên Windows (build 15, bản đồ vệ tinh), thêm ảnh đang bay vòng quanh (`13`) và bay địa hình (`14`); ảnh build 10 lưu ở `docs/images/archive/` |
 
 ## Đang làm
 
-Không có. PR #7 đã merge; PR #8 (README, rà hướng dẫn) chờ người dùng merge. Người dùng đang thử các chức năng mới trong mô phỏng (SITL) vì chưa có
-phần cứng drone; chờ người dùng chọn việc tiếp theo trong danh sách dưới.
+Không có. PR #9 đã merge. Người dùng chuẩn bị trình bày với đồng nghiệp bằng deck "FSEMI Mission
+Planner" (Artifact https://claude.ai/artifact/XLDsCnqBjyA6u2xyvAi34s, 45 slide, cùng giao diện deck
+FC737; slide 44 còn ô `[__]` chờ điền). Chờ người dùng chọn việc tiếp theo trong danh sách dưới.
 
 ## Cần làm / ý tưởng tiếp theo
 
@@ -114,3 +116,11 @@ phần cứng drone; chờ người dùng chọn việc tiếp theo trong danh s
 5. Tự học thời gian bay của pin sau mỗi chuyến (như bigWing, cần bộ ghi chuyến bay), thay cho ô
    nhập tay.
 6. Giọng nói tiếng Việt cho cảnh báo thả hàng (hiện đang nói tiếng Anh).
+7. **Mô phỏng có gió**, để thử chia chuyến theo pin (30% dự phòng có đủ khi ngược gió không) và
+   thả hàng khi có gió. SITL ArduPilot đã có sẵn tham số: `SIM_WIND_SPD` (m/s), `SIM_WIND_DIR`
+   (độ, hướng bắc thật), `SIM_WIND_TURB` (gió giật, m/s), `SIM_WIND_T` / `SIM_WIND_T_ALT` (gió
+   thay đổi theo độ cao). Hiện chỉnh tay được ở CẤU HÌNH → Tham số đầy đủ, có hiệu lực ngay. Hai
+   cách làm, người dùng chưa chọn:
+   - thêm sẵn một mức gió (ví dụ 5 m/s) vào `docs/fsemi-sitl.parm`;
+   - thêm ô "Gió" (tốc độ, hướng, gió giật) trên tab MÔ PHỎNG, cạnh ô "Thông số thử FSEMI",
+     ghi các tham số trên khi khởi động hoặc khi đang bay.
